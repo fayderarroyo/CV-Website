@@ -50,19 +50,26 @@ const translations = {
             title: "Proyectos Destacados",
             projects: [
                 {
-                    title: "SpaceParts - BI",
-                    desc: "Flujo completo de BI con ETL en Python y visualización en Power BI. KPIs de margen bruto y desempeño.",
-                    tags: ["Power BI", "Python", "ETL"]
+                    title: "SpaceParts - Business Intelligence",
+                    desc: "Ciclo completo de analítica: ETL en Python, modelado estrella y visualización en Power BI. Gestión con Git Flow.",
+                    fullDesc: "Proyecto técnico que integra el ciclo completo de analítica de datos. <br>⚙️ <b>ETL:</b> Python (Pandas/PyArrow) para datasets Parquet. <br>📊 <b>Modelado:</b> Power BI/DAX (FactSales, DimProduct, etc). <br>💾 <b>Control:</b> GitHub + VS Code.",
+                    tags: ["Power BI", "Python", "ETL", "Git Flow"],
+                    image: "assets/images/spaceparts-1.png",
+                    images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
                 {
                     title: "Tres Leches - Delivery",
                     desc: "Base de datos relacional en MySQL y análisis de indicadores de ventas y retención de clientes.",
-                    tags: ["SQL", "MySQL", "Data Modeling"]
+                    fullDesc: "Diseño de base de datos y consultas analíticas para optimizar un modelo de negocio de delivery.",
+                    tags: ["SQL", "MySQL", "Data Modeling"],
+                    image: "https://picsum.photos/seed/tresleches/600/400"
                 },
                 {
                     title: "Tableros IPS Syso",
                     desc: "Dashboards integrados para gestión de infraestructura y servicios médicos en tiempo real.",
-                    tags: ["Power BI", "Excel", "Healthcare"]
+                    fullDesc: "Solución integral para el sector salud, monitoreando infraestructura y servicios críticos.",
+                    tags: ["Power BI", "Excel", "Healthcare"],
+                    image: "https://picsum.photos/seed/ipssyso/600/400"
                 }
             ]
         },
@@ -121,19 +128,26 @@ const translations = {
             title: "Featured Projects",
             projects: [
                 {
-                    title: "SpaceParts - BI",
-                    desc: "Complete BI flow with Python ETL and Power BI visualization. KPIs for gross margin and performance.",
-                    tags: ["Power BI", "Python", "ETL"]
+                    title: "SpaceParts - Business Intelligence",
+                    desc: "Full analytics cycle: Python ETL, Star Schema modeling, and Power BI visualization. Managed with Git Flow.",
+                    fullDesc: "Technical project integrating the full data analytics cycle. <br>⚙️ <b>ETL:</b> Python (Pandas/PyArrow) for Parquet datasets. <br>📊 <b>Modeling:</b> Power BI/DAX (FactSales, DimProduct, etc). <br>💾 <b>Control:</b> GitHub + VS Code.",
+                    tags: ["Power BI", "Python", "ETL", "Git Flow"],
+                    image: "assets/images/spaceparts-1.png",
+                    images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
                 {
                     title: "Tres Leches - Delivery",
                     desc: "Relational database in MySQL and analysis of sales indicators and customer retention.",
-                    tags: ["SQL", "MySQL", "Data Modeling"]
+                    fullDesc: "Database design and analytical queries to optimize a delivery business model.",
+                    tags: ["SQL", "MySQL", "Data Modeling"],
+                    image: "https://picsum.photos/seed/tresleches/600/400"
                 },
                 {
                     title: "IPS Syso Dashboards",
                     desc: "Integrated dashboards for infrastructure and medical services management in real-time.",
-                    tags: ["Power BI", "Excel", "Healthcare"]
+                    fullDesc: "Comprehensive solution for the healthcare sector, monitoring infrastructure and critical services.",
+                    tags: ["Power BI", "Excel", "Healthcare"],
+                    image: "https://picsum.photos/seed/ipssyso/600/400"
                 }
             ]
         },

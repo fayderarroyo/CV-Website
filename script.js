@@ -38,7 +38,7 @@ function updateContent() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         const value = getNestedValue(t, key);
-        if (value) el.innerHTML = value; // Changed to innerHTML to support <br> and <span>
+        if (value) el.innerHTML = value;
     });
 
     // Update complex sections (Experience & Portfolio)
@@ -81,9 +81,9 @@ function renderPortfolio(projects) {
     projects.forEach(project => {
         const card = document.createElement('div');
         card.className = 'project-card';
-        // Using a placeholder image service for now
-        const randomId = Math.floor(Math.random() * 1000);
-        const imgUrl = `https://picsum.photos/seed/${project.title.replace(/\s/g, '')}/600/400`;
+
+        // Use local image if available, else placeholder
+        const imgUrl = project.image || `https://picsum.photos/seed/${project.title.replace(/\s/g, '')}/600/400`;
 
         card.innerHTML = `
             <div class="project-img-wrapper">
@@ -92,6 +92,9 @@ function renderPortfolio(projects) {
             <div class="project-info">
                 <h3 class="project-title">${project.title}</h3>
                 <p style="margin: 0.5rem 0; color: var(--text-secondary); font-size: 0.9rem;">${project.desc}</p>
+                
+                ${project.fullDesc ? `<p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--glass-border); padding-top: 0.5rem;">${project.fullDesc}</p>` : ''}
+
                 <div class="project-tags">
                     ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                 </div>
