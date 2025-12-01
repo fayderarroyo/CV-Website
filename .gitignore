@@ -1,0 +1,14 @@
+# Parquet files (too large for GitHub)
+dashboard/*.parquet
+
+# CSV files (too large)
+dashboard/*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
