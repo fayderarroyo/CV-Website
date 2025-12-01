@@ -1,24 +1,16 @@
 :root {
     /* New Palette: Dark Modern */
     --bg-primary: #0f172a;
-    /* Slate 900 */
     --bg-secondary: #1e293b;
-    /* Slate 800 */
     --bg-tertiary: #020617;
-    /* Slate 950 */
 
     --text-primary: #f8fafc;
-    /* Slate 50 */
     --text-secondary: #94a3b8;
-    /* Slate 400 */
     --text-muted: #64748b;
-    /* Slate 500 */
 
     --accent-primary: #22c55e;
-    /* Green 500 */
     --accent-glow: rgba(34, 197, 94, 0.3);
     --accent-hover: #4ade80;
-    /* Green 400 */
 
     --glass-bg: rgba(15, 23, 42, 0.7);
     --glass-border: rgba(255, 255, 255, 0.1);
@@ -225,6 +217,35 @@ section {
     }
 }
 
+.hero-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-photo {
+    position: relative;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid var(--accent-primary);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
 .hero-content {
     max-width: 800px;
     position: relative;
@@ -407,7 +428,6 @@ section {
     overflow: hidden;
     border: 1px solid var(--glass-border);
     transition: var(--transition);
-    group: project;
 }
 
 .project-card:hover {
@@ -509,12 +529,22 @@ footer {
 
     .nav-links {
         display: none;
-        /* Mobile menu to be implemented */
     }
 
     .hero {
         text-align: center;
         padding-top: 120px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .profile-img {
+        max-width: 200px;
+        height: 200px;
+        margin: 0 auto;
     }
 
     .hero-content {
@@ -523,5 +553,6 @@ footer {
 
     .cta-buttons {
         justify-content: center;
+        flex-wrap: wrap;
     }
 }
