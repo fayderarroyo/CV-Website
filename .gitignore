@@ -1,14 +1,8 @@
-# Parquet files (too large for GitHub)
-dashboard/*.parquet
+# Ignore large data files
+dashboard/
+*.parquet
 
-# CSV files (too large)
-dashboard/*.csv
-
-# Python cache
+# Ignore streamlit cache
+streamlit-dashboard/.streamlit/
 __pycache__/
 *.pyc
-*.pyo
-
-# OS files
-.DS_Store
-Thumbs.db
