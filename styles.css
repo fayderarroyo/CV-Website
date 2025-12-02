@@ -226,30 +226,7 @@ section {
     z-index: 2;
 }
 
-.hero-photo {
-    position: relative;
-}
-
-.profile-img {
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 20px;
-    border: 3px solid var(--accent-primary);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-    transition: var(--transition);
-}
-
-.profile-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px var(--accent-glow);
-}
-
-.hero-content {
-    max-width: 800px;
-    position: relative;
-    z-index: 2;
+z-index: 2;
 }
 
 .hero-role {

@@ -44,6 +44,15 @@ function updateContent() {
     // Update complex sections (Experience & Portfolio)
     renderExperience(t.experience.jobs);
     renderPortfolio(t.portfolio.projects);
+
+    // Update CV Download Link
+    const cvBtn = document.getElementById('download-cv');
+    if (cvBtn) {
+        const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf' : 'assets/documents/cv_en.pdf';
+        cvBtn.setAttribute('href', cvPath);
+        // Optional: Update download attribute if you want to force a specific filename
+        // cvBtn.setAttribute('download', currentLang === 'es' ? 'Fayder_Arroyo_CV_ES.pdf' : 'Fayder_Arroyo_CV_EN.pdf');
+    }
 }
 
 // Helper to get nested object values using string dot notation "nav.about"
@@ -98,6 +107,8 @@ function renderPortfolio(projects) {
                 <div class="project-tags">
                     ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                 </div>
+                
+                ${project.link ? `<div style="margin-top: 1rem;"><a href="${project.link}" target="_blank" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem; font-weight: 500;">Ver Proyecto <i class="fas fa-external-link-alt"></i></a></div>` : ''}
             </div>
         `;
         container.appendChild(card);

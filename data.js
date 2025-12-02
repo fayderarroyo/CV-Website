@@ -54,6 +54,7 @@ const translations = {
                     desc: "Ciclo completo de analítica: ETL en Python, modelado estrella y visualización en Power BI. Gestión con Git Flow.",
                     fullDesc: "Proyecto técnico que integra el ciclo completo de analítica de datos. <br>⚙️ <b>ETL:</b> Python (Pandas/PyArrow) para datasets Parquet. <br>📊 <b>Modelado:</b> Power BI/DAX (FactSales, DimProduct, etc). <br>💾 <b>Control:</b> GitHub + VS Code.",
                     tags: ["Power BI", "Python", "ETL", "Git Flow"],
+                    link: "https://spaceparts-dashboard-report.streamlit.app/",
                     image: "assets/images/spaceparts-1.png",
                     images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
@@ -132,6 +133,7 @@ const translations = {
                     desc: "Full analytics cycle: Python ETL, Star Schema modeling, and Power BI visualization. Managed with Git Flow.",
                     fullDesc: "Technical project integrating the full data analytics cycle. <br>⚙️ <b>ETL:</b> Python (Pandas/PyArrow) for Parquet datasets. <br>📊 <b>Modeling:</b> Power BI/DAX (FactSales, DimProduct, etc). <br>💾 <b>Control:</b> GitHub + VS Code.",
                     tags: ["Power BI", "Python", "ETL", "Git Flow"],
+                    link: "https://spaceparts-dashboard.streamlit.app/",
                     image: "assets/images/spaceparts-1.png",
                     images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
