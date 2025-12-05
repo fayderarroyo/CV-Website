@@ -4,45 +4,160 @@ const translations = {
             about: "Sobre Mí",
             skills: "Skills",
             experience: "Experiencia",
+            education: "Formación",
             portfolio: "Proyectos",
             contact: "Contacto"
         },
         hero: {
             greeting: "Fayder Enrique<br><span class='highlight'>Arroyo Herazo</span>",
-            role: "Data & BI Analyst · Coordinador de Innovación",
-            bio: "Transformo datos en decisiones estratégicas. Combino analítica, tecnología e innovación para optimizar procesos y crear soluciones inteligentes.",
+            role: "Especialista en Analítica y Soluciones Basadas en Datos",
+            bio: "Impulso la transformación digital a través de Business Intelligence, automatización y análisis de datos, convirtiendo la información en decisiones estratégicas que optimizan la eficiencia operativa y promueven la innovación tecnológica.",
             btn_cv: "Descargar CV",
             btn_contact: "Contáctame"
         },
         about: {
             title: "Sobre Mí",
-            description: `Soy <span class='highlight'>Coordinador de Innovación Tecnológica</span> y Gestión de Infraestructura, con sólida formación en analítica de datos e ingeniería industrial. 
+            description: `Soy un profesional con experiencia en analítica de datos, inteligencia de negocios e innovación tecnológica, enfocado en mejorar la gestión operativa, financiera y estratégica de las organizaciones.
             <br><br>
-            Mi perfil integra una visión multidisciplinaria: comprendo el negocio desde la perspectiva operativa, analítica y tecnológica. Esto me permite identificar oportunidades de mejora, desarrollar modelos de información robustos y liderar la implementación de herramientas que conectan las áreas administrativas, financieras y técnicas de una organización.`
+            Combino herramientas como Power BI, SQL y Python con metodologías de análisis y optimización de procesos para generar información clara, confiable y útil para la toma de decisiones.
+            <br><br>
+            Mi objetivo es transformar datos en conocimiento accionable, impulsar la eficiencia y acompañar la evolución digital de las empresas mediante soluciones analíticas y tecnológicas de alto impacto.`
         },
         skills: {
             title: "Skills & Tecnologías"
+        },
+        certifications: {
+            title: "Diplomados y Cursos"
         },
         experience: {
             title: "Experiencia Laboral",
             jobs: [
                 {
+                    role: "Asesor de Innovación Tecnológica y Gestión de Infraestructura",
+                    company: "IPS SYSO Empresarial",
+                    period: "Actualidad",
+                    location: "Cartagena, Colombia",
+                    desc: `• Asesoro la implementación de soluciones tecnológicas para optimizar la gestión administrativa y operativa.<br>
+                    • Desarrollo dashboards en Power BI para monitorear indicadores de desempeño y productividad.<br>
+                    • Propongo mejoras en infraestructura tecnológica, conectividad y procesos internos.<br>
+                    • Apoyo la digitalización de procesos de RIPS, mantenimiento y control documental.`
+                },
+                {
                     role: "Data Planning Analyst",
                     company: "3 Castillos",
-                    period: "Actualidad",
-                    desc: "Lidero la planeación financiera y el control presupuestal mediante modelos predictivos y dashboards en Power BI. Analizo variaciones y optimizo la toma de decisiones basada en datos históricos y proyecciones."
-                },
-                {
-                    role: "Coordinador de Infraestructura",
-                    company: "IPS Syso Empresarial",
                     period: "Previo",
-                    desc: "Dirigí la transformación digital y la gestión de infraestructura técnica. Implementé tableros de control para fortalecer la gestión médica y administrativa."
+                    desc: `• Elaboración de presupuestos y análisis de desempeño financiero con datos históricos y actuales.<br>
+                    • Creación de dashboards financieros en Power BI con métricas estadísticas y proyecciones.<br>
+                    • Automatización de procesos de carga y transformación de datos con Excel Power Query.`
                 },
                 {
-                    role: "Líder de Cartera y Cobranzas",
+                    role: "Supervisor de Operaciones / Analista de Cartera",
                     company: "Muebles Jamar",
                     period: "Previo",
-                    desc: "Diseñé dashboards de control interno y automaticé procesos de cobranza, reduciendo tiempos de generación de reportes de 4 horas a 25 minutos."
+                    desc: `• Reduje el tiempo de generación de cuentas por cobrar de 4 horas a 25 minutos mediante automatización.<br>
+                    • Desarrollé tableros de control de cartera y cobranzas en Power BI y Excel.<br>
+                    • Diseñé segmentaciones de clientes basadas en análisis de saldo, zona y ocupación.`
+                }
+            ]
+        },
+        education: {
+            title: "Formación Académica",
+            degrees: [
+                {
+                    degree: "Especialización en Analítica de Datos e Información",
+                    institution: "Fundación Universitaria Tecnológico Comfenalco",
+                    year: "2025",
+                    status: "current"
+                },
+                {
+                    degree: "Ingeniería Industrial",
+                    institution: "Fundación Universitaria Tecnológico Comfenalco",
+                    year: "2020"
+                },
+                {
+                    degree: "Tecnología en Control de Calidad",
+                    institution: "Fundación Universitaria Tecnológico Comfenalco",
+                    year: "2018"
+                },
+                {
+                    degree: "Tecnología en Análisis y Desarrollo de Sistemas de Información",
+                    institution: "SENA",
+                    year: "2012"
+                }
+            ],
+            diplomas: [
+                {
+                    name: "Formulación y Gerencia de Proyectos",
+                    institution: "Fundación Universitaria Tecnológico Comfenalco",
+                    hours: "120 horas",
+                    location: "Cartagena",
+                    year: "2021",
+                    month: "mayo"
+                },
+                {
+                    name: "Microsoft Power BI",
+                    institution: "Universidad de Cataluña",
+                    duration: "12 semanas",
+                    location: "Modalidad virtual",
+                    year: "2021"
+                },
+                {
+                    name: "Análisis de Datos",
+                    institution: "Universidad Tecnológica de Bolívar (MINTIC)",
+                    duration: "12 semanas",
+                    location: "Modalidad presencial",
+                    year: "2024",
+                    status: "current"
+                }
+            ],
+            workshops: [
+                {
+                    name: "Estadística Aplicada al Proceso Empresarial",
+                    institution: "Universidad de Cataluña",
+                    hours: "40 horas",
+                    location: "Cartagena",
+                    year: "2021",
+                    month: "junio"
+                },
+                {
+                    name: "Herramientas de Dirección",
+                    institution: "Universidad Pontificia Javeriana",
+                    hours: "32 horas",
+                    location: "Bogotá",
+                    year: "2020",
+                    month: "diciembre"
+                }
+            ],
+            platzi: [
+                {
+                    name: "Data Science e Inteligencia Artificial",
+                    date: "13 sept. 2022",
+                    hours: "14 h"
+                },
+                {
+                    name: "Fundamentos de Matemáticas",
+                    date: "18 sept. 2022",
+                    hours: "13 h"
+                },
+                {
+                    name: "Fundamentos de Ingeniería de Software",
+                    date: "21 sept. 2022",
+                    hours: "16 h"
+                },
+                {
+                    name: "Análisis de Negocios para Ciencia de Datos",
+                    date: "14 sept. 2022",
+                    hours: "10 h"
+                },
+                {
+                    name: "Python: Comprehensions, Funciones y Manejo de Errores",
+                    date: "19 ene. 2023",
+                    hours: "32 h"
+                },
+                {
+                    name: "Entorno de Trabajo para Ciencia de Datos con Jupyter Notebooks y Anaconda",
+                    date: "8 oct. 2022",
+                    hours: "18 h"
                 }
             ]
         },
@@ -50,8 +165,15 @@ const translations = {
             title: "Proyectos Destacados",
             projects: [
                 {
-                    title: "SpaceParts - Business Intelligence",
-                    desc: "Ciclo completo de analítica: ETL en Python, modelado estrella y visualización en Power BI. Gestión con Git Flow.",
+                    title: "Dashboard de Innovación y Operaciones – IPS SYSO",
+                    desc: "Digitalización de reportes administrativos, integración de RIPS y monitoreo de indicadores operativos.",
+                    fullDesc: "Sistema integral de Business Intelligence para el sector salud. <br>📊 <b>Dashboards:</b> Monitoreo de indicadores de desempeño y productividad en tiempo real. <br>🏥 <b>RIPS:</b> Digitalización de procesos de registro individual de prestación de servicios. <br>⚙️ <b>Infraestructura:</b> Propuestas de mejora en conectividad y procesos internos.",
+                    tags: ["Power BI", "Healthcare", "Process Optimization"],
+                    image: "https://picsum.photos/seed/ipssyso/600/400"
+                },
+                {
+                    title: "SpaceParts – Proyecto BI End-to-End",
+                    desc: "ETL en Python, modelado de datos en estrella y dashboards Power BI con métricas de rentabilidad y OTD.",
                     fullDesc: "Proyecto técnico que integra el ciclo completo de analítica de datos. <br>⚙️ <b>ETL:</b> Python (Pandas/PyArrow) para datasets Parquet. <br>📊 <b>Modelado:</b> Power BI/DAX (FactSales, DimProduct, etc). <br>💾 <b>Control:</b> GitHub + VS Code.",
                     tags: ["Power BI", "Python", "ETL", "Git Flow"],
                     link: "https://spaceparts-dashboard-report.streamlit.app/",
@@ -59,18 +181,18 @@ const translations = {
                     images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
                 {
-                    title: "Tres Leches - Delivery",
-                    desc: "Base de datos relacional en MySQL y análisis de indicadores de ventas y retención de clientes.",
-                    fullDesc: "Diseño de base de datos y consultas analíticas para optimizar un modelo de negocio de delivery.",
+                    title: "Tres Leches – Modelo SQL + BI para Emprendimiento",
+                    desc: "Base de datos relacional con métricas de ventas, ticket promedio y desempeño por zona.",
+                    fullDesc: "Diseño de base de datos y consultas analíticas para optimizar un modelo de negocio de delivery. <br>💾 <b>Base de Datos:</b> MySQL con modelado relacional completo. <br>📈 <b>Métricas:</b> Ventas, ticket promedio, retención de clientes. <br>📍 <b>Análisis:</b> Desempeño por zona geográfica.",
                     tags: ["SQL", "MySQL", "Data Modeling"],
                     image: "https://picsum.photos/seed/tresleches/600/400"
                 },
                 {
-                    title: "Tableros IPS Syso",
-                    desc: "Dashboards integrados para gestión de infraestructura y servicios médicos en tiempo real.",
-                    fullDesc: "Solución integral para el sector salud, monitoreando infraestructura y servicios críticos.",
-                    tags: ["Power BI", "Excel", "Healthcare"],
-                    image: "https://picsum.photos/seed/ipssyso/600/400"
+                    title: "Estadísticas Vitales DANE – Análisis Académico",
+                    desc: "Limpieza y análisis estadístico de microdatos de nacimientos mediante Python y exportación en formato Parquet.",
+                    fullDesc: "Análisis de datos públicos del DANE para proyecto académico. <br>🐍 <b>Python:</b> Pandas, NumPy, Matplotlib para procesamiento y visualización. <br>📊 <b>Análisis:</b> Estadísticas descriptivas de nacimientos en Colombia. <br>💾 <b>Formato:</b> Exportación optimizada en Parquet.",
+                    tags: ["Python", "Data Analysis", "Parquet"],
+                    image: "https://picsum.photos/seed/dane/600/400"
                 }
             ]
         },
@@ -83,45 +205,160 @@ const translations = {
             about: "About Me",
             skills: "Skills",
             experience: "Experience",
+            education: "Education",
             portfolio: "Projects",
             contact: "Contact"
         },
         hero: {
             greeting: "Fayder Enrique<br><span class='highlight'>Arroyo Herazo</span>",
-            role: "Data & BI Analyst · Innovation Coordinator",
-            bio: "I transform data into strategic decisions. I combine analytics, technology, and innovation to optimize processes and create intelligent solutions.",
+            role: "Specialist in Analytics and Data-Driven Solutions",
+            bio: "I drive digital transformation through Business Intelligence, automation, and data analysis, turning information into strategic decisions that optimize operational efficiency and promote technological innovation.",
             btn_cv: "Download CV",
             btn_contact: "Contact Me"
         },
         about: {
             title: "About Me",
-            description: `I am a <span class='highlight'>Technology Innovation Coordinator</span> and Infrastructure Manager, with a solid background in data analytics and industrial engineering.
+            description: `I am a professional with experience in data analytics, business intelligence, and technological innovation, focused on improving the operational, financial, and strategic management of organizations.
             <br><br>
-            My profile integrates a multidisciplinary vision: I understand the business from operational, analytical, and technical perspectives. This allows me to identify improvement opportunities, develop robust information models, and lead the implementation of tools that connect administrative, financial, and technical areas.`
+            I combine tools like Power BI, SQL, and Python with analysis and process optimization methodologies to generate clear, reliable, and useful information for decision-making.
+            <br><br>
+            My goal is to transform data into actionable knowledge, drive efficiency, and accompany the digital evolution of companies through high-impact analytical and technological solutions.`
         },
         skills: {
             title: "Skills & Technologies"
+        },
+        certifications: {
+            title: "Diplomas & Courses"
         },
         experience: {
             title: "Professional Experience",
             jobs: [
                 {
+                    role: "Technology Innovation and Infrastructure Management Advisor",
+                    company: "IPS SYSO Empresarial",
+                    period: "Current",
+                    location: "Cartagena, Colombia",
+                    desc: `• Advise on implementing technological solutions to optimize administrative and operational management.<br>
+                    • Develop Power BI dashboards to monitor performance and productivity indicators.<br>
+                    • Propose improvements in technological infrastructure, connectivity, and internal processes.<br>
+                    • Support digitalization of RIPS processes, maintenance, and document control.`
+                },
+                {
                     role: "Data Planning Analyst",
                     company: "3 Castillos",
-                    period: "Current",
-                    desc: "Leading financial planning and budget control through predictive models and Power BI dashboards. Analyzing variations and optimizing decision-making."
-                },
-                {
-                    role: "Infrastructure Coordinator",
-                    company: "IPS Syso Empresarial",
                     period: "Previous",
-                    desc: "Directed digital transformation and technical infrastructure management. Implemented control dashboards to strengthen medical and administrative management."
+                    desc: `• Budget preparation and financial performance analysis with historical and current data.<br>
+                    • Creation of financial dashboards in Power BI with statistical metrics and projections.<br>
+                    • Automation of data loading and transformation processes with Excel Power Query.`
                 },
                 {
-                    role: "Portfolio & Collections Leader",
+                    role: "Operations Supervisor / Portfolio Analyst",
                     company: "Muebles Jamar",
                     period: "Previous",
-                    desc: "Designed internal control dashboards and automated collection processes, reducing report generation times from 4 hours to 25 minutes."
+                    desc: `• Reduced accounts receivable generation time from 4 hours to 25 minutes through automation.<br>
+                    • Developed portfolio and collections control dashboards in Power BI and Excel.<br>
+                    • Designed customer segmentations based on balance, zone, and occupation analysis.`
+                }
+            ]
+        },
+        education: {
+            title: "Education",
+            degrees: [
+                {
+                    degree: "Specialization in Data Analytics and Information",
+                    institution: "Fundación Universitaria Tecnológico Comfenalco",
+                    year: "2025",
+                    status: "current"
+                },
+                {
+                    degree: "Industrial Engineering",
+                    institution: "Fundación Universitaria Tecnológico Comfenalco",
+                    year: "2020"
+                },
+                {
+                    degree: "Technology in Quality Control",
+                    institution: "Fundación Universitaria Tecnológico Comfenalco",
+                    year: "2018"
+                },
+                {
+                    degree: "Technology in Information Systems Analysis and Development",
+                    institution: "SENA",
+                    year: "2012"
+                }
+            ],
+            diplomas: [
+                {
+                    name: "Project Formulation and Management",
+                    institution: "Fundación Universitaria Tecnológico Comfenalco",
+                    hours: "120 hours",
+                    location: "Cartagena",
+                    year: "2021",
+                    month: "May"
+                },
+                {
+                    name: "Microsoft Power BI",
+                    institution: "Universidad de Cataluña",
+                    duration: "12 weeks",
+                    location: "Virtual mode",
+                    year: "2021"
+                },
+                {
+                    name: "Data Analysis",
+                    institution: "Universidad Tecnológica de Bolívar (MINTIC)",
+                    duration: "12 weeks",
+                    location: "In-person mode",
+                    year: "2024",
+                    status: "current"
+                }
+            ],
+            workshops: [
+                {
+                    name: "Applied Statistics for Business Processes",
+                    institution: "Universidad de Cataluña",
+                    hours: "40 hours",
+                    location: "Cartagena",
+                    year: "2021",
+                    month: "June"
+                },
+                {
+                    name: "Management Tools",
+                    institution: "Universidad Pontificia Javeriana",
+                    hours: "32 hours",
+                    location: "Bogotá",
+                    year: "2020",
+                    month: "December"
+                }
+            ],
+            platzi: [
+                {
+                    name: "Data Science and Artificial Intelligence",
+                    date: "Sept. 13, 2022",
+                    hours: "14 h"
+                },
+                {
+                    name: "Mathematics Fundamentals",
+                    date: "Sept. 18, 2022",
+                    hours: "13 h"
+                },
+                {
+                    name: "Software Engineering Fundamentals",
+                    date: "Sept. 21, 2022",
+                    hours: "16 h"
+                },
+                {
+                    name: "Business Analysis for Data Science",
+                    date: "Sept. 14, 2022",
+                    hours: "10 h"
+                },
+                {
+                    name: "Python: Comprehensions, Functions and Error Handling",
+                    date: "Jan. 19, 2023",
+                    hours: "32 h"
+                },
+                {
+                    name: "Work Environment for Data Science with Jupyter Notebooks and Anaconda",
+                    date: "Oct. 8, 2022",
+                    hours: "18 h"
                 }
             ]
         },
@@ -129,27 +366,34 @@ const translations = {
             title: "Featured Projects",
             projects: [
                 {
-                    title: "SpaceParts - Business Intelligence",
-                    desc: "Full analytics cycle: Python ETL, Star Schema modeling, and Power BI visualization. Managed with Git Flow.",
+                    title: "Innovation and Operations Dashboard – IPS SYSO",
+                    desc: "Digitalization of administrative reports, RIPS integration, and operational indicators monitoring.",
+                    fullDesc: "Comprehensive Business Intelligence system for the healthcare sector. <br>📊 <b>Dashboards:</b> Real-time monitoring of performance and productivity indicators. <br>🏥 <b>RIPS:</b> Digitalization of individual service provision registration processes. <br>⚙️ <b>Infrastructure:</b> Proposals for improvement in connectivity and internal processes.",
+                    tags: ["Power BI", "Healthcare", "Process Optimization"],
+                    image: "https://picsum.photos/seed/ipssyso/600/400"
+                },
+                {
+                    title: "SpaceParts – End-to-End BI Project",
+                    desc: "Python ETL, star schema data modeling, and Power BI dashboards with profitability and OTD metrics.",
                     fullDesc: "Technical project integrating the full data analytics cycle. <br>⚙️ <b>ETL:</b> Python (Pandas/PyArrow) for Parquet datasets. <br>📊 <b>Modeling:</b> Power BI/DAX (FactSales, DimProduct, etc). <br>💾 <b>Control:</b> GitHub + VS Code.",
                     tags: ["Power BI", "Python", "ETL", "Git Flow"],
-                    link: "https://spaceparts-dashboard.streamlit.app/",
+                    link: "https://spaceparts-dashboard-report.streamlit.app/",
                     image: "assets/images/spaceparts-1.png",
                     images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
                 {
-                    title: "Tres Leches - Delivery",
-                    desc: "Relational database in MySQL and analysis of sales indicators and customer retention.",
-                    fullDesc: "Database design and analytical queries to optimize a delivery business model.",
+                    title: "Tres Leches – SQL + BI Model for Entrepreneurship",
+                    desc: "Relational database with sales metrics, average ticket, and performance by zone.",
+                    fullDesc: "Database design and analytical queries to optimize a delivery business model. <br>💾 <b>Database:</b> MySQL with complete relational modeling. <br>📈 <b>Metrics:</b> Sales, average ticket, customer retention. <br>📍 <b>Analysis:</b> Performance by geographic zone.",
                     tags: ["SQL", "MySQL", "Data Modeling"],
                     image: "https://picsum.photos/seed/tresleches/600/400"
                 },
                 {
-                    title: "IPS Syso Dashboards",
-                    desc: "Integrated dashboards for infrastructure and medical services management in real-time.",
-                    fullDesc: "Comprehensive solution for the healthcare sector, monitoring infrastructure and critical services.",
-                    tags: ["Power BI", "Excel", "Healthcare"],
-                    image: "https://picsum.photos/seed/ipssyso/600/400"
+                    title: "DANE Vital Statistics – Academic Analysis",
+                    desc: "Cleaning and statistical analysis of birth microdata using Python and Parquet format export.",
+                    fullDesc: "Analysis of DANE public data for academic project. <br>🐍 <b>Python:</b> Pandas, NumPy, Matplotlib for processing and visualization. <br>📊 <b>Analysis:</b> Descriptive statistics of births in Colombia. <br>💾 <b>Format:</b> Optimized export in Parquet.",
+                    tags: ["Python", "Data Analysis", "Parquet"],
+                    image: "https://picsum.photos/seed/dane/600/400"
                 }
             ]
         },

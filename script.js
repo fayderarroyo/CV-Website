@@ -41,8 +41,10 @@ function updateContent() {
         if (value) el.innerHTML = value;
     });
 
-    // Update complex sections (Experience & Portfolio)
+    // Update complex sections (Experience, Education & Portfolio)
     renderExperience(t.experience.jobs);
+    renderEducation(t.education);
+    renderCertifications(t.education);
     renderPortfolio(t.portfolio.projects);
 
     // Update CV Download Link
@@ -50,8 +52,6 @@ function updateContent() {
     if (cvBtn) {
         const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf' : 'assets/documents/cv_en.pdf';
         cvBtn.setAttribute('href', cvPath);
-        // Optional: Update download attribute if you want to force a specific filename
-        // cvBtn.setAttribute('download', currentLang === 'es' ? 'Fayder_Arroyo_CV_ES.pdf' : 'Fayder_Arroyo_CV_EN.pdf');
     }
 }
 
@@ -81,6 +81,178 @@ function renderExperience(jobs) {
         `;
         container.appendChild(item);
     });
+}
+
+function renderEducation(education) {
+    const container = document.getElementById('education-list');
+    container.innerHTML = '';
+
+    // ========== TIMELINE 1: Academic Degrees ==========
+    if (education.degrees && education.degrees.length > 0) {
+        createTimelineSection(
+            container,
+            currentLang === 'es' ? 'Formación Académica' : 'Academic Degrees',
+            'fas fa-graduation-cap',
+            education.degrees.map(degree => ({
+                ...degree,
+                type: 'degree',
+                typeLabel: currentLang === 'es' ? 'Título' : 'Degree',
+                title: degree.degree,
+                subtitle: degree.institution,
+                year: degree.year
+            }))
+        );
+    }
+
+    // ========== TIMELINE 2: Diplomas + Workshops (MERGED) ==========
+    const diplomasAndWorkshops = [];
+
+    if (education.diplomas) {
+        education.diplomas.forEach(diploma => {
+            diplomasAndWorkshops.push({
+                ...diploma,
+                type: 'diploma',
+                typeLabel: currentLang === 'es' ? 'Diplomado' : 'Diploma',
+                title: diploma.name,
+                subtitle: diploma.institution,
+                details: diploma.hours || diploma.duration,
+                location: diploma.location,
+                year: diploma.year
+            });
+        });
+    }
+
+    if (education.workshops) {
+        education.workshops.forEach(workshop => {
+            diplomasAndWorkshops.push({
+                ...workshop,
+                type: 'workshop',
+                typeLabel: currentLang === 'es' ? 'Taller' : 'Workshop',
+                title: workshop.name,
+                subtitle: workshop.institution,
+                details: workshop.hours,
+                location: workshop.location,
+                year: workshop.year
+            });
+        });
+    }
+
+    if (diplomasAndWorkshops.length > 0) {
+        createTimelineSection(
+            container,
+            currentLang === 'es' ? 'Diplomados y Talleres' : 'Diplomas & Workshops',
+            'fas fa-award',
+            diplomasAndWorkshops
+        );
+    }
+
+    // ========== TIMELINE 3: Platzi Courses ==========
+    if (education.platzi && education.platzi.length > 0) {
+        createTimelineSection(
+            container,
+            currentLang === 'es' ? 'Ruta Data Engineer - Platzi' : 'Data Engineer Path - Platzi',
+            'fas fa-laptop-code',
+            education.platzi.map(course => ({
+                ...course,
+                type: 'platzi',
+                typeLabel: 'Platzi',
+                title: course.name,
+                subtitle: course.date,
+                details: course.hours,
+                year: course.date ? course.date.split(' ').pop() : ''
+            }))
+        );
+    }
+}
+
+// Helper function to create a timeline section
+function createTimelineSection(container, title, icon, items) {
+    const section = document.createElement('div');
+    section.className = 'timeline-section';
+
+    const sectionTitle = document.createElement('h3');
+    sectionTitle.className = 'timeline-section-title';
+    sectionTitle.innerHTML = `<i class="${icon}"></i> ${title}`;
+    section.appendChild(sectionTitle);
+
+    const timeline = document.createElement('div');
+    timeline.className = 'timeline-container';
+
+    const line = document.createElement('div');
+    line.className = 'timeline-line';
+    timeline.appendChild(line);
+
+    const itemsContainer = document.createElement('div');
+    itemsContainer.className = 'timeline-items';
+
+    // Sort by year
+    items.sort((a, b) => {
+        const yearA = a.status === 'current' || a.year === 'En curso' || a.year === 'In Progress' ? 9999 : parseInt(a.year) || 0;
+        const yearB = b.status === 'current' || b.year === 'En curso' || b.year === 'In Progress' ? 9999 : parseInt(b.year) || 0;
+        return yearB - yearA;
+    });
+
+    items.forEach(item => {
+        const timelineItem = createTimelineItem(item);
+        itemsContainer.appendChild(timelineItem);
+    });
+
+    timeline.appendChild(itemsContainer);
+    section.appendChild(timeline);
+    container.appendChild(section);
+}
+
+// Helper function to create timeline items
+function createTimelineItem(item) {
+    const timelineItem = document.createElement('div');
+    timelineItem.className = `timeline-item ${item.status === 'current' ? 'current' : ''}`;
+
+    // Year label
+    const yearLabel = document.createElement('div');
+    yearLabel.className = 'timeline-year';
+    yearLabel.textContent = item.year || item.date || '';
+
+    // Dot
+    const dot = document.createElement('div');
+    dot.className = 'timeline-dot';
+
+    // Card
+    const card = document.createElement('div');
+    card.className = 'timeline-card';
+
+    let cardHTML = `
+        <span class="timeline-type ${item.type}">${item.typeLabel}</span>
+        <div class="timeline-title">${item.title}</div>
+    `;
+
+    if (item.subtitle) {
+        cardHTML += `<div class="timeline-institution">${item.subtitle}</div>`;
+    }
+
+    if (item.details) {
+        cardHTML += `<div class="timeline-details">${item.details}</div>`;
+    }
+
+    if (item.location) {
+        cardHTML += `<div class="timeline-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</div>`;
+    }
+
+    if (item.status === 'current') {
+        cardHTML += `<span class="timeline-status">${currentLang === 'es' ? 'En curso' : 'In Progress'}</span>`;
+    }
+
+    card.innerHTML = cardHTML;
+
+    timelineItem.appendChild(yearLabel);
+    timelineItem.appendChild(dot);
+    timelineItem.appendChild(card);
+
+    return timelineItem;
+}
+
+function renderCertifications(education) {
+    // This function is now deprecated as everything is in the timeline
+    // Keep it empty to avoid errors
 }
 
 function renderPortfolio(projects) {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fayder Arroyo | Data & BI Analyst</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="education.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +28,7 @@
                 <div class="nav-links">
                     <a href="#about" data-i18n="nav.about">Sobre Mí</a>
                     <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+                    <a href="#education" data-i18n="nav.education">Formación</a>
                     <a href="#portfolio" data-i18n="nav.portfolio">Proyectos</a>
                     <a href="#skills" data-i18n="nav.skills">Skills</a>
                     <a href="#contact" data-i18n="nav.contact">Contacto</a>
@@ -92,6 +94,16 @@
         </div>
     </section>
 
+    <!-- Education Section with Timeline -->
+    <section id="education">
+        <div class="container">
+            <h2 data-i18n="education.title">Formación Académica</h2>
+            <div id="education-list">
+                <!-- Injected by JS - Timeline with all education types -->
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="portfolio">
         <div class="container">
@@ -102,19 +114,43 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section with Circular Badges -->
     <section id="skills">
         <div class="container">
             <h2 data-i18n="skills.title">Skills & Tecnologías</h2>
-            <div class="skills-grid">
-                <div class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</div>
-                <div class="skill-tag"><i class="fas fa-database"></i> SQL Server</div>
-                <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
-                <div class="skill-tag"><i class="fas fa-bolt"></i> Power Query</div>
-                <div class="skill-tag"><i class="fas fa-table"></i> Excel Adv.</div>
-                <div class="skill-tag"><i class="fas fa-chart-pie"></i> DAX</div>
-                <div class="skill-tag"><i class="fas fa-cogs"></i> ETL Process</div>
-                <div class="skill-tag"><i class="fas fa-brain"></i> Innovation</div>
+            <div class="skills-circles">
+                <div class="skill-circle">
+                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="skill-name">Power BI</div>
+                </div>
+                <div class="skill-circle">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <div class="skill-name">SQL Server</div>
+                </div>
+                <div class="skill-circle">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <div class="skill-name">Python</div>
+                </div>
+                <div class="skill-circle">
+                    <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="skill-name">Power Query</div>
+                </div>
+                <div class="skill-circle">
+                    <div class="skill-icon"><i class="fas fa-table"></i></div>
+                    <div class="skill-name">Excel</div>
+                </div>
+                <div class="skill-circle">
+                    <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="skill-name">DAX</div>
+                </div>
+                <div class="skill-circle">
+                    <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                    <div class="skill-name">ETL</div>
+                </div>
+                <div class="skill-circle">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <div class="skill-name">Innovation</div>
+                </div>
             </div>
         </div>
     </section>
