@@ -4,7 +4,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
 from sqlalchemy import create_engine
-import psycopg2
 
 # Page config
 st.set_page_config(
@@ -42,6 +41,10 @@ st.markdown("""
 def get_db_connection():
     """Create database connection from Streamlit secrets"""
     try:
+        if "database" not in st.secrets:
+            st.error("❌ No se encontró la configuración de base de datos en secrets.toml")
+            return None
+            
         db_config = st.secrets["database"]
         engine = create_engine(
             f"postgresql://{db_config['user']}:{db_config['password']}@"
@@ -53,77 +56,43 @@ def get_db_connection():
         return None
 
 @st.cache_data(ttl=3600)
-def load_all_data():
-    """Load data from PostgreSQL database"""
+def load_data():
+    """Load aggregated data from Supabase"""
     engine = get_db_connection()
     
     if engine is None:
-        return None, None, None, None
+        return None
     
-    with st.spinner("Cargando datos desde la base de datos..."):
-        conn = None
+    with st.spinner("Cargando datos optimizados desde Supabase..."):
         try:
-            # Establish a connection explicitly to manage transactions
-            conn = engine.connect()
+            # Load only the sales_summary table
+            # This table is pre-aggregated and small (<10MB) avoiding the 500MB limit
+            df = pd.read_sql("SELECT * FROM sales_summary", engine)
             
-            # Load dimension tables (small)
-            customers = pd.read_sql("SELECT * FROM customers", conn)
-            products = pd.read_sql("SELECT * FROM products", conn)
-            
-            # Load fact tables - all available data
-            invoices = pd.read_sql("""
-                SELECT 
-                    billing_date, ship_date, otd_indicator,
-                    net_invoice_value, net_invoice_cogs, net_invoice_quantity,
-                    customer_key, product_key
-                FROM invoices
-            """, conn)
-            
-            orders = pd.read_sql("""
-                SELECT 
-                    order_date, billing_date, ship_date,
-                    net_order_value, net_order_quantity,
-                    customer_key, product_key
-                FROM orders
-            """, conn)
-            
-            # Convert data types
-            invoices['net_invoice_value'] = pd.to_numeric(invoices['net_invoice_value'], errors='coerce')
-            invoices['net_invoice_cogs'] = pd.to_numeric(invoices['net_invoice_cogs'], errors='coerce')
-            invoices['net_invoice_quantity'] = pd.to_numeric(invoices['net_invoice_quantity'], errors='coerce')
-            orders['net_order_value'] = pd.to_numeric(orders['net_order_value'], errors='coerce')
-            orders['net_order_quantity'] = pd.to_numeric(orders['net_order_quantity'], errors='coerce')
-            
-            return customers, products, orders, invoices
+            # Convert date
+            if 'billing_date' in df.columns:
+                df['billing_date'] = pd.to_datetime(df['billing_date'])
+                
+            return df
             
         except Exception as e:
             st.error(f"Error loading data: {str(e)}")
-            # Attempt rollback if connection is active
-            if conn:
-                try:
-                    from sqlalchemy import text
-                    conn.execute(text("ROLLBACK"))
-                except Exception:
-                    pass
-            return None, None, None, None
-        finally:
-            if conn:
-                conn.close()
+            st.info("💡 Si acabas de migrar, asegúrate de que la tabla `sales_summary` existe en Supabase.")
+            return None
 
-def calculate_kpis(invoices_df):
-    """Calculate main KPIs"""
-    total_sales = invoices_df['net_invoice_value'].sum()
-    total_cogs = invoices_df['net_invoice_cogs'].sum()
+def calculate_kpis(df):
+    """Calculate main KPIs from aggregated data"""
+    # Summing up pre-aggregated values
+    total_sales = df['total_sales'].sum()
+    total_cogs = df['total_cogs'].sum()
     gross_margin = total_sales - total_cogs
     margin_pct = (gross_margin / total_sales * 100) if total_sales > 0 else 0
     
-    # OTD calculation (On-Time Delivery)
-    if 'otd_indicator' in invoices_df.columns:
-        otd_pct = (invoices_df['otd_indicator'].sum() / len(invoices_df) * 100) if len(invoices_df) > 0 else 0
-    else:
-        otd_pct = 0
+    # OTD calculation (Weighted average based on successes/orders)
+    total_orders = df['total_orders'].sum()
+    total_otd_successes = df['otd_successes'].sum()
     
-    total_orders = len(invoices_df)
+    otd_pct = (total_otd_successes / total_orders * 100) if total_orders > 0 else 0
     
     return {
         'total_sales': total_sales,
@@ -136,100 +105,67 @@ def main():
     # Header
     st.title("🚀 SpaceParts Business Intelligence")
     st.markdown("### Dashboard Interactivo | Fayder Arroyo")
+    st.caption("⚡ Versión Optimizada para Supabase")
     st.markdown("---")
     
     # Load data
-    customers, products, orders, invoices = load_all_data()
+    df = load_data()
     
-    if invoices is None:
-        st.error("No se pudieron cargar los datos. Verifica la conexión con la base de datos.")
-        st.info("Asegúrate de configurar las credenciales en `.streamlit/secrets.toml`")
+    if df is None or df.empty:
+        st.warning("⚠️ No hay datos disponibles. Ejecuta la migración de datos primero.")
         return
     
-    # Check if data is empty
-    if len(invoices) == 0:
-        st.warning("⚠️ No hay datos de facturas en la base de datos. Asegúrate de haber importado los archivos CSV.")
-        return
-    
-    # Filters Section in Sidebar
+    # --- FILTERS ---
     st.sidebar.markdown("## 🔍 Filtros")
     
-    # Merge invoices with products and customers for filtering
-    if products is not None and 'product_key' in invoices.columns and 'product_key' in products.columns:
-        invoices = invoices.merge(
-            products[['product_key', 'part_ship_class', 'sub_brand_name']], 
-            on='product_key', 
-            how='left'
-        )
-    
-    if customers is not None and 'customer_key' in invoices.columns:
-        invoices = invoices.merge(
-            customers[['customer_key', 'station']], 
-            on='customer_key', 
-            how='left'
-        )
-    
-    # Convert billing_date to datetime
-    if 'billing_date' in invoices.columns:
-        invoices['billing_date'] = pd.to_datetime(invoices['billing_date'])
-    
-    # Part Ship Class filter
-    if 'part_ship_class' in invoices.columns:
-        ship_classes = sorted(invoices['part_ship_class'].dropna().unique())
-        selected_classes = st.sidebar.multiselect(
-            "📦 Part Ship Class",
-            options=ship_classes,
-            default=ship_classes,
-            key="ship_class_filter"
-        )
-        if selected_classes:
-            invoices = invoices[invoices['part_ship_class'].isin(selected_classes)]
-    
     # Date Range filter
-    if 'billing_date' in invoices.columns:
-        min_date = invoices['billing_date'].min().date()
-        max_date = invoices['billing_date'].max().date()
-        
-        date_range = st.sidebar.date_input(
-            "📅 Rango de Fechas",
-            value=(min_date, max_date),
-            min_value=min_date,
-            max_value=max_date,
-            key="date_range_filter"
-        )
-        
-        if len(date_range) == 2:
-            start_date, end_date = date_range
-            invoices = invoices[
-                (invoices['billing_date'].dt.date >= start_date) & 
-                (invoices['billing_date'].dt.date <= end_date)
-            ]
+    min_date = df['billing_date'].min().date()
+    max_date = df['billing_date'].max().date()
     
-    # Top Stations filter
-    if 'station' in invoices.columns:
-        # Calculate top stations from current filtered data
-        station_sales = invoices.groupby('station', as_index=False)['net_invoice_value'].sum()
-        top_stations_list = station_sales.nlargest(10, 'net_invoice_value')['station'].tolist()
-        all_stations = sorted(invoices['station'].dropna().unique())
-        
-        selected_stations = st.sidebar.multiselect(
-            "🏢 Estaciones (Top 10 por defecto)",
-            options=all_stations,
-            default=top_stations_list,
-            key="station_filter"
-        )
-        
-        if selected_stations:
-            invoices = invoices[invoices['station'].isin(selected_stations)]
+    date_range = st.sidebar.date_input(
+        "📅 Rango de Fechas",
+        value=(min_date, max_date),
+        min_value=min_date,
+        max_value=max_date
+    )
     
+    if len(date_range) == 2:
+        start_date, end_date = date_range
+        df = df[
+            (df['billing_date'].dt.date >= start_date) & 
+            (df['billing_date'].dt.date <= end_date)
+        ]
+        
+    # Ship Class filter
+    all_classes = sorted(df['part_ship_class'].unique())
+    selected_classes = st.sidebar.multiselect(
+        "📦 Part Ship Class",
+        all_classes,
+        default=all_classes
+    )
+    if selected_classes:
+        df = df[df['part_ship_class'].isin(selected_classes)]
+        
+    # Station filter
+    # To avoid list too long, get top stations by sales
+    station_sales = df.groupby('station')['total_sales'].sum().sort_values(ascending=False)
+    top_stations = station_sales.head(20).index.tolist()
+    
+    selected_stations = st.sidebar.multiselect(
+        "🏢 Estaciones (Top 20)",
+        top_stations,
+        default=top_stations[:5]  # Select top 5 by default not to clutter
+    )
+    
+    if selected_stations:
+        df = df[df['station'].isin(selected_stations)]
+
     st.sidebar.markdown("---")
     
-    # Calculate KPIs
-    kpis = calculate_kpis(invoices)
+    # --- KPIs ---
+    kpis = calculate_kpis(df)
     
-    # KPI Cards
     col1, col2, col3, col4 = st.columns(4)
-    
     with col1:
         st.metric("💰 Total Sales", f"${kpis['total_sales']/1e6:.1f}M")
     with col2:
@@ -241,48 +177,42 @@ def main():
     
     st.markdown("---")
     
-    # Charts Row 1
+    # --- CHARTS ---
     col1, col2 = st.columns(2)
     
     with col1:
         st.subheader("💰 Sales Over Time")
-        if 'billing_date' in invoices.columns:
-            monthly_data = invoices.groupby(invoices['billing_date'].dt.to_period('M')).agg({
-                'net_invoice_value': 'sum',
-                'net_invoice_cogs': 'sum'
-            }).reset_index()
-            monthly_data['billing_date'] = monthly_data['billing_date'].astype(str)
-            monthly_data['margin'] = monthly_data['net_invoice_value'] - monthly_data['net_invoice_cogs']
-            
-            fig = go.Figure()
-            fig.add_trace(go.Bar(name='Sales', x=monthly_data['billing_date'], y=monthly_data['net_invoice_value'], marker_color='#22c55e'))
-            fig.add_trace(go.Bar(name='COGS', x=monthly_data['billing_date'], y=monthly_data['net_invoice_cogs'], marker_color='#3b82f6'))
-            
-            fig.update_layout(barmode='group', title="Monthly Sales vs COGS", template="plotly_dark")
-            st.plotly_chart(fig, use_container_width=True)
-    
+        # Group by month
+        monthly = df.groupby(df['billing_date'].dt.to_period('M')).agg({
+            'total_sales': 'sum',
+            'total_cogs': 'sum'
+        }).reset_index()
+        monthly['billing_date'] = monthly['billing_date'].astype(str)
+        
+        fig = go.Figure()
+        fig.add_trace(go.Bar(name='Sales', x=monthly['billing_date'], y=monthly['total_sales'], marker_color='#22c55e'))
+        fig.add_trace(go.Bar(name='COGS', x=monthly['billing_date'], y=monthly['total_cogs'], marker_color='#3b82f6'))
+        fig.update_layout(barmode='group', title="Monthly Sales vs COGS", template="plotly_dark")
+        st.plotly_chart(fig, use_container_width=True)
+        
     with col2:
         st.subheader("🏆 Top Stations")
-        if 'station' in invoices.columns:
-            top_stations = invoices.groupby('station')['net_invoice_value'].sum().nlargest(10).reset_index()
-            
-            fig = px.bar(
-                top_stations, x='net_invoice_value', y='station', orientation='h',
-                title="Top 10 Stations by Sales", template="plotly_dark", color_discrete_sequence=['#22c55e']
-            )
-            fig.update_layout(yaxis={'categoryorder':'total ascending'})
-            st.plotly_chart(fig, use_container_width=True)
-    
-    # Charts Row 2
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.subheader("🚦 Margin Health")
-        current_margin = kpis['margin_pct']
+        top_st = df.groupby('station')['total_sales'].sum().nlargest(10).reset_index()
+        fig = px.bar(
+            top_st, x='total_sales', y='station', orientation='h',
+            title="Top 10 Stations by Sales", template="plotly_dark", color_discrete_sequence=['#22c55e']
+        )
+        fig.update_layout(yaxis={'categoryorder':'total ascending'})
+        st.plotly_chart(fig, use_container_width=True)
         
+    # Row 2
+    col3, col4 = st.columns(2)
+    
+    with col3:
+        st.subheader("🚦 Margin Health")
         fig = go.Figure(go.Indicator(
             mode = "gauge+number",
-            value = current_margin,
+            value = kpis['margin_pct'],
             title = {'text': "Overall Margin %"},
             gauge = {
                 'axis': {'range': [0, 60]},
@@ -296,58 +226,50 @@ def main():
         ))
         fig.update_layout(template="plotly_dark")
         st.plotly_chart(fig, use_container_width=True)
-    
-    with col2:
+        
+    with col4:
         st.subheader("📊 Product Performance")
-        if 'sub_brand_name' in invoices.columns:
-            # Aggregate by product: total sales vs margin %
-            product_perf = invoices.groupby('sub_brand_name').agg({
-                'net_invoice_value': 'sum',
-                'net_invoice_cogs': 'sum'
-            }).reset_index()
-            
-            product_perf['margin_pct'] = ((product_perf['net_invoice_value'] - product_perf['net_invoice_cogs']) / product_perf['net_invoice_value'] * 100).fillna(0)
-            product_perf['sales_millions'] = product_perf['net_invoice_value'] / 1e6
-            
-            # Filter top products by sales
-            product_perf = product_perf.nlargest(20, 'net_invoice_value')
-            
-            fig = px.scatter(
-                product_perf,
-                x='sales_millions',
-                y='margin_pct',
-                size='sales_millions',
-                color='margin_pct',
-                hover_data=['sub_brand_name'],
-                title="Sales vs Margin % (Top 20 Products)",
-                labels={'sales_millions': 'Sales (Millions $)', 'margin_pct': 'Margin %'},
-                template="plotly_dark",
-                color_continuous_scale='RdYlGn'
-            )
-            fig.update_traces(marker=dict(line=dict(width=1, color='white')))
-            st.plotly_chart(fig, use_container_width=True)
-    
+        # Aggregate by product
+        prod_perf = df.groupby('sub_brand_name').agg({
+            'total_sales': 'sum',
+            'total_cogs': 'sum'
+        }).reset_index()
+        
+        prod_perf['margin_pct'] = ((prod_perf['total_sales'] - prod_perf['total_cogs']) / prod_perf['total_sales'] * 100).fillna(0)
+        prod_perf['sales_millions'] = prod_perf['total_sales'] / 1e6
+        
+        # Filter top 20
+        prod_perf = prod_perf.nlargest(20, 'total_sales')
+        
+        fig = px.scatter(
+            prod_perf, x='sales_millions', y='margin_pct', size='sales_millions',
+            color='margin_pct', hover_data=['sub_brand_name'],
+            title="Sales vs Margin % (Top 20 Products)",
+            template="plotly_dark", color_continuous_scale='RdYlGn'
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
     # Footer
     st.markdown("---")
     
-    # Data status in footer
+    # Calculate summary metrics for footer
+    unique_stations = df['station'].nunique()
+    unique_products = df['sub_brand_name'].nunique()
+    total_records = df['total_orders'].sum()
+    
     col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown("")
     with col2:
         st.markdown(f"""
         <div style='text-align: center; color: #64748b; font-size: 0.85rem; padding: 0.5rem;'>
-            📊 <strong>Datos cargados:</strong> {len(customers):,} clientes | {len(products):,} productos | {len(orders):,} órdenes | {len(invoices):,} facturas
+            📊 <strong>Datos Procesados:</strong> {unique_stations} Estaciones | {unique_products} Productos | {total_records:,} Transacciones
         </div>
         """, unsafe_allow_html=True)
-    with col3:
-        st.markdown("")
-    
+        
     st.markdown("""
     <div style='text-align: center; color: #94a3b8; padding: 1.5rem;'>
         <p>Desarrollado por <strong style='color: #22c55e;'>Fayder Arroyo</strong> | Data & BI Analyst</p>
         <p>🔗 <a href='https://fayderarroyo.github.io/CV-Website/' style='color: #22c55e;'>Ver Portafolio</a></p>
-        <p style='font-size: 0.8rem; margin-top: 1rem;'>Powered by PostgreSQL Database (Neon.tech)</p>
+        <p style='font-size: 0.8rem; margin-top: 1rem;'>Powered by PostgreSQL & Streamlit (Supabase Optimized)</p>
     </div>
     """, unsafe_allow_html=True)
 
