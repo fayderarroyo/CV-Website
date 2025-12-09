@@ -6,3 +6,8 @@ dashboard/
 streamlit-dashboard/.streamlit/
 __pycache__/
 *.pyc
+
+# Ignore virtual environments
+.venv/
+venv/
+streamlit-dashboard/.venv/
