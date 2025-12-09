@@ -165,6 +165,14 @@ const translations = {
             title: "Proyectos Destacados",
             projects: [
                 {
+                    title: "Revenue Command Center - Analítica Prescriptiva",
+                    desc: "Sistema de Revenue Management B2B para optimización de precios y márgenes.",
+                    fullDesc: "Herramienta de <b>Analítica Prescriptiva</b> que transforma la estrategia de precios en commodities. Elimina la incertidumbre mediante modelado causal avanzado. <br>📊 <b>Stack Técnico:</b> Regresión Log-Log (Elasticidad), Prophet (Forecast) y XGBoost. <br>💡 <b>Impacto Negocio:</b> Identificación de elasticidad crítica (-2.08) y prevención de riesgos por $797M.",
+                    tags: ["Python", "Streamlit", "Plotly", "Prophet", "XGBoost", "Causal Modeling"],
+                    link: "https://tableroestrategicofinanciero.streamlit.app/",
+                    image: "assets/images/revenue_command_center.png"
+                },
+                {
                     title: "Dashboard de Innovación y Operaciones – IPS SYSO",
                     desc: "Digitalización de reportes administrativos, integración de RIPS y monitoreo de indicadores operativos.",
                     fullDesc: "Sistema integral de Business Intelligence para el sector salud. <br>📊 <b>Dashboards:</b> Monitoreo de indicadores de desempeño y productividad en tiempo real. <br>🏥 <b>RIPS:</b> Digitalización de procesos de registro individual de prestación de servicios. <br>⚙️ <b>Infraestructura:</b> Propuestas de mejora en conectividad y procesos internos.",
@@ -365,6 +373,14 @@ const translations = {
         portfolio: {
             title: "Featured Projects",
             projects: [
+                {
+                    title: "Revenue Command Center - Prescriptive Analytics",
+                    desc: "B2B Revenue Management system for price and margin optimization.",
+                    fullDesc: "<b>Prescriptive Analytics</b> tool transforming commodity pricing strategy. Eliminates uncertainty through advanced causal modeling. <br>📊 <b>Tech Stack:</b> Log-Log Regression (Elasticity), Prophet (Forecast), and XGBoost. <br>💡 <b>Business Impact:</b> Critical elasticity identification (-2.08) and $797M risk prevention.",
+                    tags: ["Python", "Streamlit", "Plotly", "Prophet", "XGBoost", "Causal Modeling"],
+                    link: "https://tableroestrategicofinanciero.streamlit.app/",
+                    image: "assets/images/revenue_command_center.png"
+                },
                 {
                     title: "Innovation and Operations Dashboard – IPS SYSO",
                     desc: "Digitalization of administrative reports, RIPS integration, and operational indicators monitoring.",
