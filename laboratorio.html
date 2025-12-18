@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Clínico | Fayder Arroyo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="education.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .project-header {
+            padding: 120px 0 60px;
+            background: var(--bg-primary);
+            text-align: center;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .project-actions {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-content {
+            padding: 60px 0;
+            background: var(--bg-secondary);
+        }
+
+        .schema-container {
+            margin: 40px 0;
+            text-align: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .schema-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .doc-section {
+            background: var(--bg-primary);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .doc-section h2 {
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-secondary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .doc-section h3 {
+            color: var(--text-primary);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .doc-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .doc-section li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+
+        .doc-section li::before {
+            content: "•";
+            color: var(--accent-primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .code-block {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #d63384;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    Fayder Arroyo
+                    <span>Data & BI Analyst</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#portfolio">← Volver al Portafolio</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <h1 class="project-title">Laboratorio Clínico - Gestión de Servicios a Domicilio</h1>
+            <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
+                Sistema integral de gestión logística y clínica. Integración de PostgreSQL (Supabase) con React para una
+                solución moderna y escalable.
+            </p>
+
+            <div class="project-actions">
+                <a href="https://laboratorioclinico-delta.vercel.app/" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Ver Aplicación en Vivo
+                </a>
+                <a href="#documentation" class="btn btn-secondary">
+                    <i class="fas fa-book"></i> Ver Documentación
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="documentation" class="project-content">
+        <div class="container">
+
+            <!-- Schema Image -->
+            <div class="doc-section">
+                <h2>Arquitectura de Datos del Sistema IPS SYSO Empresarial</h2>
+                <p>El siguiente diagrama ilustra el modelo entidad-relación (ERD) diseñado para soportar la operación
+                    del laboratorio clínico.</p>
+                <div class="schema-container">
+                    <img src="assets/images/schema_lab_clin.jpg" alt="Esquema de Base de Datos - Laboratorio Clínico"
+                        class="schema-img">
+                </div>
+            </div>
+
+            <!-- Documentation Content -->
+            <div class="doc-section">
+                <h2>Documentación Técnica</h2>
+
+                <p>Este repositorio contiene la arquitectura de datos y la aplicación web para un sistema de gestión de
+                    laboratorios clínicos con servicio a domicilio para <strong>IPS SYSO Empresarial</strong>. El diseño
+                    de la base de datos sigue una arquitectura modular adaptada para PostgreSQL en Supabase.</p>
+                <p>A continuación, se presenta una explicación detallada de las entidades del modelo de datos,
+                    clasificadas por su función dentro del dominio del negocio.</p>
+
+                <h3>🌍 Libro 1: Geografía y Pacientes</h3>
+                <p>Este módulo gestiona la información demográfica de los usuarios y la logística de cobertura
+                    geográfica del servicio.</p>
+
+                <h4>1. Entidad: <code>zona_cobertura</code></h4>
+                <p>Representa las macro-áreas logísticas de operación (ej. "Norte", "Sur", "Centro"). Es fundamental
+                    para la planificación de rutas y asignación de recursos.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_zona</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>nombre</code>: Identificador textual único de la zona.</li>
+                            <li><code>tiempo_objetivo_min</code>: Define el Acuerdo de Nivel de Servicio (SLA) para el
+                                tiempo de llegada esperado en esta zona.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Restricciones:</strong>
+                        <ul>
+                            <li><code>UNIQUE(nombre)</code>: Garantiza que no existan zonas duplicadas.</li>
+                            <li><code>NOT NULL(tiempo_objetivo_min)</code>: Asegura que siempre exista un parámetro de
+                                calidad del servicio.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>2. Entidad: <code>barrio</code></h4>
+                <p>Subdivisiones específicas dentro de cada zona de cobertura. Permite una granularidad más fina para la
+                    tarificación y logística.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_barrio</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Clave Foránea (FK):</strong> <code>id_zona</code> referencia a
+                        <code>zona_cobertura(id_zona)</code>. Relación 1:N (Una zona tiene muchos barrios).</li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>nombre</code>: Nombre del barrio.</li>
+                            <li><code>tarifa_desplazamiento</code>: Costo adicional de transporte asociado
+                                específicamente a este barrio.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>3. Entidad: <code>paciente</code></h4>
+                <p>Almacena la información personal y de contacto de los usuarios del sistema.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_paciente</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>identificacion</code>: Número de documento de identidad (Cédula, DNI).</li>
+                            <li><code>tipo_identificacion</code>: Tipo de documento ('CC', 'TI', etc.).</li>
+                            <li><code>nombre_completo</code>, <code>fecha_nacimiento</code>, <code>celular</code>,
+                                <code>email</code>: Datos personales básicos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Restricciones:</strong>
+                        <ul>
+                            <li><code>UNIQUE(identificacion)</code>: Garantiza la unicidad del paciente en el sistema.
+                            </li>
+                            <li><code>CHECK(sexo IN ('M', 'F', 'O'))</code>: Valida que el sexo sexa uno de los valores
+                                permitidos.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>4. Entidad: <code>domicilio_paciente</code></h4>
+                <p>Permite registrar múltiples direcciones asociadas a un mismo paciente (ej. Casa, Oficina),
+                    facilitando la recurrencia del servicio.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_domicilio</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Claves Foráneas (FK):</strong>
+                        <ul>
+                            <li><code>id_paciente</code> referencia a <code>paciente(id_paciente)</code>.</li>
+                            <li><code>id_barrio</code> referencia a <code>barrio(id_barrio)</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>direccion_texto</code>: Dirección física formateada.</li>
+                            <li><code>latitud</code>, <code>longitud</code>: Coordenadas geoespaciales para integración
+                                con servicios de mapas.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>🧪 Libro 2: Catálogo Médico</h3>
+                <p>Este módulo define la oferta de valor del laboratorio: los exámenes disponibles y sus precios.</p>
+
+                <h4>5. Entidad: <code>examen</code></h4>
+                <p>Inventario maestro de las pruebas de laboratorio que la empresa ofrece.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_examen</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>codigo_interno</code>: Código SKU o identificador interno (ej. 'HEM001').</li>
+                            <li><code>nombre</code>: Nombre comercial del examen.</li>
+                            <li><code>tipo_muestra</code>: Especificación biológica (ej. 'Sangre Total', 'Suero').</li>
+                            <li><code>condiciones_preanaliticas</code>: Instrucciones para el paciente (ej. 'Ayuno 8h').
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Restricciones:</strong>
+                        <ul>
+                            <li><code>UNIQUE(codigo_interno)</code>: Evita duplicidad en la codificación de productos.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>6. Entidad: <code>tarifa_examen</code></h4>
+                <p>Mantiene el histórico de precios de los exámenes, permitiendo auditoría y cambios de precios en el
+                    tiempo sin afectar registros históricos.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_tarifa</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Clave Foránea (FK):</strong> <code>id_examen</code> referencia a
+                        <code>examen(id_examen)</code>.</li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>precio</code>: Valor monetario del servicio.</li>
+                            <li><code>vigencia_desde</code>, <code>vigencia_hasta</code>: Rango de fechas en las que la
+                                tarifa es válida.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>📦 Libro 3: Logística de Insumos (Costos)</h3>
+                <p>Este módulo es fundamental para la contabilidad de costos y el control de inventario.</p>
+
+                <h4>7. Entidad: <code>insumo_medico</code></h4>
+                <p>Catálogo de materiales fungibles necesarios para la operación (agujas, tubos, etc.).</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_insumo</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>nombre</code>: Descripción del insumo.</li>
+                            <li><code>unidad_medida</code>: Métrica de cuantificación (ej. 'Unidad', 'ml').</li>
+                            <li><code>costo_estandar</code>: Costo base para cálculos de rentabilidad.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>8. Entidad: <code>protocolo_toma</code></h4>
+                <p>Define la "receta" de costos para cada examen, especificando qué insumos se consumen y en qué
+                    cantidad.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_protocolo</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Claves Foráneas (FK):</strong>
+                        <ul>
+                            <li><code>id_examen</code> referencia a <code>examen</code>.</li>
+                            <li><code>id_insumo</code> referencia a <code>insumo_medico</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>cantidad</code>: Cantidad del insumo requerida para realizar el examen.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>🚑 Libro 4: Operación (Órdenes y Tomas)</h3>
+                <p>El núcleo transaccional que registra la actividad diaria del negocio.</p>
+
+                <h4>9. Entidad: <code>flebotomista</code></h4>
+                <p>Registro del personal sanitario encargado de la toma de muestras a domicilio.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_flebotomista</code> (BIGINT, Autoincremental).
+                    </li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>nombre</code>: Nombre del profesional.</li>
+                            <li><code>activo</code>: Estado actual del personal (Booleano).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>10. Entidad: <code>orden_servicio</code></h4>
+                <p>Representa la transacción principal o "pedido" realizado por un paciente.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_orden</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Claves Foráneas (FK):</strong> <code>id_paciente</code>, <code>id_domicilio</code>.</li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>fecha_programada</code>: Fecha y hora agendada para la visita.</li>
+                            <li><code>estado</code>: Estado del flujo de vida de la orden.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Restricciones:</strong>
+                        <ul>
+                            <li><code>CHECK(estado)</code>: Asegura que el estado sea válido ('Programada', 'En Camino',
+                                'Recolectada', 'En Laboratorio', 'Procesada', 'Cancelada').</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>11. Entidad: <code>detalle_orden</code></h4>
+                <p>Desglosa los servicios específicos contratados dentro de una orden.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_detalle</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Claves Foráneas (FK):</strong>
+                        <ul>
+                            <li><code>id_orden</code> referencia a <code>orden_servicio</code>. Utiliza
+                                <code>ON DELETE CASCADE</code> para mantener integridad referencial fuerte.</li>
+                            <li><code>id_examen</code> referencia a <code>examen</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>precio_unitario_snapshot</code>: Guarda el precio del examen <strong>en el momento
+                                    de la venta</strong>, protegiendo la integridad histórica financiera ante cambios
+                                futuros de tarifas.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>12. Entidad: <code>visita_domiciliaria</code></h4>
+                <p>Registra la ejecución logística del servicio.</p>
+                <ul>
+                    <li><strong>Clave Primaria (PK):</strong> <code>id_visita</code> (BIGINT, Autoincremental).</li>
+                    <li><strong>Claves Foráneas (FK):</strong>
+                        <ul>
+                            <li><code>id_orden</code> referencia a <code>orden_servicio</code>. Relación 1:1 (Una orden
+                                corresponde a una única visita logística).</li>
+                            <li><code>id_flebotomista</code> referencia a <code>flebotomista</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Atributos:</strong>
+                        <ul>
+                            <li><code>hora_inicio_ruta</code>, <code>hora_llegada</code>,
+                                <code>hora_finalizacion</code>: Tiempos reales para auditoría de eficiencia.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fayder Arroyo — Data & BI · Innovación Tecnológica</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -189,11 +189,12 @@ const translations = {
                     images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
                 {
-                    title: "Tres Leches – Modelo SQL + BI para Emprendimiento",
-                    desc: "Base de datos relacional con métricas de ventas, ticket promedio y desempeño por zona.",
-                    fullDesc: "Diseño de base de datos y consultas analíticas para optimizar un modelo de negocio de delivery. <br>💾 <b>Base de Datos:</b> MySQL con modelado relacional completo. <br>📈 <b>Métricas:</b> Ventas, ticket promedio, retención de clientes. <br>📍 <b>Análisis:</b> Desempeño por zona geográfica.",
-                    tags: ["SQL", "MySQL", "Data Modeling"],
-                    image: "https://picsum.photos/seed/tresleches/600/400"
+                    title: "Laboratorio Clínico - Gestión de Servicios a Domicilio",
+                    desc: "Sistema de gestión logística y clínica integrando PostgreSQL (Supabase) y React.",
+                    fullDesc: "Sistema de gestión para <b>IPS SYSO Empresarial</b>. Optimización de servicios domiciliarios. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) con arquitectura multi-zona. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS para dashboard operativo. <br>🚀 <b>Infraestructura:</b> Despliegue continuo en Vercel.",
+                    tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
+                    link: "laboratorio.html",
+                    image: "assets/images/header_laboratorio.png"
                 },
                 {
                     title: "Estadísticas Vitales DANE – Análisis Académico",
@@ -398,11 +399,12 @@ const translations = {
                     images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
                 {
-                    title: "Tres Leches – SQL + BI Model for Entrepreneurship",
-                    desc: "Relational database with sales metrics, average ticket, and performance by zone.",
-                    fullDesc: "Database design and analytical queries to optimize a delivery business model. <br>💾 <b>Database:</b> MySQL with complete relational modeling. <br>📈 <b>Metrics:</b> Sales, average ticket, customer retention. <br>📍 <b>Analysis:</b> Performance by geographic zone.",
-                    tags: ["SQL", "MySQL", "Data Modeling"],
-                    image: "https://picsum.photos/seed/tresleches/600/400"
+                    title: "Clinical Laboratory - Home Service Management",
+                    desc: "Logistics and clinical management system integrating PostgreSQL (Supabase) and React.",
+                    fullDesc: "Management system for <b>IPS SYSO Empresarial</b>. Home service optimization. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) with multi-zone architecture. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS for operational dashboard. <br>🚀 <b>Infrastructure:</b> Continuous deployment on Vercel.",
+                    tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
+                    link: "laboratorio.html",
+                    image: "assets/images/header_laboratorio.png"
                 },
                 {
                     title: "DANE Vital Statistics – Academic Analysis",
