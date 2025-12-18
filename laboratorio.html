@@ -145,7 +145,7 @@
 
             <!-- Schema Image -->
             <div class="doc-section">
-                <h2>Arquitectura de Datos del Sistema IPS SYSO Empresarial</h2>
+                <h2>Arquitectura de Datos del Sistema de Laboratorio</h2>
                 <p>El siguiente diagrama ilustra el modelo entidad-relación (ERD) diseñado para soportar la operación
                     del laboratorio clínico.</p>
                 <div class="schema-container">
@@ -159,7 +159,8 @@
                 <h2>Documentación Técnica</h2>
 
                 <p>Este repositorio contiene la arquitectura de datos y la aplicación web para un sistema de gestión de
-                    laboratorios clínicos con servicio a domicilio para <strong>IPS SYSO Empresarial</strong>. El diseño
+                    laboratorios clínicos con servicio a domicilio para una <strong>Red de Laboratorios
+                        Clínicos</strong>. El diseño
                     de la base de datos sigue una arquitectura modular adaptada para PostgreSQL en Supabase.</p>
                 <p>A continuación, se presenta una explicación detallada de las entidades del modelo de datos,
                     clasificadas por su función dentro del dominio del negocio.</p>
@@ -195,7 +196,8 @@
                 <ul>
                     <li><strong>Clave Primaria (PK):</strong> <code>id_barrio</code> (BIGINT, Autoincremental).</li>
                     <li><strong>Clave Foránea (FK):</strong> <code>id_zona</code> referencia a
-                        <code>zona_cobertura(id_zona)</code>. Relación 1:N (Una zona tiene muchos barrios).</li>
+                        <code>zona_cobertura(id_zona)</code>. Relación 1:N (Una zona tiene muchos barrios).
+                    </li>
                     <li><strong>Atributos:</strong>
                         <ul>
                             <li><code>nombre</code>: Nombre del barrio.</li>
@@ -214,7 +216,8 @@
                             <li><code>identificacion</code>: Número de documento de identidad (Cédula, DNI).</li>
                             <li><code>tipo_identificacion</code>: Tipo de documento ('CC', 'TI', etc.).</li>
                             <li><code>nombre_completo</code>, <code>fecha_nacimiento</code>, <code>celular</code>,
-                                <code>email</code>: Datos personales básicos.</li>
+                                <code>email</code>: Datos personales básicos.
+                            </li>
                         </ul>
                     </li>
                     <li><strong>Restricciones:</strong>
@@ -277,7 +280,8 @@
                 <ul>
                     <li><strong>Clave Primaria (PK):</strong> <code>id_tarifa</code> (BIGINT, Autoincremental).</li>
                     <li><strong>Clave Foránea (FK):</strong> <code>id_examen</code> referencia a
-                        <code>examen(id_examen)</code>.</li>
+                        <code>examen(id_examen)</code>.
+                    </li>
                     <li><strong>Atributos:</strong>
                         <ul>
                             <li><code>precio</code>: Valor monetario del servicio.</li>
@@ -363,7 +367,8 @@
                     <li><strong>Claves Foráneas (FK):</strong>
                         <ul>
                             <li><code>id_orden</code> referencia a <code>orden_servicio</code>. Utiliza
-                                <code>ON DELETE CASCADE</code> para mantener integridad referencial fuerte.</li>
+                                <code>ON DELETE CASCADE</code> para mantener integridad referencial fuerte.
+                            </li>
                             <li><code>id_examen</code> referencia a <code>examen</code>.</li>
                         </ul>
                     </li>
@@ -390,7 +395,8 @@
                     <li><strong>Atributos:</strong>
                         <ul>
                             <li><code>hora_inicio_ruta</code>, <code>hora_llegada</code>,
-                                <code>hora_finalizacion</code>: Tiempos reales para auditoría de eficiencia.</li>
+                                <code>hora_finalizacion</code>: Tiempos reales para auditoría de eficiencia.
+                            </li>
                         </ul>
                     </li>
                 </ul>

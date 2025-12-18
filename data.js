@@ -191,7 +191,7 @@ const translations = {
                 {
                     title: "Laboratorio Clínico - Gestión de Servicios a Domicilio",
                     desc: "Sistema de gestión logística y clínica integrando PostgreSQL (Supabase) y React.",
-                    fullDesc: "Sistema de gestión para <b>IPS SYSO Empresarial</b>. Optimización de servicios domiciliarios. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) con arquitectura multi-zona. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS para dashboard operativo. <br>🚀 <b>Infraestructura:</b> Despliegue continuo en Vercel.",
+                    fullDesc: "Sistema de gestión para <b>Red de Laboratorios Clínicos</b>. Optimización de servicios domiciliarios. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) con arquitectura multi-zona. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS para dashboard operativo. <br>🚀 <b>Infraestructura:</b> Despliegue continuo en Vercel.",
                     tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
                     link: "laboratorio.html",
                     image: "assets/images/header_laboratorio.png"
@@ -401,7 +401,7 @@ const translations = {
                 {
                     title: "Clinical Laboratory - Home Service Management",
                     desc: "Logistics and clinical management system integrating PostgreSQL (Supabase) and React.",
-                    fullDesc: "Management system for <b>IPS SYSO Empresarial</b>. Home service optimization. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) with multi-zone architecture. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS for operational dashboard. <br>🚀 <b>Infrastructure:</b> Continuous deployment on Vercel.",
+                    fullDesc: "Management system for <b>Clinical Laboratory Network</b>. Home service optimization. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) with multi-zone architecture. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS for operational dashboard. <br>🚀 <b>Infrastructure:</b> Continuous deployment on Vercel.",
                     tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
                     link: "laboratorio.html",
                     image: "assets/images/header_laboratorio.png"
