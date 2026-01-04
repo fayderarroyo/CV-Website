@@ -89,7 +89,7 @@ function renderEducation(education) {
 
     // ========== TIMELINE 1: Academic Degrees ==========
     if (education.degrees && education.degrees.length > 0) {
-        createTimelineSection(
+        createCardSection(
             container,
             currentLang === 'es' ? 'Formación Académica' : 'Academic Degrees',
             'fas fa-graduation-cap',
@@ -138,7 +138,7 @@ function renderEducation(education) {
     }
 
     if (diplomasAndWorkshops.length > 0) {
-        createTimelineSection(
+        createCardSection(
             container,
             currentLang === 'es' ? 'Diplomados y Talleres' : 'Diplomas & Workshops',
             'fas fa-award',
@@ -148,7 +148,7 @@ function renderEducation(education) {
 
     // ========== TIMELINE 3: Platzi Courses ==========
     if (education.platzi && education.platzi.length > 0) {
-        createTimelineSection(
+        createCardSection(
             container,
             currentLang === 'es' ? 'Ruta Data Engineer - Platzi' : 'Data Engineer Path - Platzi',
             'fas fa-laptop-code',
@@ -165,25 +165,18 @@ function renderEducation(education) {
     }
 }
 
-// Helper function to create a timeline section
-function createTimelineSection(container, title, icon, items) {
+// Helper function to create a Card section (replaces timeline)
+function createCardSection(container, title, icon, items) {
     const section = document.createElement('div');
-    section.className = 'timeline-section';
+    section.className = 'edu-section';
 
     const sectionTitle = document.createElement('h3');
-    sectionTitle.className = 'timeline-section-title';
+    sectionTitle.className = 'edu-section-title';
     sectionTitle.innerHTML = `<i class="${icon}"></i> ${title}`;
     section.appendChild(sectionTitle);
 
-    const timeline = document.createElement('div');
-    timeline.className = 'timeline-container';
-
-    const line = document.createElement('div');
-    line.className = 'timeline-line';
-    timeline.appendChild(line);
-
-    const itemsContainer = document.createElement('div');
-    itemsContainer.className = 'timeline-items';
+    const grid = document.createElement('div');
+    grid.className = 'edu-grid';
 
     // Sort by year
     items.sort((a, b) => {
@@ -193,61 +186,54 @@ function createTimelineSection(container, title, icon, items) {
     });
 
     items.forEach(item => {
-        const timelineItem = createTimelineItem(item);
-        itemsContainer.appendChild(timelineItem);
+        const card = createModernCard(item);
+        grid.appendChild(card);
     });
 
-    timeline.appendChild(itemsContainer);
-    section.appendChild(timeline);
+    section.appendChild(grid);
     container.appendChild(section);
 }
 
-// Helper function to create timeline items
-function createTimelineItem(item) {
-    const timelineItem = document.createElement('div');
-    timelineItem.className = `timeline-item ${item.status === 'current' ? 'current' : ''}`;
-
-    // Year label
-    const yearLabel = document.createElement('div');
-    yearLabel.className = 'timeline-year';
-    yearLabel.textContent = item.year || item.date || '';
-
-    // Dot
-    const dot = document.createElement('div');
-    dot.className = 'timeline-dot';
-
-    // Card
+// Helper function to create modern cards
+function createModernCard(item) {
     const card = document.createElement('div');
-    card.className = 'timeline-card';
+    card.className = `edu-card ${item.type}`;
 
-    let cardHTML = `
-        <span class="timeline-type ${item.type}">${item.typeLabel}</span>
-        <div class="timeline-title">${item.title}</div>
+    // Icon handling
+    let iconClass = 'fas fa-certificate';
+    if (item.type === 'degree') iconClass = 'fas fa-graduation-cap';
+    else if (item.type === 'diploma') iconClass = 'fas fa-scroll';
+    else if (item.type === 'workshop') iconClass = 'fas fa-tools';
+    else if (item.type === 'platzi') iconClass = 'fas fa-laptop-code';
+
+    // Badge Color Mapping
+    let badgeClass = 'default-badge';
+    if (item.type === 'degree') badgeClass = 'degree-badge';
+    else if (item.type === 'platzi') badgeClass = 'platzi-badge';
+
+    card.innerHTML = `
+        <div class="edu-card-header">
+            <div class="edu-icon-box ${item.type}">
+                <i class="${iconClass}"></i>
+            </div>
+            <div class="edu-year-badge">${item.year || item.date}</div>
+        </div>
+        
+        <div class="edu-card-content">
+            <h4 class="edu-title">${item.title}</h4>
+            ${item.subtitle ? `<div class="edu-subtitle">${item.subtitle}</div>` : ''}
+            
+            <div class="edu-meta">
+                <span class="edu-type-badge ${badgeClass}">${item.typeLabel}</span>
+                ${item.details ? `<span class="edu-detail"><i class="far fa-clock"></i> ${item.details}</span>` : ''}
+            </div>
+
+            ${item.location ? `<div class="edu-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</div>` : ''}
+            ${item.status === 'current' ? `<div class="edu-status-active"><span class="pulse-dot"></span> ${currentLang === 'es' ? 'En curso' : 'In Progress'}</div>` : ''}
+        </div>
     `;
 
-    if (item.subtitle) {
-        cardHTML += `<div class="timeline-institution">${item.subtitle}</div>`;
-    }
-
-    if (item.details) {
-        cardHTML += `<div class="timeline-details">${item.details}</div>`;
-    }
-
-    if (item.location) {
-        cardHTML += `<div class="timeline-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</div>`;
-    }
-
-    if (item.status === 'current') {
-        cardHTML += `<span class="timeline-status">${currentLang === 'es' ? 'En curso' : 'In Progress'}</span>`;
-    }
-
-    card.innerHTML = cardHTML;
-
-    timelineItem.appendChild(yearLabel);
-    timelineItem.appendChild(dot);
-    timelineItem.appendChild(card);
-
-    return timelineItem;
+    return card;
 }
 
 function renderCertifications(education) {
