@@ -146,21 +146,13 @@ function renderEducation(education) {
         );
     }
 
-    // ========== TIMELINE 3: Platzi Courses ==========
+    // ========== TIMELINE 3: Platzi Courses (GROUPED ACCORDION) ==========
     if (education.platzi && education.platzi.length > 0) {
-        createCardSection(
+        createAccordionSection(
             container,
             currentLang === 'es' ? 'Ruta Data Engineer - Platzi' : 'Data Engineer Path - Platzi',
             'fas fa-laptop-code',
-            education.platzi.map(course => ({
-                ...course,
-                type: 'platzi',
-                typeLabel: 'Platzi',
-                title: course.name,
-                subtitle: course.date,
-                details: course.hours,
-                year: course.date ? course.date.split(' ').pop() : ''
-            }))
+            education.platzi
         );
     }
 }
@@ -234,6 +226,78 @@ function createModernCard(item) {
     `;
 
     return card;
+}
+
+// Helper function to create the Accordion "Master Card"
+function createAccordionSection(container, title, icon, courses) {
+    const section = document.createElement('div');
+    section.className = 'edu-section';
+
+    // Section Title
+    const sectionTitle = document.createElement('h3');
+    sectionTitle.className = 'edu-section-title';
+    sectionTitle.innerHTML = `<i class="${icon}"></i> ${title}`;
+    section.appendChild(sectionTitle);
+
+    // The Master Card
+    const accordionCard = document.createElement('div');
+    accordionCard.className = 'edu-card accordion-card';
+
+    // Header (Always Visible)
+    const header = document.createElement('div');
+    header.className = 'accordion-header';
+    header.innerHTML = `
+        <div class="accordion-info">
+            <div class="edu-icon-box platzi">
+                <i class="fas fa-layer-group"></i>
+            </div>
+            <div class="accordion-text">
+                <div class="accordion-header-top">
+                    <h4 class="edu-title">Platzi Academy</h4>
+                    <span class="accordion-badge">${courses.length} Cursos</span>
+                </div>
+                <div class="edu-subtitle" style="color: var(--accent-primary); font-size: 0.9rem;">
+                    ${currentLang === 'es' ? 'Certificación Profesional Data Engineer' : 'Data Engineer Professional Certification'}
+                </div>
+            </div>
+        </div>
+        <div class="accordion-toggle">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    `;
+
+    // Content (Hidden by default)
+    const content = document.createElement('div');
+    content.className = 'accordion-content';
+
+    const list = document.createElement('div');
+    list.className = 'course-list';
+
+    courses.slice().reverse().forEach(course => { // Reverse to show newest first if typical list
+        const item = document.createElement('div');
+        item.className = 'course-item';
+        item.innerHTML = `
+            <i class="fas fa-check-circle course-check"></i>
+            <div class="course-info">
+                <span class="course-name">${course.name}</span>
+                <span class="course-meta">${course.date} · ${course.hours}</span>
+            </div>
+        `;
+        list.appendChild(item);
+    });
+
+    content.appendChild(list);
+
+    // Toggle Logic
+    header.addEventListener('click', () => {
+        accordionCard.classList.toggle('active');
+    });
+
+    accordionCard.appendChild(header);
+    accordionCard.appendChild(content);
+
+    section.appendChild(accordionCard);
+    container.appendChild(section);
 }
 
 function renderCertifications(education) {

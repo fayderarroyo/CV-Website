@@ -202,3 +202,120 @@
         padding: 1.25rem;
     }
 }
+/* Accordion Card Styles */
+.accordion-card {
+    cursor: default;
+    padding: 0; 
+    /* Padding is handled by header/content for proper click area */
+    display: block;
+}
+
+.accordion-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    transition: var(--transition);
+}
+
+.accordion-header:hover {
+    background: rgba(34, 197, 94, 0.03);
+}
+
+.accordion-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.accordion-header-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.accordion-badge {
+    font-size: 0.75rem;
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--accent-primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.accordion-toggle {
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
+}
+
+/* Active State */
+.accordion-card.active .accordion-toggle {
+    transform: rotate(180deg);
+}
+
+.accordion-card.active .accordion-header {
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* Accordion Content */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion-card.active .accordion-content {
+    max-height: 2000px; /* Arbitrary high value to allow expansion */
+    transition: max-height 0.8s ease-in;
+}
+
+.course-list {
+    padding: 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.75rem;
+}
+
+.course-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.course-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(34, 197, 94, 0.1);
+}
+
+.course-check {
+    color: var(--accent-primary);
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-name {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.course-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
