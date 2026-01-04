@@ -276,17 +276,34 @@
 @media (max-width: 768px) {
     .timeline-item {
         flex: 0 0 calc(50% - 1rem);
-        margin-bottom: 7rem;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .timeline-card {
-        min-width: 180px;
-        max-width: 220px;
+        position: relative;
+        top: 0;
+        min-width: auto;
+        width: 100%;
+        max-width: 100%;
         padding: 1rem;
+        margin-top: 1rem;
+        opacity: 1;
+        animation: none;
+        transform: translateY(0);
     }
 
     .timeline-year {
-        font-size: 0.95rem;
+        position: relative;
+        top: 0;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-dot {
+        margin-bottom: 0;
     }
 
     .timeline-section-title {
@@ -294,14 +311,14 @@
     }
 
     .timeline-section {
-        margin-bottom: 8rem;
+        margin-bottom: 4rem;
     }
 }
 
 @media (max-width: 480px) {
     .timeline-item {
         flex: 0 0 100%;
-        margin-bottom: 6rem;
+        margin-bottom: 3rem;
     }
 
     .timeline-card {
@@ -313,6 +330,6 @@
     }
 
     .timeline-section {
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
     }
 }
