@@ -230,13 +230,12 @@ section {
 }
 
 .hero-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligned to the LEFT */
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: center;
     position: relative;
     z-index: 2;
-    padding-left: 2rem; /* Shifting more to the left */
 }
 
 .hero-photo {
