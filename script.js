@@ -19,7 +19,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    initScrollAnimations();
 });
+
+function initScrollAnimations() {
+    // Select sections and cards to animate
+    const animatedElements = document.querySelectorAll('section:not(#hero), .exp-card, .project-card, .skill-circle, .contact-item, .edu-section-title, .edu-card');
+    
+    // Add initial class
+    animatedElements.forEach(el => {
+        el.classList.add('fade-up');
+    });
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, observerOptions);
+
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+}
 
 function updateActiveLangBtn() {
     langBtns.forEach(btn => {

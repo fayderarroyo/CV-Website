@@ -12,7 +12,7 @@ const translations = {
             greeting: "Fayder Enrique<br><span class='highlight'>Arroyo Herazo</span>",
             role: "Especialista en Analítica y Soluciones Basadas en Datos",
             bio: "Impulso la transformación digital a través de Business Intelligence, automatización y análisis de datos, convirtiendo la información en decisiones estratégicas que optimizan la eficiencia operativa y promueven la innovación tecnológica.",
-            btn_cv: "Descargar CV",
+            btn_cv: "Descargar<br>CV",
             btn_contact: "Contáctame"
         },
         about: {
@@ -33,30 +33,59 @@ const translations = {
             title: "Experiencia Laboral",
             jobs: [
                 {
+                    role: "Data Analyst / Market Research",
+                    company: "Corporación Unificada Nacional de Educación Superior (CUN)",
+                    period: "Feb 2026 - Actualidad",
+                    location: "Híbrido",
+                    desc: `• Diseño de investigaciones de mercado cuantitativas y cualitativas.<br>
+                    • Limpieza, integración y análisis estadístico de datos para generar insights.<br>
+                    • Desarrollo de reportes analíticos y dashboards para la toma de decisiones.`
+                },
+                {
+                    role: "Data Analyst / Business Intelligence Analyst",
+                    company: "Fox Ordering",
+                    period: "Ene 2026 - Actualidad",
+                    location: "Remoto / Híbrido",
+                    desc: `• Creación, mantenimiento y optimización de reportes, dashboards e indicadores clave (KPIs) operativos.<br>
+                    • Análisis de grandes volúmenes de datos con SQL para identificar tendencias y cuellos de botella.<br>
+                    • Gestión y control de información en Excel avanzado asegurando trazabilidad de los datos.<br>
+                    • Documentación y control de versiones de reportes mediante Git de forma colaborativa.`
+                },
+                {
                     role: "Asesor de Innovación Tecnológica y Gestión de Infraestructura",
-                    company: "IPS SYSO Empresarial",
-                    period: "Actualidad",
+                    company: "IPS SYSO Empresarial S.A.S.",
+                    period: "Sep 2025 - Actualidad",
                     location: "Cartagena, Colombia",
-                    desc: `• Asesoro la implementación de soluciones tecnológicas para optimizar la gestión administrativa y operativa.<br>
-                    • Desarrollo dashboards en Power BI para monitorear indicadores de desempeño y productividad.<br>
-                    • Propongo mejoras en infraestructura tecnológica, conectividad y procesos internos.<br>
-                    • Apoyo la digitalización de procesos de RIPS, mantenimiento y control documental.`
+                    desc: `• Liderazgo de proyectos de innovación tecnológica para optimizar la eficiencia operativa.<br>
+                    • Desarrollo de tableros de control y automatización de reportes mediante Power BI y Looker Studio.<br>
+                    • Mantenimiento y aseguramiento de la disponibilidad técnica y de infraestructura de la empresa.<br>
+                    • Integración y análisis de datos de sistemas e infraestructura operativa.`
                 },
                 {
-                    role: "Data Planning Analyst",
+                    role: "Analista de Planeación Financiera de Datos",
                     company: "3 Castillos",
-                    period: "Previo",
-                    desc: `• Elaboración de presupuestos y análisis de desempeño financiero con datos históricos y actuales.<br>
-                    • Creación de dashboards financieros en Power BI con métricas estadísticas y proyecciones.<br>
-                    • Automatización de procesos de carga y transformación de datos con Excel Power Query.`
+                    period: "Abr 2024 - Sep 2025",
+                    desc: `• Análisis detallados de datos financieros aplicando métodos y herramientas estadísticas avanzadas.<br>
+                    • Automatización de recolección y transformación de datos con Excel Power Query.<br>
+                    • Mantenimiento y creación de dashboards financieros interactivos en Power BI.<br>
+                    • Proyección de desempeño mediante presupuestos y previsiones estadísticas.`
                 },
                 {
-                    role: "Supervisor de Operaciones / Analista de Cartera",
-                    company: "Muebles Jamar",
-                    period: "Previo",
-                    desc: `• Reduje el tiempo de generación de cuentas por cobrar de 4 horas a 25 minutos mediante automatización.<br>
-                    • Desarrollé tableros de control de cartera y cobranzas en Power BI y Excel.<br>
-                    • Diseñé segmentaciones de clientes basadas en análisis de saldo, zona y ocupación.`
+                    role: "Supervisor de Operaciones",
+                    company: "Credi Jamar S.A.",
+                    period: "Ene 2015 - Ene 2024",
+                    desc: `• Garantizar y monitorear las ejecuciones del PEC (plan estratégico de cobranza).<br>
+                    • Cumplimiento de metas de productividad y gestión de personal a cargo.<br>
+                    • Diseño e implementación de dashboard de control interno en Power BI y Excel.<br>
+                    • Optimización de procesos: reducción de tiempos de generación de cuentas de 4 horas a 25 min.`
+                },
+                {
+                    role: "Analista de Cartera",
+                    company: "Credi Jamar S.A.",
+                    period: "Jul 2008 - Dic 2014",
+                    desc: `• Recuperación de cartera vencida mediante contacto directo y negociación.<br>
+                    • Gestión de PQR y seguimiento a quejas sobre consignaciones no aplicadas.<br>
+                    • Autorización de descuentos y análisis de procesos de aprobación de crédito.`
                 }
             ]
         },
@@ -173,6 +202,44 @@ const translations = {
                     image: "assets/images/revenue_command_center.png"
                 },
                 {
+                    title: "PharmaLife BI Dashboard",
+                    desc: "Dashboard ejecutivo interactivo para análisis predictivo y operativo.",
+                    fullDesc: "Plataforma de inteligencia de negocios para Laboratorios PharmaLife, desarrollada con <b>Antigravity AI</b>. <br>📈 <b>Modelado:</b> Prophet, Elasticidad OLS. <br>📊 <b>Visualización:</b> Streamlit, Plotly interactivo con branding corporativo completo.",
+                    tags: ["Streamlit", "Python", "Prophet", "Antigravity"],
+                    link: "https://ventaspharmalife.streamlit.app/",
+                    image: "https://picsum.photos/seed/pharma/600/400"
+                },
+                {
+                    title: "Alegra BI Challenge - Análisis de Paridad",
+                    desc: "Plataforma de Business Intelligence interactiva para el análisis de representación femenina.",
+                    fullDesc: "Dashboard estilo SaaS desarrollado en Python. <br>📊 <b>Modelado:</b> Scikit-Learn (Regresión Lineal) para predicción de años hacia la paridad. <br>📈 <b>Visualización:</b> Streamlit, Pandas y Plotly interactivo. <br>🚀 <b>Impacto:</b> Benchmarking global y alertas de retroceso automáticas.",
+                    tags: ["Python", "Streamlit", "Scikit-Learn", "BI"],
+                    link: "https://alegra-bi-dashboard.streamlit.app/",
+                    image: "https://picsum.photos/seed/alegra/600/400"
+                },
+                {
+                    title: "Laboratorio Clínico - Gestión de Servicios a Domicilio",
+                    desc: "Sistema de gestión logística y clínica integrando PostgreSQL (Supabase) y React.",
+                    fullDesc: "Sistema de gestión para <b>Red de Laboratorios Clínicos</b>. Optimización de servicios domiciliarios. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) con arquitectura multi-zona. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS para dashboard operativo. <br>🚀 <b>Infraestructura:</b> Despliegue continuo en Vercel.",
+                    tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
+                    link: "laboratorio.html",
+                    image: "assets/images/header_laboratorio.png"
+                },
+                {
+                    title: "CUN - Ecosistema de Investigación de Mercados",
+                    desc: "Plataforma integral con chatbot, gestión de WhatsApp y scraping de aplicaciones.",
+                    fullDesc: "Herramienta avanzada de análisis desarrollada para automatizar la extracción de datos. <br>🤖 <b>Scraping & NLP:</b> Análisis detallado del contenido de aplicaciones mediante comentarios y descripciones. <br>💬 <b>Chatbot:</b> Motor de gestión de interacciones vía WhatsApp. <br>🚀 <b>Despliegue:</b> Arquitectura backend robusta (Node/Python).",
+                    tags: ["Web Scraping", "NLP", "Chatbot", "Node.js"],
+                    image: "https://picsum.photos/seed/cun_market/600/400"
+                },
+                {
+                    title: "PLAUD & HP Analytics",
+                    desc: "Dashboards analíticos para control operativo y automatización de reportes.",
+                    fullDesc: "Sistemas desarrollados en conjunto con <b>Antigravity AI</b> para optimizar el análisis de grandes volúmenes de datos. <br>⚙️ <b>Gestión:</b> Integración de automatizaciones y diseño de interfaces en Python/PyQt6.",
+                    tags: ["Python", "Automation", "Antigravity"],
+                    image: "https://picsum.photos/seed/plaud/600/400"
+                },
+                {
                     title: "Dashboard de Innovación y Operaciones – IPS SYSO",
                     desc: "Digitalización de reportes administrativos, integración de RIPS y monitoreo de indicadores operativos.",
                     fullDesc: "Sistema integral de Business Intelligence para el sector salud. <br>📊 <b>Dashboards:</b> Monitoreo de indicadores de desempeño y productividad en tiempo real. <br>🏥 <b>RIPS:</b> Digitalización de procesos de registro individual de prestación de servicios. <br>⚙️ <b>Infraestructura:</b> Propuestas de mejora en conectividad y procesos internos.",
@@ -189,19 +256,18 @@ const translations = {
                     images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
                 {
-                    title: "Laboratorio Clínico - Gestión de Servicios a Domicilio",
-                    desc: "Sistema de gestión logística y clínica integrando PostgreSQL (Supabase) y React.",
-                    fullDesc: "Sistema de gestión para <b>Red de Laboratorios Clínicos</b>. Optimización de servicios domiciliarios. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) con arquitectura multi-zona. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS para dashboard operativo. <br>🚀 <b>Infraestructura:</b> Despliegue continuo en Vercel.",
-                    tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
-                    link: "laboratorio.html",
-                    image: "assets/images/header_laboratorio.png"
-                },
-                {
                     title: "Estadísticas Vitales DANE – Análisis Académico",
                     desc: "Limpieza y análisis estadístico de microdatos de nacimientos mediante Python y exportación en formato Parquet.",
                     fullDesc: "Análisis de datos públicos del DANE para proyecto académico. <br>🐍 <b>Python:</b> Pandas, NumPy, Matplotlib para procesamiento y visualización. <br>📊 <b>Análisis:</b> Estadísticas descriptivas de nacimientos en Colombia. <br>💾 <b>Formato:</b> Exportación optimizada en Parquet.",
                     tags: ["Python", "Data Analysis", "Parquet"],
                     image: "https://picsum.photos/seed/dane/600/400"
+                },
+                {
+                    title: "Babyshower - Ian Gabriel",
+                    desc: "Aplicación web interactiva para lista de regalos de Babyshower.",
+                    fullDesc: "Experiencia digital responsiva construida con <b>Antigravity AI</b>. <br>👶 <b>UX/UI:</b> Diseño con scroll horizontal, animaciones dinámicas y agrupamiento por categorías de regalos. <br>🎨 <b>Frontend:</b> HTML, CSS moderno, JavaScript.",
+                    tags: ["Web", "UI/UX", "Antigravity"],
+                    image: "https://picsum.photos/seed/baby/600/400"
                 }
             ]
         },
@@ -222,7 +288,7 @@ const translations = {
             greeting: "Fayder Enrique<br><span class='highlight'>Arroyo Herazo</span>",
             role: "Specialist in Analytics and Data-Driven Solutions",
             bio: "I drive digital transformation through Business Intelligence, automation, and data analysis, turning information into strategic decisions that optimize operational efficiency and promote technological innovation.",
-            btn_cv: "Download CV",
+            btn_cv: "Download<br>CV",
             btn_contact: "Contact Me"
         },
         about: {
@@ -243,30 +309,59 @@ const translations = {
             title: "Professional Experience",
             jobs: [
                 {
+                    role: "Data Analyst / Market Research",
+                    company: "Corporación Unificada Nacional de Educación Superior (CUN)",
+                    period: "Feb 2026 - Current",
+                    location: "Hybrid",
+                    desc: `• Designing quantitative and qualitative market research studies.<br>
+                    • Data cleaning, integration, and statistical analysis to generate actionable insights.<br>
+                    • Development of analytical reports and dashboards for decision-making support.`
+                },
+                {
+                    role: "Data Analyst / Business Intelligence Analyst",
+                    company: "Fox Ordering",
+                    period: "Jan 2026 - Current",
+                    location: "Remote / Hybrid",
+                    desc: `• Creation, maintenance, and optimization of operational reports, dashboards, and KPIs.<br>
+                    • Analysis of large volumes of data using SQL to identify trends and process bottlenecks.<br>
+                    • Management and control of information in advanced Excel to ensure data traceability.<br>
+                    • Documentation and version control of reporting assets using Git in a collaborative setting.`
+                },
+                {
                     role: "Technology Innovation and Infrastructure Management Advisor",
-                    company: "IPS SYSO Empresarial",
-                    period: "Current",
+                    company: "IPS SYSO Empresarial S.A.S.",
+                    period: "Sep 2025 - Current",
                     location: "Cartagena, Colombia",
-                    desc: `• Advise on implementing technological solutions to optimize administrative and operational management.<br>
-                    • Develop Power BI dashboards to monitor performance and productivity indicators.<br>
-                    • Propose improvements in technological infrastructure, connectivity, and internal processes.<br>
-                    • Support digitalization of RIPS processes, maintenance, and document control.`
+                    desc: `• Leadership in technological innovation projects to optimize operational efficiency.<br>
+                    • Development of control dashboards and report automation using Power BI and Looker Studio.<br>
+                    • Maintenance and assurance of the company's technical and infrastructure availability.<br>
+                    • Integration and analysis of operational systems and infrastructure data.`
                 },
                 {
-                    role: "Data Planning Analyst",
+                    role: "Data Financial Planning Analyst",
                     company: "3 Castillos",
-                    period: "Previous",
-                    desc: `• Budget preparation and financial performance analysis with historical and current data.<br>
-                    • Creation of financial dashboards in Power BI with statistical metrics and projections.<br>
-                    • Automation of data loading and transformation processes with Excel Power Query.`
+                    period: "Apr 2024 - Sep 2025",
+                    desc: `• Detailed analysis of financial data applying advanced statistical methods and tools.<br>
+                    • Automation of data collection and transformation applying Excel Power Query workflows.<br>
+                    • Creation and maintenance of interactive financial dashboards in Power BI.<br>
+                    • Performance projection through statistical budgeting and accurate financial forecasting.`
                 },
                 {
-                    role: "Operations Supervisor / Portfolio Analyst",
-                    company: "Muebles Jamar",
-                    period: "Previous",
-                    desc: `• Reduced accounts receivable generation time from 4 hours to 25 minutes through automation.<br>
-                    • Developed portfolio and collections control dashboards in Power BI and Excel.<br>
-                    • Designed customer segmentations based on balance, zone, and occupation analysis.`
+                    role: "Operations Supervisor",
+                    company: "Credi Jamar S.A.",
+                    period: "Jan 2015 - Jan 2024",
+                    desc: `• Monitored and executed the Strategic Collection Plan (PEC).<br>
+                    • Met productivity goals and managed assigned personnel.<br>
+                    • Designed and implemented internal control dashboards in Power BI and Excel.<br>
+                    • Process optimization: reduced report generation time from 4 hours to 25 minutes.`
+                },
+                {
+                    role: "Portfolio Analyst",
+                    company: "Credi Jamar S.A.",
+                    period: "Jul 2008 - Dec 2014",
+                    desc: `• Recovered overdue portfolio through direct contact and negotiation.<br>
+                    • Managed customer claims (PQR) and followed up on unapplied payments.<br>
+                    • Authorized discounts and identified flaws in the credit approval process.`
                 }
             ]
         },
@@ -383,6 +478,44 @@ const translations = {
                     image: "assets/images/revenue_command_center.png"
                 },
                 {
+                    title: "PharmaLife BI Dashboard",
+                    desc: "Interactive executive dashboard for predictive and operational analysis.",
+                    fullDesc: "Business intelligence platform for PharmaLife Laboratories, developed with <b>Antigravity AI</b>. <br>📈 <b>Modeling:</b> Prophet, OLS Elasticity. <br>📊 <b>Visualization:</b> Streamlit, interactive Plotly with full corporate branding.",
+                    tags: ["Streamlit", "Python", "Prophet", "Antigravity"],
+                    link: "https://ventaspharmalife.streamlit.app/",
+                    image: "https://picsum.photos/seed/pharma/600/400"
+                },
+                {
+                    title: "Alegra BI Challenge - Parity Analysis",
+                    desc: "Interactive Business Intelligence platform for analyzing female political representation.",
+                    fullDesc: "SaaS-style dashboard developed in Python. <br>📊 <b>Modeling:</b> Scikit-Learn (Linear Regression) for predicting parity timeline. <br>📈 <b>Visualization:</b> Streamlit, Pandas, and interactive Plotly. <br>🚀 <b>Impact:</b> Global benchmarking and automated setback alerts.",
+                    tags: ["Python", "Streamlit", "Scikit-Learn", "BI"],
+                    link: "https://alegra-bi-dashboard.streamlit.app/",
+                    image: "https://picsum.photos/seed/alegra/600/400"
+                },
+                {
+                    title: "Clinical Laboratory - Home Service Management",
+                    desc: "Logistics and clinical management system integrating PostgreSQL (Supabase) and React.",
+                    fullDesc: "Management system for <b>Clinical Laboratory Network</b>. Home service optimization. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) with multi-zone architecture. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS for operational dashboard. <br>🚀 <b>Infrastructure:</b> Continuous deployment on Vercel.",
+                    tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
+                    link: "laboratorio.html",
+                    image: "assets/images/header_laboratorio.png"
+                },
+                {
+                    title: "CUN - Market Research Ecosystem",
+                    desc: "Comprehensive platform with chatbot, WhatsApp management, and app scraping.",
+                    fullDesc: "Advanced analysis tool developed to automate data extraction. <br>🤖 <b>Scraping & NLP:</b> Detailed app content analysis based on comments and descriptions. <br>💬 <b>Chatbot:</b> WhatsApp interaction management engine. <br>🚀 <b>Deployment:</b> Robust backend architecture (Node/Python).",
+                    tags: ["Web Scraping", "NLP", "Chatbot", "Node.js"],
+                    image: "https://picsum.photos/seed/cun_market/600/400"
+                },
+                {
+                    title: "PLAUD & HP Analytics",
+                    desc: "Analytical dashboards for operational control and report automation.",
+                    fullDesc: "Systems developed in conjunction with <b>Antigravity AI</b> to optimize the analysis of large volumes of data. <br>⚙️ <b>Management:</b> Integration of automations and interface design in Python/PyQt6.",
+                    tags: ["Python", "Automation", "Antigravity"],
+                    image: "https://picsum.photos/seed/plaud/600/400"
+                },
+                {
                     title: "Innovation and Operations Dashboard – IPS SYSO",
                     desc: "Digitalization of administrative reports, RIPS integration, and operational indicators monitoring.",
                     fullDesc: "Comprehensive Business Intelligence system for the healthcare sector. <br>📊 <b>Dashboards:</b> Real-time monitoring of performance and productivity indicators. <br>🏥 <b>RIPS:</b> Digitalization of individual service provision registration processes. <br>⚙️ <b>Infrastructure:</b> Proposals for improvement in connectivity and internal processes.",
@@ -399,19 +532,18 @@ const translations = {
                     images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
                 },
                 {
-                    title: "Clinical Laboratory - Home Service Management",
-                    desc: "Logistics and clinical management system integrating PostgreSQL (Supabase) and React.",
-                    fullDesc: "Management system for <b>Clinical Laboratory Network</b>. Home service optimization. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) with multi-zone architecture. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS for operational dashboard. <br>🚀 <b>Infrastructure:</b> Continuous deployment on Vercel.",
-                    tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
-                    link: "laboratorio.html",
-                    image: "assets/images/header_laboratorio.png"
-                },
-                {
                     title: "DANE Vital Statistics – Academic Analysis",
                     desc: "Cleaning and statistical analysis of birth microdata using Python and Parquet format export.",
                     fullDesc: "Analysis of DANE public data for academic project. <br>🐍 <b>Python:</b> Pandas, NumPy, Matplotlib for processing and visualization. <br>📊 <b>Analysis:</b> Descriptive statistics of births in Colombia. <br>💾 <b>Format:</b> Optimized export in Parquet.",
                     tags: ["Python", "Data Analysis", "Parquet"],
                     image: "https://picsum.photos/seed/dane/600/400"
+                },
+                {
+                    title: "Babyshower - Ian Gabriel",
+                    desc: "Interactive web application for Babyshower gift registry.",
+                    fullDesc: "Responsive digital experience built with <b>Antigravity AI</b>. <br>👶 <b>UX/UI:</b> Horizontal scroll design, dynamic animations, and category-based gift grouping. <br>🎨 <b>Frontend:</b> HTML, Modern CSS, JavaScript.",
+                    tags: ["Web", "UI/UX", "Antigravity"],
+                    image: "https://picsum.photos/seed/baby/600/400"
                 }
             ]
         },
