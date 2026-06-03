@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initScrollAnimations() {
-    // Select sections and cards to animate
-    const animatedElements = document.querySelectorAll('section:not(#hero), .exp-card, .project-card, .skill-circle, .contact-item, .edu-section-title, .edu-card');
+    // Select specific elements to animate, avoiding whole sections that could be too tall on mobile
+    const animatedElements = document.querySelectorAll('.about-card, section:not(#hero) h2, .exp-card, .project-card, .skill-circle, .contact-item, .edu-section-title, .edu-card');
     
     // Add initial class
     animatedElements.forEach(el => {
@@ -34,8 +34,8 @@ function initScrollAnimations() {
 
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.05
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
