@@ -81,7 +81,8 @@ function updateContent() {
     // Update CV Download Link
     const cvBtn = document.getElementById('download-cv');
     if (cvBtn) {
-        const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf' : 'assets/documents/cv_en.pdf';
+        // Add cache-buster to force fresh download
+        const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf?v=20260623' : 'assets/documents/cv_en.pdf';
         cvBtn.setAttribute('href', cvPath);
     }
 }
