@@ -230,7 +230,7 @@ const translations = {
                     desc: "Single Page Application (SPA) Enterprise para Gestión de Talento.",
                     fullDesc: "Solución integral desarrollada a la medida para Gestión Humana. Funciona como un Centro de Control Estratégico para monitorear KPIs sobre salud organizacional, impacto financiero y retención. <br>📊 <b>Módulos:</b> Dashboard Ejecutivo, Impacto Financiero, Salud Organizacional, Atracción de Talento. <br>💻 <b>Stack Técnico:</b> React 18, TypeScript, Vite, Tailwind CSS, Recharts.",
                     tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS"],
-                    link: "https://talentobioger.vercel.app",
+                    link: "https://talentohumanoctg.vercel.app/",
                     image: "assets/images/gestion_humana.png"
                 },
                 {
@@ -514,7 +514,7 @@ const translations = {
                     desc: "Enterprise Single Page Application (SPA) for Talent Management.",
                     fullDesc: "Custom comprehensive solution for Human Resources. Acts as a Strategic Control Center to monitor KPIs on organizational health, financial impact, and retention. <br>📊 <b>Modules:</b> Executive Dashboard, Financial Impact, Organizational Health, Talent Attraction. <br>💻 <b>Tech Stack:</b> React 18, TypeScript, Vite, Tailwind CSS, Recharts.",
                     tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS"],
-                    link: "https://talentobioger.vercel.app",
+                    link: "https://talentohumanoctg.vercel.app/",
                     image: "assets/images/gestion_humana.png"
                 },
                 {
