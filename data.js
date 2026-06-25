@@ -234,14 +234,6 @@ const translations = {
                     image: "assets/images/gestion_humana.png"
                 },
                 {
-                    title: "OrganiSaaS - Gestión Jerárquica",
-                    desc: "Plataforma B2B para visualizar y gestionar organigramas corporativos.",
-                    fullDesc: "SaaS multi-inquilino diseñado para revolucionar la forma en que RRHH visualiza y comparte organigramas. Permite roles de superadmin y administradores de RRHH. <br>⚙️ <b>Backend:</b> Supabase (PostgreSQL) con RLS y autenticación segura. <br>⚛️ <b>Frontend:</b> Next.js 15, React 19, Tailwind CSS, React Flow.",
-                    tags: ["Next.js 15", "React Flow", "Supabase", "SaaS"],
-                    link: "https://organisaas.vercel.app/login",
-                    image: "https://picsum.photos/seed/organisaas/600/400"
-                },
-                {
                     title: "CUN - Ecosistema de Investigación de Mercados",
                     desc: "Plataforma integral con chatbot, gestión de WhatsApp y scraping de aplicaciones.",
                     fullDesc: "Herramienta avanzada de análisis desarrollada para automatizar la extracción de datos. <br>🤖 <b>Scraping & NLP:</b> Análisis detallado del contenido de aplicaciones mediante comentarios y descripciones. <br>💬 <b>Chatbot:</b> Motor de gestión de interacciones vía WhatsApp. <br>🚀 <b>Despliegue:</b> Arquitectura backend robusta (Node/Python).",
@@ -524,14 +516,6 @@ const translations = {
                     tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS"],
                     link: "https://talentobioger.vercel.app",
                     image: "assets/images/gestion_humana.png"
-                },
-                {
-                    title: "OrganiSaaS - Hierarchical Management",
-                    desc: "B2B platform to visualize and manage corporate org charts.",
-                    fullDesc: "Multi-tenant SaaS designed to revolutionize how HR visualizes and shares org charts. Supports superadmin and HR admin roles. <br>⚙️ <b>Backend:</b> Supabase (PostgreSQL) with RLS and secure authentication. <br>⚛️ <b>Frontend:</b> Next.js 15, React 19, Tailwind CSS, React Flow.",
-                    tags: ["Next.js 15", "React Flow", "Supabase", "SaaS"],
-                    link: "https://organisaas.vercel.app/login",
-                    image: "https://picsum.photos/seed/organisaas/600/400"
                 },
                 {
                     title: "CUN - Market Research Ecosystem",
