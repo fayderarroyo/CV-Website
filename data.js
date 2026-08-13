@@ -236,7 +236,7 @@ const translations = {
                 {
                     title: "Talent Hub Enterprise - Nexo Bioger",
                     desc: "Plataforma web integral (SPA) para gestión de RRHH y análisis financiero.",
-                    fullDesc: "Sistema de gestión con <b>Organigrama Institucional Dinámico</b> en tiempo real. Auditoría de inconsistencias y control operativo. <br>🔐 <b>Seguridad:</b> Autenticación y permisos granulares con Supabase. <br>💻 <b>Stack Técnico:</b> React 19, Vite, Tailwind CSS v4, Recharts, Supabase Realtime.",
+                    fullDesc: "Sistema de gestión con <b>Organigrama Dinámico</b> en tiempo real. Incluye <b>análisis financiero forense</b> de fugas por accidentes de trabajo y sobrecostos por reprocesos con horas extras. <br>🔐 <b>Seguridad:</b> Autenticación y permisos granulares con Supabase. <br>💻 <b>Stack Técnico:</b> React 19, Vite, Tailwind CSS v4, Recharts, Supabase Realtime.",
                     tags: ["React 19", "Vite", "Supabase Realtime", "Tailwind CSS v4"],
                     link: "https://nexo-demo-two.vercel.app/login",
                     image: "assets/images/nexo-logo.jpg"
@@ -536,7 +536,7 @@ const translations = {
                 {
                     title: "Talent Hub Enterprise - Nexo Bioger",
                     desc: "Enterprise Single Page Application (SPA) for HR management and financial analysis.",
-                    fullDesc: "Management system with real-time <b>Dynamic Institutional Org Chart</b>. Forensics auditing and operational control. <br>🔐 <b>Security:</b> Granular permissions and authentication via Supabase. <br>💻 <b>Tech Stack:</b> React 19, Vite, Tailwind CSS v4, Recharts, Supabase Realtime.",
+                    fullDesc: "Management system with real-time <b>Dynamic Org Chart</b>. Includes <b>forensic financial analysis</b> of losses due to workplace accidents and cost overruns from rework with overtime. <br>🔐 <b>Security:</b> Granular permissions and authentication via Supabase. <br>💻 <b>Tech Stack:</b> React 19, Vite, Tailwind CSS v4, Recharts, Supabase Realtime.",
                     tags: ["React 19", "Vite", "Supabase Realtime", "Tailwind CSS v4"],
                     link: "https://nexo-demo-two.vercel.app/login",
                     image: "assets/images/nexo-logo.jpg"
