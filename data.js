@@ -226,6 +226,22 @@ const translations = {
                     image: "assets/images/header_laboratorio.png"
                 },
                 {
+                    title: "FEPCO NEXO - Master Command Center",
+                    desc: "Plataforma integral de inteligencia operacional y analítica prescriptiva para LATAM.",
+                    fullDesc: "Centro de Comando Geográfico Unificado para monitorear vacantes, métricas de candidatos y riesgo de rotación con IA. <br>🗺️ <b>Mapas:</b> Renderizado vectorial detallado de Colombia y LATAM. <br>💻 <b>Stack Técnico:</b> Next.js, TypeScript, Tailwind CSS, Supabase, D3 Geo.",
+                    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "D3 Geo"],
+                    link: "https://github.com/fayderarroyo/FEPCO_NEXO",
+                    image: "https://picsum.photos/seed/fepco/600/400"
+                },
+                {
+                    title: "Talent Hub Enterprise - Nexo Bioger",
+                    desc: "Plataforma web integral (SPA) para gestión de RRHH y análisis financiero.",
+                    fullDesc: "Sistema de gestión con <b>Organigrama Institucional Dinámico</b> en tiempo real. Auditoría de inconsistencias y control operativo. <br>🔐 <b>Seguridad:</b> Autenticación y permisos granulares con Supabase. <br>💻 <b>Stack Técnico:</b> React 19, Vite, Tailwind CSS v4, Recharts, Supabase Realtime.",
+                    tags: ["React 19", "Vite", "Supabase Realtime", "Tailwind CSS v4"],
+                    link: "https://github.com/fayderarroyo/nexo_bioger",
+                    image: "assets/images/nexo-logo.jpg"
+                },
+                {
                     title: "Plataforma de Analítica y Gestión Humana",
                     desc: "Single Page Application (SPA) Enterprise para Gestión de Talento.",
                     fullDesc: "Solución integral desarrollada a la medida para Gestión Humana. Funciona como un Centro de Control Estratégico para monitorear KPIs sobre salud organizacional, impacto financiero y retención. <br>📊 <b>Módulos:</b> Dashboard Ejecutivo, Impacto Financiero, Salud Organizacional, Atracción de Talento. <br>💻 <b>Stack Técnico:</b> React 18, TypeScript, Vite, Tailwind CSS, Recharts.",
@@ -508,6 +524,22 @@ const translations = {
                     tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
                     link: "laboratorio.html",
                     image: "assets/images/header_laboratorio.png"
+                },
+                {
+                    title: "FEPCO NEXO - Master Command Center",
+                    desc: "Comprehensive operational intelligence and prescriptive analytics platform for LATAM.",
+                    fullDesc: "Unified Geographic Command Center to monitor vacancies, candidate metrics, and AI-driven turnover risk. <br>🗺️ <b>Maps:</b> Detailed vector rendering of Colombia and LATAM. <br>💻 <b>Tech Stack:</b> Next.js, TypeScript, Tailwind CSS, Supabase, D3 Geo.",
+                    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "D3 Geo"],
+                    link: "https://github.com/fayderarroyo/FEPCO_NEXO",
+                    image: "https://picsum.photos/seed/fepco/600/400"
+                },
+                {
+                    title: "Talent Hub Enterprise - Nexo Bioger",
+                    desc: "Enterprise Single Page Application (SPA) for HR management and financial analysis.",
+                    fullDesc: "Management system with real-time <b>Dynamic Institutional Org Chart</b>. Forensics auditing and operational control. <br>🔐 <b>Security:</b> Granular permissions and authentication via Supabase. <br>💻 <b>Tech Stack:</b> React 19, Vite, Tailwind CSS v4, Recharts, Supabase Realtime.",
+                    tags: ["React 19", "Vite", "Supabase Realtime", "Tailwind CSS v4"],
+                    link: "https://github.com/fayderarroyo/nexo_bioger",
+                    image: "assets/images/nexo-logo.jpg"
                 },
                 {
                     title: "Talent Hub Analytics - HR Platform",
