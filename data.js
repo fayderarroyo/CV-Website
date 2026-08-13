@@ -226,7 +226,7 @@ const translations = {
                     image: "assets/images/header_laboratorio.png"
                 },
                 {
-                    title: "FEPCO NEXO - Master Command Center",
+                    title: "NEXO FEPCO - Centro de Seguimiento y Control de Vacantes",
                     desc: "Plataforma integral de inteligencia operacional y analítica prescriptiva para LATAM.",
                     fullDesc: "Centro de Comando Geográfico Unificado para monitorear vacantes, métricas de candidatos y riesgo de rotación con IA. <br>🗺️ <b>Mapas:</b> Renderizado vectorial detallado de Colombia y LATAM. <br>💻 <b>Stack Técnico:</b> Next.js, TypeScript, Tailwind CSS, Supabase, D3 Geo.",
                     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "D3 Geo"],
@@ -526,7 +526,7 @@ const translations = {
                     image: "assets/images/header_laboratorio.png"
                 },
                 {
-                    title: "FEPCO NEXO - Master Command Center",
+                    title: "NEXO FEPCO - Vacancy Tracking & Control Center",
                     desc: "Comprehensive operational intelligence and prescriptive analytics platform for LATAM.",
                     fullDesc: "Unified Geographic Command Center to monitor vacancies, candidate metrics, and AI-driven turnover risk. <br>🗺️ <b>Maps:</b> Detailed vector rendering of Colombia and LATAM. <br>💻 <b>Tech Stack:</b> Next.js, TypeScript, Tailwind CSS, Supabase, D3 Geo.",
                     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "D3 Geo"],
