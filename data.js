@@ -35,31 +35,31 @@ const translations = {
                 {
                     role: "Data Analyst / Market Research",
                     company: "Corporación Unificada Nacional de Educación Superior (CUN)",
-                    period: "Feb 2026 - Actualidad",
+                    period: "Feb 2026 - Ago 2026",
                     location: "Híbrido",
                     desc: `• Diseño de investigaciones de mercado cuantitativas y cualitativas.<br>
                     • Limpieza, integración y análisis estadístico de datos para generar insights.<br>
                     • Desarrollo de reportes analíticos y dashboards para la toma de decisiones.`
                 },
                 {
-                    role: "Data Analyst / Business Intelligence Analyst",
-                    company: "Fox Ordering",
-                    period: "Ene 2026 - Actualidad",
-                    location: "Remoto / Híbrido",
-                    desc: `• Creación, mantenimiento y optimización de reportes, dashboards e indicadores clave (KPIs) operativos.<br>
-                    • Análisis de grandes volúmenes de datos con SQL para identificar tendencias y cuellos de botella.<br>
-                    • Gestión y control de información en Excel avanzado asegurando trazabilidad de los datos.<br>
-                    • Documentación y control de versiones de reportes mediante Git de forma colaborativa.`
-                },
-                {
                     role: "Asesor de Innovación Tecnológica y Gestión de Infraestructura",
                     company: "IPS SYSO Empresarial S.A.S.",
-                    period: "Sep 2025 - Actualidad",
+                    period: "Sep 2025 - Dic 2025",
                     location: "Cartagena, Colombia",
                     desc: `• Liderazgo de proyectos de innovación tecnológica para optimizar la eficiencia operativa.<br>
                     • Desarrollo de tableros de control y automatización de reportes mediante Power BI y Looker Studio.<br>
                     • Mantenimiento y aseguramiento de la disponibilidad técnica y de infraestructura de la empresa.<br>
                     • Integración y análisis de datos de sistemas e infraestructura operativa.`
+                },
+                {
+                    role: "Data Analyst / Business Intelligence Analyst",
+                    company: "Fox Ordering",
+                    period: "Ene 2026 - Abr 2026",
+                    location: "Remoto / Híbrido",
+                    desc: `• Creación, mantenimiento y optimización de reportes, dashboards e indicadores clave (KPIs) operativos.<br>
+                    • Análisis de grandes volúmenes de datos con SQL para identificar tendencias y cuellos de botella.<br>
+                    • Gestión y control de información en Excel avanzado asegurando trazabilidad de los datos.<br>
+                    • Documentación y control de versiones de reportes mediante Git de forma colaborativa.`
                 },
                 {
                     role: "Analista de Planeación Financiera de Datos",
@@ -341,31 +341,31 @@ const translations = {
                 {
                     role: "Data Analyst / Market Research",
                     company: "Corporación Unificada Nacional de Educación Superior (CUN)",
-                    period: "Feb 2026 - Current",
+                    period: "Feb 2026 - Aug 2026",
                     location: "Hybrid",
                     desc: `• Designing quantitative and qualitative market research studies.<br>
                     • Data cleaning, integration, and statistical analysis to generate actionable insights.<br>
                     • Development of analytical reports and dashboards for decision-making support.`
                 },
                 {
-                    role: "Data Analyst / Business Intelligence Analyst",
-                    company: "Fox Ordering",
-                    period: "Jan 2026 - Current",
-                    location: "Remote / Hybrid",
-                    desc: `• Creation, maintenance, and optimization of operational reports, dashboards, and KPIs.<br>
-                    • Analysis of large volumes of data using SQL to identify trends and process bottlenecks.<br>
-                    • Management and control of information in advanced Excel to ensure data traceability.<br>
-                    • Documentation and version control of reporting assets using Git in a collaborative setting.`
-                },
-                {
                     role: "Technology Innovation and Infrastructure Management Advisor",
                     company: "IPS SYSO Empresarial S.A.S.",
-                    period: "Sep 2025 - Current",
+                    period: "Sep 2025 - Dec 2025",
                     location: "Cartagena, Colombia",
                     desc: `• Leadership in technological innovation projects to optimize operational efficiency.<br>
                     • Development of control dashboards and report automation using Power BI and Looker Studio.<br>
                     • Maintenance and assurance of the company's technical and infrastructure availability.<br>
                     • Integration and analysis of operational systems and infrastructure data.`
+                },
+                {
+                    role: "Data Analyst / Business Intelligence Analyst",
+                    company: "Fox Ordering",
+                    period: "Jan 2026 - Apr 2026",
+                    location: "Remote / Hybrid",
+                    desc: `• Creation, maintenance, and optimization of operational reports, dashboards, and KPIs.<br>
+                    • Analysis of large volumes of data using SQL to identify trends and process bottlenecks.<br>
+                    • Management and control of information in advanced Excel to ensure data traceability.<br>
+                    • Documentation and version control of reporting assets using Git in a collaborative setting.`
                 },
                 {
                     role: "Data Financial Planning Analyst",
