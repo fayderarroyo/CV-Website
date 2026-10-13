@@ -95,8 +95,8 @@ const translations = {
                 {
                     degree: "Especialización en Analítica de Datos e Información",
                     institution: "Fundación Universitaria Tecnológico Comfenalco",
-                    year: "2025",
-                    status: "current"
+                    year: "2026",
+                    thesis: 'Trabajo de Grado Meritorio: "Sistema de Analítica Descriptiva y Automatización de Procesos ETL para la Optimización de la Cadena de Suministro en Deceuninck Colombia SAS"'
                 },
                 {
                     degree: "Ingeniería Industrial",
@@ -135,8 +135,7 @@ const translations = {
                     institution: "Universidad Tecnológica de Bolívar (MINTIC)",
                     duration: "12 semanas",
                     location: "Modalidad presencial",
-                    year: "2024",
-                    status: "current"
+                    year: "2024"
                 }
             ],
             workshops: [
@@ -193,6 +192,13 @@ const translations = {
         portfolio: {
             title: "Proyectos Destacados",
             projects: [
+                {
+                    title: "Dashboard Analítico Supply Chain & ETL - Deceuninck",
+                    desc: "Sistema analítico web y motor ETL para optimización de inventarios y demanda de planta.",
+                    fullDesc: "<b>Trabajo de Grado Meritorio</b> para optar al título de Especialista en Analítica de Datos. Migración de macros VBA en Excel a una arquitectura moderna en la nube. <br>⚙️ <b>Arquitectura:</b> FastAPI (Python) + PostgreSQL (Supabase) + React (Vite). <br>📊 <b>Analítica:</b> Análisis Descriptivo/Diagnóstico de demanda histórica, clasificación de inventario ABC ponderado y seguimiento logístico de nacionalizaciones y faltantes en tiempo real. <br>🔒 <b>Compliance:</b> Anonimización según Ley 1581.",
+                    tags: ["FastAPI", "React", "PostgreSQL", "Supabase", "Pandas", "ETL", "Vite"],
+                    image: "https://picsum.photos/seed/deceuninck/600/400"
+                },
                 {
                     title: "Revenue Command Center - Analítica Prescriptiva",
                     desc: "Sistema de Revenue Management B2B para optimización de precios y márgenes.",
@@ -395,8 +401,8 @@ const translations = {
                 {
                     degree: "Specialization in Data Analytics and Information",
                     institution: "Fundación Universitaria Tecnológico Comfenalco",
-                    year: "2025",
-                    status: "current"
+                    year: "2026",
+                    thesis: 'Meritorious Degree Project: "Descriptive Analytics System and ETL Process Automation for Supply Chain Optimization at Deceuninck Colombia SAS"'
                 },
                 {
                     degree: "Industrial Engineering",
@@ -435,8 +441,7 @@ const translations = {
                     institution: "Universidad Tecnológica de Bolívar (MINTIC)",
                     duration: "12 weeks",
                     location: "In-person mode",
-                    year: "2024",
-                    status: "current"
+                    year: "2024"
                 }
             ],
             workshops: [
@@ -493,6 +498,13 @@ const translations = {
         portfolio: {
             title: "Featured Projects",
             projects: [
+                {
+                    title: "Supply Chain Analytics & ETL Dashboard (Deceuninck)",
+                    desc: "Modern web analytics system and automated ETL pipeline for manufacturing plant demand and inventory.",
+                    fullDesc: "<b>Meritorious Degree Thesis</b> for the Postgrad Degree in Data Analytics. Migrated legacy Excel/VBA macros to a modern cloud web architecture. <br>⚙️ <b>Architecture:</b> FastAPI (Python) + PostgreSQL (Supabase) + React (Vite). <br>📊 <b>Analytics:</b> Descriptive and diagnostic demand modeling, weighted ABC inventory classification, and real-time customs tracking. <br>🔒 <b>Compliance:</b> Full data anonymization under statutory privacy laws.",
+                    tags: ["FastAPI", "React", "PostgreSQL", "Supabase", "Pandas", "ETL", "Vite"],
+                    image: "https://picsum.photos/seed/deceuninck/600/400"
+                },
                 {
                     title: "Revenue Command Center - Prescriptive Analytics",
                     desc: "B2B Revenue Management system for price and margin optimization.",

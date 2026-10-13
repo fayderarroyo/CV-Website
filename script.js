@@ -253,6 +253,7 @@ function createModernCard(item) {
             </div>
 
             ${item.location ? `<div class="edu-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</div>` : ''}
+            ${item.thesis ? `<div class="edu-thesis" style="margin-top: 6px; font-size: 0.82rem; color: #d4a373; font-weight: 600;"><i class="fas fa-award"></i> ${item.thesis}</div>` : ''}
             ${item.status === 'current' ? `<div class="edu-status-active"><span class="pulse-dot"></span> ${currentLang === 'es' ? 'En curso' : 'In Progress'}</div>` : ''}
         </div>
     `;
