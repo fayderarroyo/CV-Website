@@ -82,7 +82,7 @@ function updateContent() {
     const cvBtn = document.getElementById('download-cv');
     if (cvBtn) {
         // Add cache-buster to force fresh download
-        const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf?v=20260623' : 'assets/documents/cv_en.pdf';
+        const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf?v=20261012' : 'assets/documents/cv_en.pdf?v=20261012';
         cvBtn.setAttribute('href', cvPath);
     }
 }
