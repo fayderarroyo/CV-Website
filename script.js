@@ -1,6 +1,7 @@
 // Current language state
 let currentLang = 'es';
 let currentPortfolioFilter = 'all';
+let currentExperienceFilter = 'all';
 
 // DOM Elements
 const langBtns = document.querySelectorAll('.lang-btn');
@@ -83,7 +84,10 @@ function updateContent() {
     renderPortfolioFilters(t.portfolio.filters);
     renderPortfolioList(t.portfolio.projects);
 
-    // Update Experience
+    // Update Experience with Filters
+    const expSubtitleEl = document.getElementById('experience-subtitle');
+    if (expSubtitleEl) expSubtitleEl.textContent = t.experience.subtitle || '';
+    renderExperienceFilters(t.experience.filters);
     renderExperience(t.experience.jobs);
 
     // Update Skills Domains
@@ -224,19 +228,64 @@ function renderPortfolioList(projects) {
     });
 }
 
+function renderExperienceFilters(filters) {
+    const container = document.getElementById('experience-filters');
+    if (!container || !filters) return;
+
+    container.innerHTML = '';
+    const keys = Object.keys(filters);
+
+    keys.forEach(key => {
+        const btn = document.createElement('button');
+        btn.className = `filter-btn ${key === currentExperienceFilter ? 'active' : ''}`;
+        btn.textContent = filters[key];
+        btn.setAttribute('data-filter', key);
+
+        btn.addEventListener('click', () => {
+            currentExperienceFilter = key;
+            document.querySelectorAll('#experience-filters .filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderExperience(translations[currentLang].experience.jobs);
+            initScrollAnimations();
+        });
+
+        container.appendChild(btn);
+    });
+}
+
 function renderExperience(jobs) {
     const container = document.getElementById('experience-list');
     if (!container) return;
     container.innerHTML = '';
 
-    jobs.forEach(job => {
+    const filtered = currentExperienceFilter === 'all'
+        ? jobs
+        : jobs.filter(j => j.type === currentExperienceFilter);
+
+    filtered.forEach(job => {
         const item = document.createElement('div');
-        item.className = 'exp-card';
+        item.className = `exp-card exp-card-${job.type || 'corporate'}`;
+
+        let iconClass = 'fas fa-briefcase';
+        if (job.type === 'corporate') iconClass = 'fas fa-building';
+        else if (job.type === 'contract') iconClass = 'fas fa-clock';
+
+        const typeBadgeHtml = job.typeLabel ? `
+            <span class="exp-type-badge exp-type-${job.type || 'corporate'}">
+                <i class="${iconClass}"></i> ${job.typeLabel}
+            </span>
+        ` : '';
+
         item.innerHTML = `
             <div class="exp-header">
                 <div>
-                    <div class="exp-role">${job.role}</div>
-                    <div class="exp-company">${job.company}</div>
+                    <div class="exp-role-row">
+                        <div class="exp-role">${job.role}</div>
+                        ${typeBadgeHtml}
+                    </div>
+                    <div class="exp-company">
+                        ${job.company} ${job.location ? `· <span class="exp-location">${job.location}</span>` : ''}
+                    </div>
                 </div>
                 <div class="exp-date">${job.period}</div>
             </div>

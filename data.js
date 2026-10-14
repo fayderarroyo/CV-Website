@@ -74,8 +74,17 @@ const translations = {
         },
         experience: {
             title: "Experiencia Profesional & Consultoría",
+            subtitle: "Diferenciación estratégica entre consultorías de arquitectura de soluciones, contratos por proyecto y trayectoria corporativa in-house.",
+            filters: {
+                all: "Toda la Trayectoria",
+                consulting: "Consultoría & Asesoría",
+                contract: "Contratos por Proyecto / Temporales",
+                corporate: "Trayectoria Corporativa (In-House)"
+            },
             jobs: [
                 {
+                    type: "consulting",
+                    typeLabel: "Consultoría / Tech Lead",
                     role: "Tech Lead & Arquitecto de Soluciones de Datos",
                     company: "Bioger S.A.S. (Ecosistema OrganiSaaS / Nexo)",
                     period: "Ene 2026 - Presente",
@@ -85,6 +94,8 @@ const translations = {
                     • Implementación de organigramas dinámicos en tiempo real, evaluaciones de desempeño y tableros analíticos de clima organizacional.`
                 },
                 {
+                    type: "consulting",
+                    typeLabel: "Consultoría Especializada",
                     role: "Consultor de Automatización de Procesos & ATS con IA",
                     company: "FEPCO S.A.S.",
                     period: "Jul 2026 - Presente",
@@ -93,39 +104,49 @@ const translations = {
                     • Desarrollo del sistema de control operativo <b>Nexo Mantenimiento</b>, integrando datos de incidentes GLPI y tarjetas de seguridad industrial.`
                 },
                 {
+                    type: "contract",
+                    typeLabel: "Contrato por Proyecto / Temporal",
                     role: "BI & Data Analyst (Remoto Internacional)",
                     company: "Fox Ordering",
-                    period: "Ene 2026 - Abr 2026",
+                    period: "Ene 2026 - Abr 2026 (4 meses)",
                     location: "Remoto (EE.UU. / Latam)",
                     desc: `• Extracción, limpieza y modelado de grandes volúmenes de datos transaccionales mediante SQL para identificar cuellos de botella operacionales.<br>
                     • Construcción de dashboards ejecutivos monitoreando indicadores críticos de servicio (SLA de entrega, NPS, retención de restaurantes y tiempos de ciclo).<br>
                     • Estandarización y control de versiones de modelos de datos mediante Git en equipo internacional.`
                 },
                 {
+                    type: "contract",
+                    typeLabel: "Contrato Temporal / Investigación",
                     role: "Data Analyst / Market Research",
                     company: "Corporación Unificada Nacional (CUN)",
-                    period: "Feb 2026 - Ago 2026",
+                    period: "Feb 2026 - Ago 2026 (7 meses)",
                     location: "Híbrido",
                     desc: `• Diseño y ejecución de investigaciones cuantitativas y cualitativas de mercado para prospección académica.<br>
                     • Modelado estadístico y desarrollo de dashboards interactivos para soporte directo a decisiones de expansión institucional.`
                 },
                 {
+                    type: "consulting",
+                    typeLabel: "Asesoría Técnica & BI",
                     role: "Asesor en Innovación Tecnológica & BI",
                     company: "IPS SYSO Empresarial S.A.S.",
-                    period: "Sep 2025 - Dic 2025",
+                    period: "Sep 2025 - Dic 2025 (4 meses)",
                     location: "Cartagena, Colombia",
                     desc: `• Liderazgo de la transformación digital de la operación de salud ocupacional; automatización de reportes mediante Power BI y Looker Studio.<br>
                     • Integración de registros individuales de prestación de servicios (RIPS), infraestructura técnica y control presupuestal.`
                 },
                 {
+                    type: "corporate",
+                    typeLabel: "Empleo Corporativo",
                     role: "Analista de Planeación Financiera & Datos",
                     company: "Molinos 3 Castillos",
-                    period: "Abr 2024 - Sep 2025",
+                    period: "Abr 2024 - Sep 2025 (1.5 años)",
                     location: "Cartagena",
                     desc: `• Automatización de extracción y consolidación de datos contables y financieros mediante Excel Power Query y Power BI.<br>
                     • Modelado de proyecciones estadísticas para presupuestos anuales y optimización de flujos de caja operativos.`
                 },
                 {
+                    type: "corporate",
+                    typeLabel: "Liderazgo Corporativo (9 años)",
                     role: "Supervisor de Operaciones & Eficiencia Operativa (9 años)",
                     company: "CREDI JAMAR S.A.",
                     period: "Ene 2015 - Ene 2024",
@@ -135,6 +156,8 @@ const translations = {
                     • Optimización del ruteo logístico de servicios de crédito basado en analítica de efectividad territorial y cobertura geográfica.`
                 },
                 {
+                    type: "corporate",
+                    typeLabel: "Empleo Corporativo (6.5 años)",
                     role: "Analista Senior de Cartera & Riesgo Crediticio (6.5 años)",
                     company: "CREDI JAMAR S.A.",
                     period: "Jul 2008 - Dic 2014",
@@ -408,8 +431,17 @@ const translations = {
         },
         experience: {
             title: "Professional Experience & Consulting",
+            subtitle: "Strategic distinction between cloud architecture consulting, project-based contracts, and long-standing corporate in-house leadership.",
+            filters: {
+                all: "Full Career History",
+                consulting: "Consulting & Advisory",
+                contract: "Project-Based / Contracts",
+                corporate: "Corporate In-House"
+            },
             jobs: [
                 {
+                    type: "consulting",
+                    typeLabel: "Consulting / Tech Lead",
                     role: "Tech Lead & Data Solutions Architect",
                     company: "Bioger S.A.S. (OrganiSaaS & Nexo Ecosystem)",
                     period: "Jan 2026 - Present",
@@ -419,6 +451,8 @@ const translations = {
                     • Engineered real-time dynamic organizational charts, employee performance evaluation pipelines, and climate survey dashboards.`
                 },
                 {
+                    type: "consulting",
+                    typeLabel: "Specialized Consulting",
                     role: "Process Automation & AI-ATS Consultant",
                     company: "FEPCO S.A.S.",
                     period: "Jul 2026 - Present",
@@ -427,39 +461,49 @@ const translations = {
                     • Designed <b>Nexo Maintenance</b> module, integrating GLPI incident records and industrial safety cards for operational field oversight.`
                 },
                 {
+                    type: "contract",
+                    typeLabel: "Project-Based Contract (Remote)",
                     role: "BI & Data Analyst (International Remote)",
                     company: "Fox Ordering",
-                    period: "Jan 2026 - Apr 2026",
+                    period: "Jan 2026 - Apr 2026 (4 mos)",
                     location: "Remote (US / Latam)",
                     desc: `• Modeled and extracted massive relational databases using SQL to pinpoint operational bottlenecks and supply chain inefficiencies.<br>
                     • Engineered executive KPI dashboards tracking critical operational metrics (delivery SLA, NPS, churn, and cycle times).<br>
                     • Maintained standardized data pipelines and repository documentation using Git.`
                 },
                 {
+                    type: "contract",
+                    typeLabel: "Temporary Contract / Research",
                     role: "Data Analyst / Market Research",
                     company: "Corporación Unificada Nacional (CUN)",
-                    period: "Feb 2026 - Aug 2026",
+                    period: "Feb 2026 - Aug 2026 (7 mos)",
                     location: "Hybrid",
                     desc: `• Designed and executed quantitative and qualitative market studies to guide strategic university positioning.<br>
                     • Developed interactive enrollment and prospecting intelligence dashboards for leadership decision support.`
                 },
                 {
+                    type: "consulting",
+                    typeLabel: "Technical Advisory & BI",
                     role: "Tech Innovation & BI Advisor",
                     company: "IPS SYSO Empresarial S.A.S.",
-                    period: "Sep 2025 - Dec 2025",
+                    period: "Sep 2025 - Dec 2025 (4 mos)",
                     location: "Cartagena, Colombia",
                     desc: `• Spearheaded digital transformation in occupational health operations; automated executive reporting using Power BI and Looker Studio.<br>
                     • Integrated clinical datasets (RIPS), infrastructure maintenance logs, and budget tracking.`
                 },
                 {
+                    type: "corporate",
+                    typeLabel: "Corporate In-House",
                     role: "Financial Planning & Data Analyst",
                     company: "Molinos 3 Castillos",
-                    period: "Apr 2024 - Sep 2025",
+                    period: "Apr 2024 - Sep 2025 (1.5 yrs)",
                     location: "Cartagena",
                     desc: `• Automated financial data extraction and transformation pipelines via Excel Power Query and Power BI.<br>
                     • Built statistical forecast models for annual budget planning and cash flow risk management.`
                 },
                 {
+                    type: "corporate",
+                    typeLabel: "Corporate Leadership (9 yrs)",
                     role: "Operations & Process Efficiency Supervisor (9 years)",
                     company: "CREDI JAMAR S.A.",
                     period: "Jan 2015 - Jan 2024",
@@ -469,6 +513,8 @@ const translations = {
                     • Optimized field service dispatching based on territory effectiveness and geospatial data.`
                 },
                 {
+                    type: "corporate",
+                    typeLabel: "Corporate In-House (6.5 yrs)",
                     role: "Senior Credit Risk & Portfolio Analyst (6.5 years)",
                     company: "CREDI JAMAR S.A.",
                     period: "Jul 2008 - Dec 2014",
