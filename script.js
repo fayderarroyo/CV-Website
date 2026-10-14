@@ -27,14 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.about-card, section:not(#hero) h2, .exp-card, .project-card, .contact-item, .edu-section-title, .edu-card, .pillar-card, .skill-domain-card');
     
-    animatedElements.forEach(el => {
-        el.classList.add('fade-up');
-    });
+    if (!('IntersectionObserver' in window)) {
+        animatedElements.forEach(el => el.classList.add('visible'));
+        return;
+    }
 
     const observerOptions = {
         root: null,
-        rootMargin: '0px 0px -50px 0px',
-        threshold: 0.05
+        rootMargin: '120px 0px 120px 0px',
+        threshold: 0.01
     };
 
     const observer = new IntersectionObserver((entries, obs) => {
@@ -47,6 +48,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     animatedElements.forEach(el => {
+        el.classList.add('fade-up');
         observer.observe(el);
     });
 }
@@ -99,6 +101,9 @@ function updateContent() {
         const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf?v=' + Date.now() : 'assets/documents/cv_en.pdf?v=' + Date.now();
         cvBtn.setAttribute('href', cvPath);
     }
+
+    // Initialize or refresh scroll animations
+    initScrollAnimations();
 }
 
 // Helper to get nested object values using string dot notation "nav.about"
@@ -369,12 +374,35 @@ function createCardSection(container, title, icon, items) {
 
 function createModernCard(item) {
     const card = document.createElement('div');
-    card.className = `edu-card ${item.type}`;
+    card.className = `edu-card ${item.type} ${item.award ? 'has-award' : ''}`;
 
     let iconClass = 'fas fa-certificate';
     if (item.type === 'degree') iconClass = 'fas fa-graduation-cap';
     else if (item.type === 'diploma') iconClass = 'fas fa-scroll';
     else if (item.type === 'workshop') iconClass = 'fas fa-tools';
+
+    const awardHtml = item.award ? `
+        <div class="edu-award-badge">
+            <i class="fas fa-trophy"></i>
+            <span>${item.award}</span>
+        </div>
+    ` : '';
+
+    const thesisHtml = item.thesis ? `
+        <div class="edu-thesis-box">
+            <div class="thesis-label">
+                <i class="fas fa-file-contract"></i>
+                <strong>${currentLang === 'es' ? 'Proyecto de Grado / Tesis:' : 'Thesis / Capstone:'}</strong>
+            </div>
+            <div class="thesis-title">${item.thesis}</div>
+        </div>
+    ` : '';
+
+    const highlightsHtml = item.highlights && item.highlights.length > 0 ? `
+        <ul class="edu-highlights-list">
+            ${item.highlights.map(h => `<li><i class="fas fa-check-circle"></i> <span>${h}</span></li>`).join('')}
+        </ul>
+    ` : '';
 
     card.innerHTML = `
         <div class="edu-card-header">
@@ -386,14 +414,17 @@ function createModernCard(item) {
         
         <div class="edu-card-content">
             <h4 class="edu-title">${item.title}</h4>
-            ${item.subtitle ? `<div class="edu-subtitle">${item.subtitle}</div>` : ''}
+            ${item.subtitle ? `<div class="edu-subtitle"><i class="fas fa-university"></i> ${item.subtitle}</div>` : ''}
             
             <div class="edu-meta">
-                <span class="edu-type-badge">${item.typeLabel}</span>
+                <span class="edu-type-badge edu-type-${item.type}">${item.typeLabel}</span>
                 ${item.details ? `<span class="edu-detail"><i class="far fa-clock"></i> ${item.details}</span>` : ''}
+                ${item.location ? `<span class="edu-location"><i class="fas fa-location-dot"></i> ${item.location}</span>` : ''}
             </div>
 
-            ${item.thesis ? `<div class="edu-thesis" style="margin-top: 8px; font-size: 0.85rem; color: #10b981; font-weight: 600;"><i class="fas fa-medal"></i> ${item.thesis}</div>` : ''}
+            ${awardHtml}
+            ${thesisHtml}
+            ${highlightsHtml}
         </div>
     `;
 
