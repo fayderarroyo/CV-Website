@@ -168,7 +168,6 @@ const translations = {
                     desc: "Plataforma SaaS multi-tenant para auditoría masiva de nómina (+$17.000M COP), organigramas dinámicos y evaluación de desempeño.",
                     fullDesc: "Plataforma empresarial desplegada en Vercel con arquitectura Supabase Multi-Tenant. Incluye panel SuperAdmin, gestión multi-empresa, <b>auditoría forense de nómina y parafiscales sobre +$17.000M COP</b> y organigrama interactivo reactivo en tiempo real.",
                     tags: ["Next.js", "React 19", "Supabase Realtime", "Vercel", "Tailwind CSS"],
-                    link: "https://nexo-demo-two.vercel.app/login",
                     image: "assets/images/bioger_live.png"
                 },
                 {
@@ -178,7 +177,6 @@ const translations = {
                     desc: "Sistema de atracción de talento con IA, seguimiento de exámenes médicos y centro de control operativo de mantenimiento industrial.",
                     fullDesc: "Suite operativa completa para FEPCO. Plataforma ATS desplegada en Vercel con motor de filtrado inteligente de perfiles y seguimiento de citas médicas ocupacionales. Incluye módulo de mantenimiento industrial integrando tickets GLPI y tarjetas de seguridad.",
                     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "IA Engine"],
-                    link: "https://fepco-nexo-teal.vercel.app/",
                     image: "assets/images/fepco_live.png"
                 },
                 {
@@ -188,7 +186,6 @@ const translations = {
                     desc: "Herramienta prescriptiva para optimización dinámica de precios, simulación de demanda y prevención de riesgo financiero.",
                     fullDesc: "Sistema B2B que modela la elasticidad precio-demanda mediante regresión Log-Log (-2.08) y proyecciones estacionales con Prophet y XGBoost. Ha permitido simular escenarios de fijación de precios previniendo riesgos comerciales por $797M COP.",
                     tags: ["Python", "Streamlit", "Prophet", "XGBoost", "Modelado Causal", "Plotly"],
-                    link: "https://tableroestrategicofinanciero.streamlit.app/",
                     image: "assets/images/revenue_command_center.png"
                 },
                 {
@@ -198,7 +195,6 @@ const translations = {
                     desc: "Portal corporativo y sistema centralizado para gestión documental de clientes, trazabilidad y auditoría de SG-SST.",
                     fullDesc: "Desarrollo integral de arquitectura web y centro de control operativo para la consultora Sdavila. Permite a los clientes corporativos subir, consultar y auditar la trazabilidad de sus requisitos de Seguridad y Salud en el Trabajo con almacenamiento seguro en la nube.",
                     tags: ["React", "Vite", "Supabase", "Tailwind CSS", "SG-SST"],
-                    link: "https://sdavilagrupoasesores.com",
                     image: "assets/images/sdavila_live.png"
                 },
                 {
@@ -208,7 +204,6 @@ const translations = {
                     desc: "Tablero ejecutivo interactivo de analítica predictiva y diagnóstico de ventas para distribución farmacéutica.",
                     fullDesc: "Plataforma analítica con modelos econométricos OLS y algoritmos de proyección temporal Prophet para anticipar rotación de producto, desviaciones de margen y cumplimiento de cuotas comerciales.",
                     tags: ["Streamlit", "Python", "Prophet", "OLS Regression", "DataViz"],
-                    link: "https://ventaspharmalife.streamlit.app/",
                     image: "assets/images/pharmalife_live.png"
                 },
                 {
@@ -218,7 +213,6 @@ const translations = {
                     desc: "Pipeline ETL en Python con datasets Parquet, modelado tabular en estrella y tableros en Power BI con métricas de rentabilidad y OTD.",
                     fullDesc: "Solución completa de analítica de datos: extracción y transformación automatizada de millones de registros a formato columnar Parquet, modelado de hechos y dimensiones en Power BI (DAX) y tableros ejecutivos.",
                     tags: ["Power BI", "Python", "ETL", "Parquet", "DAX", "Git Flow"],
-                    link: "https://spaceparts-dashboard-report.streamlit.app/",
                     image: "assets/images/spaceparts-1.png"
                 },
                 {
@@ -228,7 +222,6 @@ const translations = {
                     desc: "Sistema web multi-zona para optimización de rutas y trazabilidad de toma de muestras a domicilio.",
                     fullDesc: "Dashboard operativo desarrollado en React + Vite con backend relacional en Supabase (PostgreSQL), optimizando la programación de visitas y el flujo de trabajo del personal asistencial en campo.",
                     tags: ["React", "Supabase", "PostgreSQL", "Tailwind CSS", "Vercel"],
-                    link: "laboratorio.html",
                     image: "assets/images/schema_lab_clin.jpg"
                 }
             ]
@@ -509,7 +502,6 @@ const translations = {
                     desc: "Multi-tenant SaaS for large-scale payroll data audit (+$17B COP), dynamic org charts, and performance evaluation.",
                     fullDesc: "Enterprise platform deployed on Vercel with Supabase Multi-Tenant architecture. Features SuperAdmin control, enterprise management, <b>forensic financial audit of payroll and statutory benefits exceeding +$17B COP</b>, and interactive real-time org chart.",
                     tags: ["Next.js", "React 19", "Supabase Realtime", "Vercel", "Tailwind CSS"],
-                    link: "https://nexo-demo-two.vercel.app/login",
                     image: "assets/images/bioger_live.png"
                 },
                 {
@@ -519,7 +511,6 @@ const translations = {
                     desc: "AI-driven candidate screening, medical exam tracking, and industrial maintenance operational command center.",
                     fullDesc: "Comprehensive operational suite for FEPCO. Vercel-hosted ATS platform featuring intelligent applicant pre-screening and medical appointment monitoring. Includes industrial maintenance module connecting GLPI incident tracking and safety cards.",
                     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "AI Engine"],
-                    link: "https://fepco-nexo-teal.vercel.app/",
                     image: "assets/images/fepco_live.png"
                 },
                 {
@@ -529,7 +520,6 @@ const translations = {
                     desc: "Prescriptive analytics tool for price and margin optimization, demand simulation, and financial risk mitigation.",
                     fullDesc: "B2B platform modeling price elasticity via Log-Log regression (-2.08) and seasonal forecasts with Prophet and XGBoost. Enables executive price-setting simulations that have prevented commercial exposure totaling $797M COP.",
                     tags: ["Python", "Streamlit", "Prophet", "XGBoost", "Causal Modeling", "Plotly"],
-                    link: "https://tableroestrategicofinanciero.streamlit.app/",
                     image: "assets/images/revenue_command_center.png"
                 },
                 {
@@ -539,7 +529,6 @@ const translations = {
                     desc: "Corporate portal and centralized command center for client documentation, regulatory tracking, and SG-SST auditing.",
                     fullDesc: "Architected and deployed web infrastructure and operational control center for consulting firm Sdavila. Enables enterprise clients to upload, review, and audit occupational health and safety requirements with secure cloud storage.",
                     tags: ["React", "Vite", "Supabase", "Tailwind CSS", "SG-SST"],
-                    link: "https://sdavilagrupoasesores.com",
                     image: "assets/images/sdavila_live.png"
                 },
                 {
@@ -549,7 +538,6 @@ const translations = {
                     desc: "Interactive executive dashboard featuring predictive modeling and sales diagnostics for pharmaceutical distribution.",
                     fullDesc: "Analytics system incorporating econometric OLS modeling and Prophet forecasting algorithms to anticipate product turnover, margin variances, and sales quota pacing.",
                     tags: ["Streamlit", "Python", "Prophet", "OLS Regression", "DataViz"],
-                    link: "https://ventaspharmalife.streamlit.app/",
                     image: "assets/images/pharmalife_live.png"
                 },
                 {
@@ -559,7 +547,6 @@ const translations = {
                     desc: "Python ETL pipeline with Parquet datasets, star schema modeling, and Power BI dashboards with profitability and OTD metrics.",
                     fullDesc: "Full-cycle data analytics solution: automated extraction and transformation of millions of transaction records to columnar Parquet format, dimensional modeling in Power BI (DAX), and executive reporting.",
                     tags: ["Power BI", "Python", "ETL", "Parquet", "DAX", "Git Flow"],
-                    link: "https://spaceparts-dashboard-report.streamlit.app/",
                     image: "assets/images/spaceparts-1.png"
                 },
                 {
@@ -569,7 +556,6 @@ const translations = {
                     desc: "Multi-zone web platform optimizing route dispatching and mobile clinical sample collection traceability.",
                     fullDesc: "Operational dashboard built with React + Vite and Supabase (PostgreSQL) relational backend, streamlining mobile technician scheduling and field workflow.",
                     tags: ["React", "Supabase", "PostgreSQL", "Tailwind CSS", "Vercel"],
-                    link: "laboratorio.html",
                     image: "assets/images/schema_lab_clin.jpg"
                 }
             ]
