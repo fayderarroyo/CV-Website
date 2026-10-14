@@ -1,5 +1,6 @@
 // Current language state
 let currentLang = 'es';
+let currentPortfolioFilter = 'all';
 
 // DOM Elements
 const langBtns = document.querySelectorAll('.lang-btn');
@@ -24,10 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initScrollAnimations() {
-    // Select specific elements to animate, avoiding whole sections that could be too tall on mobile
-    const animatedElements = document.querySelectorAll('.about-card, section:not(#hero) h2, .exp-card, .project-card, .skill-circle, .contact-item, .edu-section-title, .edu-card');
+    const animatedElements = document.querySelectorAll('.about-card, section:not(#hero) h2, .exp-card, .project-card, .contact-item, .edu-section-title, .edu-card, .pillar-card, .skill-domain-card');
     
-    // Add initial class
     animatedElements.forEach(el => {
         el.classList.add('fade-up');
     });
@@ -38,11 +37,11 @@ function initScrollAnimations() {
         threshold: 0.05
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Animate only once
+                obs.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -72,17 +71,32 @@ function updateContent() {
         if (value) el.innerHTML = value;
     });
 
-    // Update complex sections (Experience, Education & Portfolio)
+    // Update Hero Stats Bar
+    renderHeroStats(t.hero);
+
+    // Update About Strategic Pillars
+    renderAbout(t.about);
+
+    // Update Portfolio with Filters
+    renderPortfolioFilters(t.portfolio.filters);
+    renderPortfolioList(t.portfolio.projects);
+
+    // Update Experience
     renderExperience(t.experience.jobs);
+
+    // Update Skills Domains
+    renderSkills(t.skills);
+
+    // Update Education & Diplomas
     renderEducation(t.education);
-    renderCertifications(t.education);
-    renderPortfolio(t.portfolio.projects);
+
+    // Update Contact
+    renderContact(t.contact);
 
     // Update CV Download Link
     const cvBtn = document.getElementById('download-cv');
     if (cvBtn) {
-        // Add cache-buster to force fresh download
-        const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf?v=20261012' : 'assets/documents/cv_en.pdf?v=20261012';
+        const cvPath = currentLang === 'es' ? 'assets/documents/cv_es.pdf?v=' + Date.now() : 'assets/documents/cv_en.pdf?v=' + Date.now();
         cvBtn.setAttribute('href', cvPath);
     }
 }
@@ -94,8 +108,120 @@ function getNestedValue(obj, path) {
     }, obj);
 }
 
+function renderHeroStats(hero) {
+    const container = document.getElementById('hero-stats');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="stat-item">
+            <div class="stat-number">+10</div>
+            <div class="stat-label">${hero.stat_exp}</div>
+        </div>
+        <div class="stat-item highlight-stat">
+            <div class="stat-number">4.8 / 5.0</div>
+            <div class="stat-label">${hero.stat_grade}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">+$17.000M</div>
+            <div class="stat-label">${hero.stat_audit}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">C1</div>
+            <div class="stat-label">${hero.stat_lang}</div>
+        </div>
+    `;
+}
+
+function renderAbout(about) {
+    const introEl = document.getElementById('about-intro');
+    const pillarsContainer = document.getElementById('about-pillars');
+    if (!introEl || !pillarsContainer) return;
+
+    introEl.innerHTML = about.intro;
+    pillarsContainer.innerHTML = '';
+
+    about.pillars.forEach(pillar => {
+        const card = document.createElement('div');
+        card.className = 'pillar-card';
+        card.innerHTML = `
+            <div class="pillar-icon"><i class="${pillar.icon}"></i></div>
+            <h3 class="pillar-title">${pillar.title}</h3>
+            <p class="pillar-desc">${pillar.desc}</p>
+        `;
+        pillarsContainer.appendChild(card);
+    });
+}
+
+function renderPortfolioFilters(filters) {
+    const container = document.getElementById('portfolio-filters');
+    if (!container) return;
+
+    container.innerHTML = '';
+    const keys = Object.keys(filters);
+
+    keys.forEach(key => {
+        const btn = document.createElement('button');
+        btn.className = `filter-btn ${key === currentPortfolioFilter ? 'active' : ''}`;
+        btn.textContent = filters[key];
+        btn.setAttribute('data-filter', key);
+
+        btn.addEventListener('click', () => {
+            currentPortfolioFilter = key;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderPortfolioList(translations[currentLang].portfolio.projects);
+        });
+
+        container.appendChild(btn);
+    });
+}
+
+function renderPortfolioList(projects) {
+    const container = document.getElementById('portfolio-list');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const filtered = currentPortfolioFilter === 'all'
+        ? projects
+        : projects.filter(p => p.category === currentPortfolioFilter);
+
+    filtered.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+
+        const imgUrl = project.image || 'assets/images/header_laboratorio.png';
+
+        card.innerHTML = `
+            <div class="project-img-wrapper">
+                <img src="${imgUrl}" alt="${project.title}" class="project-img" loading="lazy">
+                ${project.badge ? `<span class="project-badge">${project.badge}</span>` : ''}
+            </div>
+            <div class="project-info">
+                <h3 class="project-title">${project.title}</h3>
+                <p class="project-summary">${project.desc}</p>
+                ${project.fullDesc ? `<p class="project-fulldesc">${project.fullDesc}</p>` : ''}
+
+                <div class="project-tags">
+                    ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+                
+                ${project.link ? `
+                    <div class="project-cta">
+                        <a href="${project.link}" target="_blank" class="project-link">
+                            ${currentLang === 'es' ? 'Ver Proyecto / Demo' : 'View Project / Demo'} <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
 function renderExperience(jobs) {
     const container = document.getElementById('experience-list');
+    if (!container) return;
     container.innerHTML = '';
 
     jobs.forEach(job => {
@@ -115,15 +241,40 @@ function renderExperience(jobs) {
     });
 }
 
-function renderEducation(education) {
-    const container = document.getElementById('education-list');
+function renderSkills(skills) {
+    const subtitleEl = document.getElementById('skills-subtitle');
+    const container = document.getElementById('skills-categories');
+    if (subtitleEl) subtitleEl.textContent = skills.subtitle;
+    if (!container) return;
+
     container.innerHTML = '';
 
-    // ========== TIMELINE 1: Academic Degrees ==========
+    skills.categories.forEach(cat => {
+        const card = document.createElement('div');
+        card.className = 'skill-domain-card';
+        card.innerHTML = `
+            <div class="domain-header">
+                <div class="domain-icon"><i class="${cat.icon}"></i></div>
+                <h3 class="domain-title">${cat.name}</h3>
+            </div>
+            <div class="domain-tags">
+                ${cat.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function renderEducation(education) {
+    const container = document.getElementById('education-list');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Degrees
     if (education.degrees && education.degrees.length > 0) {
         createCardSection(
             container,
-            currentLang === 'es' ? 'Formación Académica' : 'Academic Degrees',
+            currentLang === 'es' ? 'Títulos Universitarios & Especialización' : 'University Degrees & Postgrad',
             'fas fa-graduation-cap',
             education.degrees.map(degree => ({
                 ...degree,
@@ -136,7 +287,7 @@ function renderEducation(education) {
         );
     }
 
-    // ========== TIMELINE 2: Diplomas + Workshops (MERGED) ==========
+    // Diplomas & Workshops
     const diplomasAndWorkshops = [];
 
     if (education.diplomas) {
@@ -159,7 +310,7 @@ function renderEducation(education) {
             diplomasAndWorkshops.push({
                 ...workshop,
                 type: 'workshop',
-                typeLabel: currentLang === 'es' ? 'Taller' : 'Workshop',
+                typeLabel: currentLang === 'es' ? 'Taller / Curso' : 'Workshop',
                 title: workshop.name,
                 subtitle: workshop.institution,
                 details: workshop.hours,
@@ -172,24 +323,23 @@ function renderEducation(education) {
     if (diplomasAndWorkshops.length > 0) {
         createCardSection(
             container,
-            currentLang === 'es' ? 'Diplomados y Talleres' : 'Diplomas & Workshops',
+            currentLang === 'es' ? 'Diplomados y Especializaciones Cortas' : 'Diplomas & Continuing Education',
             'fas fa-award',
             diplomasAndWorkshops
         );
     }
 
-    // ========== TIMELINE 3: Platzi Courses (GROUPED ACCORDION) ==========
+    // Platzi Section
     if (education.platzi && education.platzi.length > 0) {
         createAccordionSection(
             container,
-            currentLang === 'es' ? 'Ruta Data Engineer - Platzi' : 'Data Engineer Path - Platzi',
+            currentLang === 'es' ? 'Ruta de Aprendizaje Profesional — Platzi' : 'Professional Learning Track — Platzi',
             'fas fa-laptop-code',
             education.platzi
         );
     }
 }
 
-// Helper function to create a Card section (replaces timeline)
 function createCardSection(container, title, icon, items) {
     const section = document.createElement('div');
     section.className = 'edu-section';
@@ -202,10 +352,9 @@ function createCardSection(container, title, icon, items) {
     const grid = document.createElement('div');
     grid.className = 'edu-grid';
 
-    // Sort by year
     items.sort((a, b) => {
-        const yearA = a.status === 'current' || a.year === 'En curso' || a.year === 'In Progress' ? 9999 : parseInt(a.year) || 0;
-        const yearB = b.status === 'current' || b.year === 'En curso' || b.year === 'In Progress' ? 9999 : parseInt(b.year) || 0;
+        const yearA = parseInt(a.year) || 0;
+        const yearB = parseInt(b.year) || 0;
         return yearB - yearA;
     });
 
@@ -218,22 +367,14 @@ function createCardSection(container, title, icon, items) {
     container.appendChild(section);
 }
 
-// Helper function to create modern cards
 function createModernCard(item) {
     const card = document.createElement('div');
     card.className = `edu-card ${item.type}`;
 
-    // Icon handling
     let iconClass = 'fas fa-certificate';
     if (item.type === 'degree') iconClass = 'fas fa-graduation-cap';
     else if (item.type === 'diploma') iconClass = 'fas fa-scroll';
     else if (item.type === 'workshop') iconClass = 'fas fa-tools';
-    else if (item.type === 'platzi') iconClass = 'fas fa-laptop-code';
-
-    // Badge Color Mapping
-    let badgeClass = 'default-badge';
-    if (item.type === 'degree') badgeClass = 'degree-badge';
-    else if (item.type === 'platzi') badgeClass = 'platzi-badge';
 
     card.innerHTML = `
         <div class="edu-card-header">
@@ -248,124 +389,99 @@ function createModernCard(item) {
             ${item.subtitle ? `<div class="edu-subtitle">${item.subtitle}</div>` : ''}
             
             <div class="edu-meta">
-                <span class="edu-type-badge ${badgeClass}">${item.typeLabel}</span>
+                <span class="edu-type-badge">${item.typeLabel}</span>
                 ${item.details ? `<span class="edu-detail"><i class="far fa-clock"></i> ${item.details}</span>` : ''}
             </div>
 
-            ${item.location ? `<div class="edu-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</div>` : ''}
-            ${item.thesis ? `<div class="edu-thesis" style="margin-top: 6px; font-size: 0.82rem; color: #d4a373; font-weight: 600;"><i class="fas fa-award"></i> ${item.thesis}</div>` : ''}
-            ${item.status === 'current' ? `<div class="edu-status-active"><span class="pulse-dot"></span> ${currentLang === 'es' ? 'En curso' : 'In Progress'}</div>` : ''}
+            ${item.thesis ? `<div class="edu-thesis" style="margin-top: 8px; font-size: 0.85rem; color: #10b981; font-weight: 600;"><i class="fas fa-medal"></i> ${item.thesis}</div>` : ''}
         </div>
     `;
 
     return card;
 }
 
-// Helper function to create the Accordion "Master Card"
 function createAccordionSection(container, title, icon, courses) {
     const section = document.createElement('div');
     section.className = 'edu-section';
 
-    // Section Title
     const sectionTitle = document.createElement('h3');
     sectionTitle.className = 'edu-section-title';
     sectionTitle.innerHTML = `<i class="${icon}"></i> ${title}`;
     section.appendChild(sectionTitle);
 
-    // The Master Card
     const accordionCard = document.createElement('div');
     accordionCard.className = 'edu-card accordion-card';
 
-    // Header (Always Visible)
-    const header = document.createElement('div');
-    header.className = 'accordion-header';
-    header.innerHTML = `
-        <div class="accordion-info">
-            <div class="edu-icon-box platzi">
-                <i class="fas fa-layer-group"></i>
+    accordionCard.innerHTML = `
+        <div class="accordion-header">
+            <div class="accordion-info">
+                <div class="edu-icon-box platzi">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="accordion-text">
+                    <div class="accordion-header-top">
+                        <h4 class="edu-title">Platzi Professional Career</h4>
+                        <span class="accordion-badge">${courses.length} Cursos Clave</span>
+                    </div>
+                    <div class="edu-subtitle" style="color: var(--accent-primary); font-size: 0.9rem;">
+                        ${currentLang === 'es' ? 'Data Engineering & AI Foundations' : 'Data Engineering & AI Foundations'}
+                    </div>
+                </div>
             </div>
-            <div class="accordion-text">
-                <div class="accordion-header-top">
-                    <h4 class="edu-title">Platzi Academy</h4>
-                    <span class="accordion-badge">${courses.length} Cursos</span>
-                </div>
-                <div class="edu-subtitle" style="color: var(--accent-primary); font-size: 0.9rem;">
-                    ${currentLang === 'es' ? 'Certificación Profesional Data Engineer' : 'Data Engineer Professional Certification'}
-                </div>
+            <div class="accordion-toggle">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
-        <div class="accordion-toggle">
-            <i class="fas fa-chevron-down"></i>
+        <div class="accordion-content">
+            <div class="course-list">
+                ${courses.map(c => `
+                    <div class="course-item">
+                        <i class="fas fa-check-circle course-check"></i>
+                        <div class="course-info">
+                            <span class="course-name">${c.name}</span>
+                            <span class="course-meta">${c.date} · ${c.hours}</span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
         </div>
     `;
 
-    // Content (Hidden by default)
-    const content = document.createElement('div');
-    content.className = 'accordion-content';
-
-    const list = document.createElement('div');
-    list.className = 'course-list';
-
-    courses.slice().reverse().forEach(course => { // Reverse to show newest first if typical list
-        const item = document.createElement('div');
-        item.className = 'course-item';
-        item.innerHTML = `
-            <i class="fas fa-check-circle course-check"></i>
-            <div class="course-info">
-                <span class="course-name">${course.name}</span>
-                <span class="course-meta">${course.date} · ${course.hours}</span>
-            </div>
-        `;
-        list.appendChild(item);
-    });
-
-    content.appendChild(list);
-
-    // Toggle Logic
+    const header = accordionCard.querySelector('.accordion-header');
     header.addEventListener('click', () => {
         accordionCard.classList.toggle('active');
     });
-
-    accordionCard.appendChild(header);
-    accordionCard.appendChild(content);
 
     section.appendChild(accordionCard);
     container.appendChild(section);
 }
 
-function renderCertifications(education) {
-    // This function is now deprecated as everything is in the timeline
-    // Keep it empty to avoid errors
-}
+function renderContact(contact) {
+    const subtitleEl = document.getElementById('contact-subtitle');
+    const container = document.getElementById('contact-details');
+    if (subtitleEl) subtitleEl.textContent = contact.subtitle;
+    if (!container) return;
 
-function renderPortfolio(projects) {
-    const container = document.getElementById('portfolio-list');
-    container.innerHTML = '';
-
-    projects.forEach(project => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
-
-        // Use local image if available, else placeholder
-        const imgUrl = project.image || `https://picsum.photos/seed/${project.title.replace(/\s/g, '')}/600/400`;
-
-        card.innerHTML = `
-            <div class="project-img-wrapper">
-                <img src="${imgUrl}" alt="${project.title}" class="project-img">
-            </div>
-            <div class="project-info">
-                <h3 class="project-title">${project.title}</h3>
-                <p style="margin: 0.5rem 0; color: var(--text-secondary); font-size: 0.9rem;">${project.desc}</p>
-                
-                ${project.fullDesc ? `<p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--glass-border); padding-top: 0.5rem;">${project.fullDesc}</p>` : ''}
-
-                <div class="project-tags">
-                    ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                </div>
-                
-                ${project.link ? `<div style="margin-top: 1rem;"><a href="${project.link}" target="_blank" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem; font-weight: 500;">Ver Proyecto <i class="fas fa-external-link-alt"></i></a></div>` : ''}
-            </div>
-        `;
-        container.appendChild(card);
-    });
+    container.innerHTML = `
+        <a href="mailto:fayderarroyo@gmail.com" class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <h3>${contact.email_label}</h3>
+            <p>fayderarroyo@gmail.com</p>
+        </a>
+        <a href="https://wa.me/573043826145" target="_blank" class="contact-item">
+            <i class="fab fa-whatsapp contact-icon"></i>
+            <h3>${contact.phone_label}</h3>
+            <p>+57 304 382 6145 / +57 300 780 4196</p>
+        </a>
+        <a href="https://www.linkedin.com/in/fayderarroyo/" target="_blank" class="contact-item">
+            <i class="fab fa-linkedin contact-icon"></i>
+            <h3>${contact.linkedin_label}</h3>
+            <p>linkedin.com/in/fayderarroyo</p>
+        </a>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <h3>${contact.location_label}</h3>
+            <p>${contact.location_val}</p>
+        </div>
+    `;
 }

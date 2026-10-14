@@ -2,118 +2,245 @@ const translations = {
     es: {
         nav: {
             about: "Sobre Mí",
-            skills: "Skills",
+            portfolio: "Casos de Éxito",
             experience: "Experiencia",
+            skills: "Stack Técnico",
             education: "Formación",
-            portfolio: "Proyectos",
             contact: "Contacto"
         },
         hero: {
             greeting: "Fayder Enrique<br><span class='highlight'>Arroyo Herazo</span>",
             role: "Solutions Architect & Analytics Engineer",
-            bio: "Ingeniero Industrial y Especialista en Analítica de Datos (Meritorio 4.8, Bilingüe C1). Más de 10 años integrando visión de negocio, arquitectura de datos en la nube y desarrollo de plataformas analíticas (SaaS / BI) para transformar operaciones de alto impacto.",
-            btn_cv: "Descargar<br>CV",
-            btn_contact: "Contáctame"
+            bio: "Ingeniero Industrial y Especialista en Analítica de Datos e Información con <b>Distinción Meritoria (4.8 unánime)</b>, bilingüe (<b>Inglés C1</b>). Más de 10 años diseñando arquitecturas de datos de punta a punta, automatización de pipelines ETL y plataformas analíticas en la nube (SaaS / BI) para transformar operaciones de alto impacto.",
+            btn_cv: "Descargar CV",
+            btn_projects: "Ver Casos de Éxito",
+            btn_contact: "Contactar",
+            stat_exp: "Años en Operaciones & Soluciones de Datos",
+            stat_grade: "Calificación Meritoria (Tesis Deceuninck)",
+            stat_audit: "COP Auditados en Finanzas & Nómina",
+            stat_lang: "Inglés Avanzado Profesional"
         },
         about: {
-            title: "Sobre Mí",
-            description: `Soy un profesional bilingüe (Inglés C1) especializado en ingeniería industrial, arquitectura de soluciones de datos y desarrollo de plataformas analíticas en la nube (SaaS / BI), con más de 10 años de experiencia uniendo la estrategia de operaciones con la ejecución técnica.
-            <br><br>
-            Diseño e implemento soluciones de datos de punta a punta: desde la extracción y automatización de pipelines ETL (Python, FastAPI, SQL) y modelado relacional en la nube (Supabase, PostgreSQL), hasta analítica predictiva y prescriptiva (Power BI/DAX, Prophet, XGBoost) y el despliegue de sistemas web en producción (Next.js, React).
-            <br><br>
-            Cuento con casos de éxito comprobados en operaciones reales: optimización de la cadena de suministro en manufactura multinacional (Trabajo Meritorio 4.8 en Deceuninck), desarrollo de plataformas multi-tenant para auditoría masiva de datos (+17.000M COP en Bioger), sistemas ATS con IA (FEPCO) y optimización de procesos reduciendo tiempos de 4 horas a 25 minutos.`
+            title: "Propuesta de Valor & Enfoque",
+            intro: "Combino más de una década de liderazgo en operaciones reales con capacidades técnicas avanzadas para diseñar, programar y desplegar soluciones de datos que eliminan ineficiencias y aceleran la toma de decisiones estratégicas.",
+            pillars: [
+                {
+                    icon: "fas fa-database",
+                    title: "Arquitectura de Datos & Cloud ETL",
+                    desc: "Diseño de tuberías de datos automatizadas y modelos relacionales en la nube (PostgreSQL, Supabase, FastAPI). Migración de flujos manuales en hojas de cálculo hacia bases de datos seguras y escalables bajo estándares de gobernanza."
+                },
+                {
+                    icon: "fas fa-chart-line",
+                    title: "Business Intelligence & Analítica Avanzada",
+                    desc: "Modelado tabular robusto en Power BI (DAX Avanzado), pronósticos estacionales (Prophet), algoritmos de Machine Learning (XGBoost) y modelado causal de elasticidad para optimización de precios y márgenes comerciales."
+                },
+                {
+                    icon: "fas fa-laptop-code",
+                    title: "Desarrollo de Plataformas SaaS & Web",
+                    desc: "Creación de aplicaciones web modernas de nivel empresarial (Next.js, React, TypeScript, Vercel). Arquitecturas multi-tenant con control de roles, organigramas interactivos y paneles gerenciales en tiempo real."
+                },
+                {
+                    icon: "fas fa-industry",
+                    title: "Ingeniería Industrial & Optimización",
+                    desc: "Visión integral de procesos: optimización de la cadena de suministro (Supply Chain), clasificación ABC de inventarios, auditoría financiera forense y reducción drástica de tiempos de procesamiento (de 4 horas a 25 minutos)."
+                }
+            ]
         },
         skills: {
-            title: "Skills & Tecnologías"
-        },
-        certifications: {
-            title: "Diplomados y Cursos"
+            title: "Stack Tecnológico & Competencias",
+            subtitle: "Herramientas y tecnologías dominadas agrupadas por dominio técnico",
+            categories: [
+                {
+                    name: "Data Engineering & Cloud Databases",
+                    icon: "fas fa-server",
+                    skills: ["SQL Avanzado", "PostgreSQL", "Supabase", "Pipelines ETL / ELT", "FastAPI (Python)", "REST APIs", "Power Query", "Data Lakehouse (Parquet)"]
+                },
+                {
+                    name: "Business Intelligence & DataViz",
+                    icon: "fas fa-chart-bar",
+                    skills: ["Power BI (DAX Avanzado)", "Modelado Tabular", "Streamlit", "Looker Studio", "KPIs Operativos (SLA/NPS)", "Excel Avanzado"]
+                },
+                {
+                    name: "Cloud Architecture & Full-Stack",
+                    icon: "fas fa-code",
+                    skills: ["Next.js (App Router)", "React & TypeScript", "Tailwind CSS", "Node.js", "Vercel Deployments", "Git & GitHub CI/CD", "Multi-Tenant SaaS"]
+                },
+                {
+                    name: "Data Science & Prescriptive Analytics",
+                    icon: "fas fa-brain",
+                    skills: ["Python (Pandas, NumPy)", "Prophet (Forecasting)", "XGBoost & Scikit-Learn", "Modelado Causal & Elasticidad", "Clasificación ABC", "Regresión OLS"]
+                }
+            ]
         },
         experience: {
-            title: "Experiencia Laboral",
+            title: "Experiencia Profesional & Consultoría",
             jobs: [
                 {
                     role: "Tech Lead & Arquitecto de Soluciones de Datos",
                     company: "Bioger S.A.S. (Ecosistema OrganiSaaS / Nexo)",
                     period: "Ene 2026 - Presente",
                     location: "Cartagena / Híbrido",
-                    desc: `• Diseño de arquitectura y despliegue multi-tenant en la nube (Next.js, Supabase, Vercel) para control operativo y analítica de capital humano.<br>
-                    • Auditoría y conciliación masiva de datos financieros y de nómina por +$17.000M COP, detectando inconsistencias normativas y parafiscales.<br>
-                    • Desarrollo de organigramas dinámicos y tableros analíticos de evaluación de desempeño y clima laboral en tiempo real.`
+                    desc: `• Arquitectura y despliegue en la nube de <b>OrganiSaaS</b> (Next.js, Supabase, Vercel): plataforma multi-tenant para control operativo y analítica de talento humano.<br>
+                    • Auditoría y conciliación masiva de datos financieros y de nómina por <b>+$17.000M COP</b>, identificando inconsistencias en parafiscales y conceptos normativos.<br>
+                    • Implementación de organigramas dinámicos en tiempo real, evaluaciones de desempeño y tableros analíticos de clima organizacional.`
                 },
                 {
                     role: "Consultor de Automatización de Procesos & ATS con IA",
                     company: "FEPCO S.A.S.",
                     period: "Jul 2026 - Presente",
                     location: "Cartagena / Remoto",
-                    desc: `• Arquitectura y puesta en producción en Vercel de <b>Nexo FEPCO Contratación</b>: plataforma ATS con motor de IA para pre-filtrado de candidatos y trazabilidad médica.<br>
-                    • Diseño del sistema de control operativo <b>Nexo Mantenimiento</b>, integrando datos de GLPI y tarjetas de seguridad para trazabilidad técnica.`
+                    desc: `• Diseño y despliegue en producción de <b>Nexo FEPCO Contratación</b> en Vercel: plataforma ATS con motor de IA para pre-filtrado de candidatos y trazabilidad de exámenes médicos.<br>
+                    • Desarrollo del sistema de control operativo <b>Nexo Mantenimiento</b>, integrando datos de incidentes GLPI y tarjetas de seguridad industrial.`
+                },
+                {
+                    role: "BI & Data Analyst (Remoto Internacional)",
+                    company: "Fox Ordering",
+                    period: "Ene 2026 - Abr 2026",
+                    location: "Remoto (EE.UU. / Latam)",
+                    desc: `• Extracción, limpieza y modelado de grandes volúmenes de datos transaccionales mediante SQL para identificar cuellos de botella operacionales.<br>
+                    • Construcción de dashboards ejecutivos monitoreando indicadores críticos de calidad de servicio (SLA de despacho, NPS, retención de restaurantes y tiempos de ciclo).<br>
+                    • Estandarización y control de versiones de modelos de datos mediante Git en equipo internacional.`
                 },
                 {
                     role: "Data Analyst / Market Research",
-                    company: "Corporación Unificada Nacional de Educación Superior (CUN)",
+                    company: "Corporación Unificada Nacional (CUN)",
                     period: "Feb 2026 - Ago 2026",
                     location: "Híbrido",
-                    desc: `• Diseño de investigaciones de mercado cuantitativas y cualitativas.<br>
-                    • Limpieza, integración y análisis estadístico de datos para generar insights.<br>
-                    • Desarrollo de reportes analíticos y dashboards para la toma de decisiones.`
+                    desc: `• Diseño y ejecución de investigaciones cuantitativas y cualitativas de mercado para prospección académica.<br>
+                    • Modelado estadístico y desarrollo de dashboards interactivos para soporte directo a decisiones de expansión institucional.`
                 },
                 {
-                    role: "Asesor de Innovación Tecnológica y Gestión de Infraestructura",
+                    role: "Asesor en Innovación Tecnológica & BI",
                     company: "IPS SYSO Empresarial S.A.S.",
                     period: "Sep 2025 - Dic 2025",
                     location: "Cartagena, Colombia",
-                    desc: `• Liderazgo de proyectos de innovación tecnológica para optimizar la eficiencia operativa.<br>
-                    • Desarrollo de tableros de control y automatización de reportes mediante Power BI y Looker Studio.<br>
-                    • Mantenimiento y aseguramiento de la disponibilidad técnica y de infraestructura de la empresa.<br>
-                    • Integración y análisis de datos de sistemas e infraestructura operativa.`
+                    desc: `• Liderazgo de la transformación digital de la operación de salud ocupacional; automatización de reportes mediante Power BI y Looker Studio.<br>
+                    • Integración de registros individuales de prestación de servicios (RIPS), infraestructura técnica y control presupuestal.`
                 },
                 {
-                    role: "Data Analyst / Business Intelligence Analyst",
-                    company: "Fox Ordering",
-                    period: "Ene 2026 - Abr 2026",
-                    location: "Remoto / Híbrido",
-                    desc: `• Creación, mantenimiento y optimización de reportes, dashboards e indicadores clave (KPIs) operativos.<br>
-                    • Análisis de grandes volúmenes de datos con SQL para identificar tendencias y cuellos de botella.<br>
-                    • Gestión y control de información en Excel avanzado asegurando trazabilidad de los datos.<br>
-                    • Documentación y control de versiones de reportes mediante Git de forma colaborativa.`
-                },
-                {
-                    role: "Analista de Planeación Financiera de Datos",
-                    company: "3 Castillos",
+                    role: "Analista de Planeación Financiera & Datos",
+                    company: "Molinos 3 Castillos",
                     period: "Abr 2024 - Sep 2025",
-                    desc: `• Análisis detallados de datos financieros aplicando métodos y herramientas estadísticas avanzadas.<br>
-                    • Automatización de recolección y transformación de datos con Excel Power Query.<br>
-                    • Mantenimiento y creación de dashboards financieros interactivos en Power BI.<br>
-                    • Proyección de desempeño mediante presupuestos y previsiones estadísticas.`
+                    location: "Cartagena",
+                    desc: `• Automatización de extracción y consolidación de datos contables y financieros mediante Excel Power Query y Power BI.<br>
+                    • Modelado de proyecciones estadísticas para presupuestos anuales y optimización de flujos de caja operativos.`
                 },
                 {
-                    role: "Supervisor de Operaciones",
-                    company: "Credi Jamar S.A.",
+                    role: "Supervisor de Operaciones & Eficiencia Operativa (9 años)",
+                    company: "CREDI JAMAR S.A.",
                     period: "Ene 2015 - Ene 2024",
-                    desc: `• Garantizar y monitorear las ejecuciones del PEC (plan estratégico de cobranza).<br>
-                    • Cumplimiento de metas de productividad y gestión de personal a cargo.<br>
-                    • Diseño e implementación de dashboard de control interno en Power BI y Excel.<br>
-                    • Optimización de procesos: reducción de tiempos de generación de cuentas de 4 horas a 25 min.`
+                    location: "Cartagena",
+                    desc: `• Liderazgo directo de equipos operativos (hasta 7 especialistas) en ejecución del Plan Estratégico de Cobranza y cumplimiento de metas.<br>
+                    • Diseñó e implementó el primer dashboard analítico en Power BI de la operación, <b>reduciendo el tiempo del proceso de 4 horas a tan solo 25 minutos</b>.<br>
+                    • Optimización del ruteo logístico de servicios de crédito basado en analítica de efectividad territorial y cobertura geográfica.`
                 },
                 {
-                    role: "Analista de Cartera",
-                    company: "Credi Jamar S.A.",
+                    role: "Analista Senior de Cartera & Riesgo Crediticio (6.5 años)",
+                    company: "CREDI JAMAR S.A.",
                     period: "Jul 2008 - Dic 2014",
-                    desc: `• Recuperación de cartera vencida mediante contacto directo y negociación.<br>
-                    • Gestión de PQR y seguimiento a quejas sobre consignaciones no aplicadas.<br>
-                    • Autorización de descuentos y análisis de procesos de aprobación de crédito.`
+                    location: "Cartagena",
+                    desc: `• Recuperación estratégica de cartera vencida masiva, auditoría a procesos de aprobación crediticia y modelado de patrones de mora.`
+                }
+            ]
+        },
+        portfolio: {
+            title: "Casos de Éxito & Plataformas Desplegadas",
+            filters: {
+                all: "Todos",
+                enterprise: "Enterprise & SaaS",
+                analytics: "BI & Analítica Predictiva",
+                tools: "Operaciones & Datos"
+            },
+            projects: [
+                {
+                    category: "enterprise",
+                    badge: "Distinción Meritoria 4.8",
+                    title: "Optimización de Cadena de Suministro — Deceuninck Colombia",
+                    desc: "Sistema web analítico y arquitectura ETL cloud para control de inventarios, demanda de planta y logística aduanera.",
+                    fullDesc: "<b>Trabajo de Grado Meritorio (Calificación 4.8 unánime - Resolución No. 048)</b> en multinacional de manufactura. Migración de macros VBA en Excel hacia arquitectura cloud. <br>⚙️ <b>Arquitectura:</b> FastAPI (Python) + PostgreSQL (Supabase) + React (Vite). <br>📊 <b>Analítica:</b> Diagnóstico descriptivo de demanda histórica, clasificación ABC ponderada y monitoreo aduanero en tiempo real. <br>🔒 <b>Gobernanza:</b> Anonimización de datos bajo Ley 1581.",
+                    tags: ["FastAPI", "PostgreSQL", "Supabase", "React", "ETL", "Supply Chain"],
+                    image: "assets/images/schema_lab_clin.jpg"
+                },
+                {
+                    category: "enterprise",
+                    badge: "Enterprise Multi-Tenant",
+                    title: "OrganiSaaS & Nexo Bioger — Ecosistema de Gestión y Auditoría",
+                    desc: "Plataforma SaaS multi-tenant para auditoría masiva de nómina (+$17.000M COP), organigramas dinámicos y evaluación de desempeño.",
+                    fullDesc: "Plataforma empresarial desplegada en Vercel con arquitectura Supabase Multi-Tenant. Incluye panel SuperAdmin, gestión por empresas, <b>auditoría forense de nómina y parafiscales sobre +$17.000M COP</b> y organigrama reactivo en tiempo real con zoom interactivo.",
+                    tags: ["Next.js", "React 19", "Supabase Realtime", "Vercel", "Tailwind CSS"],
+                    link: "https://nexo-demo-two.vercel.app/login",
+                    image: "assets/images/nexo-logo.jpg"
+                },
+                {
+                    category: "enterprise",
+                    badge: "ATS con Inteligencia Artificial",
+                    title: "NEXO FEPCO — Plataforma ATS & Centro de Mantenimiento",
+                    desc: "Sistema de atracción de talento con IA, seguimiento de exámenes médicos y centro de control operativo de mantenimiento.",
+                    fullDesc: "Suite operativa completa para FEPCO. Plataforma ATS desplegada en Vercel con motor de filtrado inteligente de perfiles y seguimiento de citas médicas ocupacionales. Incluye módulo de mantenimiento industrial integrando tickets GLPI y tarjetas de seguridad.",
+                    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "IA Engine"],
+                    link: "https://fepco-nexo-teal.vercel.app/",
+                    image: "assets/images/gestion_humana.png"
+                },
+                {
+                    category: "analytics",
+                    badge: "Analítica Prescriptiva B2B",
+                    title: "Revenue Management Command Center",
+                    desc: "Herramienta prescriptiva para optimización dinámica de precios, simulación de demanda y prevención de riesgo financiero.",
+                    fullDesc: "Sistema B2B que modela la elasticidad precio-demanda mediante regresión Log-Log (-2.08) y proyecciones estacionales con Prophet y XGBoost. Ha permitido simular escenarios de fijación de precios previniendo riesgos comerciales por $797M COP.",
+                    tags: ["Python", "Streamlit", "Prophet", "XGBoost", "Modelado Causal", "Plotly"],
+                    link: "https://tableroestrategicofinanciero.streamlit.app/",
+                    image: "assets/images/revenue_command_center.png"
+                },
+                {
+                    category: "enterprise",
+                    badge: "Command Center SG-SST",
+                    title: "Sdavila Grupo Asesores — Portal Web & Command Center",
+                    desc: "Portal corporativo y sistema centralizado para gestión documental de clientes, trazabilidad y auditoría de SG-SST.",
+                    fullDesc: "Desarrollo integral de arquitectura web y centro de control operativo para la consultora Sdavila. Permite a los clientes corporativos subir, consultar y auditar la trazabilidad de sus requisitos de Seguridad y Salud en el Trabajo con almacenamiento seguro en la nube.",
+                    tags: ["React", "Vite", "Supabase", "Tailwind CSS", "SG-SST"],
+                    link: "https://sdavilagrupoasesores.com",
+                    image: "assets/images/header_laboratorio.png"
+                },
+                {
+                    category: "analytics",
+                    badge: "Inteligencia Comercial",
+                    title: "PharmaLife BI & Commercial Forecasting",
+                    desc: "Tablero ejecutivo interactivo de analítica predictiva y diagnóstico de ventas para distribución farmacéutica.",
+                    fullDesc: "Plataforma analítica con modelos econométricos OLS y algoritmos de proyección temporal Prophet para anticipar rotación de producto, desviaciones de margen y cumplimiento de cuotas comerciales.",
+                    tags: ["Streamlit", "Python", "Prophet", "OLS Regression", "DataViz"],
+                    link: "https://ventaspharmalife.streamlit.app/",
+                    image: "assets/images/gestion_humana.png"
+                },
+                {
+                    category: "analytics",
+                    badge: "End-to-End BI",
+                    title: "SpaceParts — Arquitectura BI Completa",
+                    desc: "Pipeline ETL en Python con datasets Parquet, modelado tabular en estrella y tableros en Power BI con métricas de rentabilidad y OTD.",
+                    fullDesc: "Solución completa de analítica de datos: extracción y transformación automatizada de millones de registros a formato columnar Parquet, modelado de hechos y dimensiones en Power BI (DAX Avanzado) y tableros ejecutivos.",
+                    tags: ["Power BI", "Python", "ETL", "Parquet", "DAX", "Git Flow"],
+                    link: "https://spaceparts-dashboard-report.streamlit.app/",
+                    image: "assets/images/spaceparts-1.png"
+                },
+                {
+                    category: "tools",
+                    badge: "Gestión Operativa",
+                    title: "Red de Laboratorios Clínicos — Gestión Domiciliaria",
+                    desc: "Sistema web multi-zona para optimización de rutas y trazabilidad de toma de muestras a domicilio.",
+                    fullDesc: "Dashboard operativo desarrollado en React + Vite con backend relacional en Supabase (PostgreSQL), optimizando la programación de visitas y el flujo de trabajo del personal asistencial en campo.",
+                    tags: ["React", "Supabase", "PostgreSQL", "Tailwind CSS", "Vercel"],
+                    link: "laboratorio.html",
+                    image: "assets/images/header_laboratorio.png"
                 }
             ]
         },
         education: {
-            title: "Formación Académica",
+            title: "Formación Académica & Reconocimientos",
             degrees: [
                 {
                     degree: "Especialización en Analítica de Datos e Información",
                     institution: "Fundación Universitaria Tecnológico Comfenalco",
                     year: "2026",
-                    thesis: 'Trabajo de Grado Meritorio: "Sistema de Analítica Descriptiva y Automatización de Procesos ETL para la Optimización de la Cadena de Suministro en Deceuninck Colombia SAS"'
+                    thesis: '🏆 Trabajo de Grado Meritorio (Calificación 4.8 unánime - Resolución No. 048): "Sistema de Analítica Descriptiva y Automatización de Procesos ETL para la Optimización de la Cadena de Suministro en Deceuninck Colombia SAS"'
                 },
                 {
                     degree: "Ingeniería Industrial",
@@ -137,21 +264,20 @@ const translations = {
                     institution: "Fundación Universitaria Tecnológico Comfenalco",
                     hours: "120 horas",
                     location: "Cartagena",
-                    year: "2021",
-                    month: "mayo"
-                },
-                {
-                    name: "Microsoft Power BI",
-                    institution: "Universidad de Cataluña",
-                    duration: "12 semanas",
-                    location: "Modalidad virtual",
                     year: "2021"
                 },
                 {
-                    name: "Análisis de Datos",
+                    name: "Microsoft Power BI Specialist",
+                    institution: "Universidad de Cataluña",
+                    duration: "12 semanas",
+                    location: "Virtual",
+                    year: "2021"
+                },
+                {
+                    name: "Análisis de Datos & BI",
                     institution: "Universidad Tecnológica de Bolívar (MINTIC)",
                     duration: "12 semanas",
-                    location: "Modalidad presencial",
+                    location: "Cartagena",
                     year: "2024"
                 }
             ],
@@ -161,207 +287,116 @@ const translations = {
                     institution: "Universidad de Cataluña",
                     hours: "40 horas",
                     location: "Cartagena",
-                    year: "2021",
-                    month: "junio"
+                    year: "2021"
                 },
                 {
                     name: "Herramientas de Dirección",
                     institution: "Universidad Pontificia Javeriana",
                     hours: "32 horas",
                     location: "Bogotá",
-                    year: "2020",
-                    month: "diciembre"
+                    year: "2020"
                 }
             ],
             platzi: [
-                {
-                    name: "Data Science e Inteligencia Artificial",
-                    date: "13 sept. 2022",
-                    hours: "14 h"
-                },
-                {
-                    name: "Fundamentos de Matemáticas",
-                    date: "18 sept. 2022",
-                    hours: "13 h"
-                },
-                {
-                    name: "Fundamentos de Ingeniería de Software",
-                    date: "21 sept. 2022",
-                    hours: "16 h"
-                },
-                {
-                    name: "Análisis de Negocios para Ciencia de Datos",
-                    date: "14 sept. 2022",
-                    hours: "10 h"
-                },
-                {
-                    name: "Python: Comprehensions, Funciones y Manejo de Errores",
-                    date: "19 ene. 2023",
-                    hours: "32 h"
-                },
-                {
-                    name: "Entorno de Trabajo para Ciencia de Datos con Jupyter Notebooks y Anaconda",
-                    date: "8 oct. 2022",
-                    hours: "18 h"
-                }
-            ]
-        },
-        portfolio: {
-            title: "Proyectos Destacados",
-            projects: [
-                {
-                    title: "Dashboard Analítico Supply Chain & ETL - Deceuninck",
-                    desc: "Sistema analítico web y motor ETL para optimización de inventarios y demanda de planta.",
-                    fullDesc: "<b>Trabajo de Grado Meritorio</b> para optar al título de Especialista en Analítica de Datos. Migración de macros VBA en Excel a una arquitectura moderna en la nube. <br>⚙️ <b>Arquitectura:</b> FastAPI (Python) + PostgreSQL (Supabase) + React (Vite). <br>📊 <b>Analítica:</b> Análisis Descriptivo/Diagnóstico de demanda histórica, clasificación de inventario ABC ponderado y seguimiento logístico de nacionalizaciones y faltantes en tiempo real. <br>🔒 <b>Compliance:</b> Anonimización según Ley 1581.",
-                    tags: ["FastAPI", "React", "PostgreSQL", "Supabase", "Pandas", "ETL", "Vite"],
-                    image: "https://picsum.photos/seed/deceuninck/600/400"
-                },
-                {
-                    title: "Revenue Command Center - Analítica Prescriptiva",
-                    desc: "Sistema de Revenue Management B2B para optimización de precios y márgenes.",
-                    fullDesc: "Herramienta de <b>Analítica Prescriptiva</b> que transforma la estrategia de precios en commodities. Elimina la incertidumbre mediante modelado causal avanzado. <br>📊 <b>Stack Técnico:</b> Regresión Log-Log (Elasticidad), Prophet (Forecast) y XGBoost. <br>💡 <b>Impacto Negocio:</b> Identificación de elasticidad crítica (-2.08) y prevención de riesgos por $797M.",
-                    tags: ["Python", "Streamlit", "Plotly", "Prophet", "XGBoost", "Causal Modeling"],
-                    link: "https://tableroestrategicofinanciero.streamlit.app/",
-                    image: "assets/images/revenue_command_center.png"
-                },
-                {
-                    title: "PharmaLife BI Dashboard",
-                    desc: "Dashboard ejecutivo interactivo para análisis predictivo y operativo.",
-                    fullDesc: "Plataforma de inteligencia de negocios para Laboratorios PharmaLife, desarrollada con <b>Antigravity AI</b>. <br>📈 <b>Modelado:</b> Prophet, Elasticidad OLS. <br>📊 <b>Visualización:</b> Streamlit, Plotly interactivo con branding corporativo completo.",
-                    tags: ["Streamlit", "Python", "Prophet", "Antigravity"],
-                    link: "https://ventaspharmalife.streamlit.app/",
-                    image: "https://picsum.photos/seed/pharma/600/400"
-                },
-                {
-                    title: "Alegra BI Challenge - Análisis de Paridad",
-                    desc: "Plataforma de Business Intelligence interactiva para el análisis de representación femenina.",
-                    fullDesc: "Dashboard estilo SaaS desarrollado en Python. <br>📊 <b>Modelado:</b> Scikit-Learn (Regresión Lineal) para predicción de años hacia la paridad. <br>📈 <b>Visualización:</b> Streamlit, Pandas y Plotly interactivo. <br>🚀 <b>Impacto:</b> Benchmarking global y alertas de retroceso automáticas.",
-                    tags: ["Python", "Streamlit", "Scikit-Learn", "BI"],
-                    link: "https://alegra-bi-dashboard.streamlit.app/",
-                    image: "https://picsum.photos/seed/alegra/600/400"
-                },
-                {
-                    title: "Laboratorio Clínico - Gestión de Servicios a Domicilio",
-                    desc: "Sistema de gestión logística y clínica integrando PostgreSQL (Supabase) y React.",
-                    fullDesc: "Sistema de gestión para <b>Red de Laboratorios Clínicos</b>. Optimización de servicios domiciliarios. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) con arquitectura multi-zona. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS para dashboard operativo. <br>🚀 <b>Infraestructura:</b> Despliegue continuo en Vercel.",
-                    tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
-                    link: "laboratorio.html",
-                    image: "assets/images/header_laboratorio.png"
-                },
-                {
-                    title: "NEXO FEPCO - Centro de Seguimiento y Control de Vacantes",
-                    desc: "Plataforma integral de inteligencia operacional y analítica prescriptiva para LATAM.",
-                    fullDesc: "Centro de Comando Geográfico Unificado para monitorear vacantes, métricas de candidatos y riesgo de rotación con IA. <br>🗺️ <b>Mapas:</b> Renderizado vectorial detallado de Colombia y LATAM. <br>💻 <b>Stack Técnico:</b> Next.js, TypeScript, Tailwind CSS, Supabase, D3 Geo.",
-                    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "D3 Geo"],
-                    link: "https://fepco-nexo-teal.vercel.app/",
-                    image: "https://picsum.photos/seed/fepco/600/400"
-                },
-                {
-                    title: "Talent Hub Enterprise - Nexo Bioger",
-                    desc: "Plataforma web integral (SPA) para gestión de RRHH y análisis financiero.",
-                    fullDesc: "Sistema de gestión con <b>Organigrama Dinámico</b> en tiempo real. Incluye <b>análisis financiero forense</b> de fugas por accidentes de trabajo y sobrecostos por reprocesos con horas extras. <br>🔐 <b>Seguridad:</b> Autenticación y permisos granulares con Supabase. <br>💻 <b>Stack Técnico:</b> React 19, Vite, Tailwind CSS v4, Recharts, Supabase Realtime.",
-                    tags: ["React 19", "Vite", "Supabase Realtime", "Tailwind CSS v4"],
-                    link: "https://nexo-demo-two.vercel.app/login",
-                    image: "assets/images/nexo-logo.jpg"
-                },
-                {
-                    title: "Plataforma de Analítica y Gestión Humana",
-                    desc: "Single Page Application (SPA) Enterprise para Gestión de Talento.",
-                    fullDesc: "Solución integral desarrollada a la medida para Gestión Humana. Funciona como un Centro de Control Estratégico para monitorear KPIs sobre salud organizacional, impacto financiero y retención. <br>📊 <b>Módulos:</b> Dashboard Ejecutivo, Impacto Financiero, Salud Organizacional, Atracción de Talento. <br>💻 <b>Stack Técnico:</b> React 18, TypeScript, Vite, Tailwind CSS, Recharts.",
-                    tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS"],
-                    link: "https://talentohumanoctg.vercel.app/",
-                    image: "assets/images/gestion_humana.png"
-                },
-                {
-                    title: "CUN - Ecosistema de Investigación de Mercados",
-                    desc: "Plataforma integral con chatbot, gestión de WhatsApp y scraping de aplicaciones.",
-                    fullDesc: "Herramienta avanzada de análisis desarrollada para automatizar la extracción de datos. <br>🤖 <b>Scraping & NLP:</b> Análisis detallado del contenido de aplicaciones mediante comentarios y descripciones. <br>💬 <b>Chatbot:</b> Motor de gestión de interacciones vía WhatsApp. <br>🚀 <b>Despliegue:</b> Arquitectura backend robusta (Node/Python).",
-                    tags: ["Web Scraping", "NLP", "Chatbot", "Node.js"],
-                    image: "https://picsum.photos/seed/cun_market/600/400"
-                },
-                {
-                    title: "PLAUD & HP Analytics",
-                    desc: "Dashboards analíticos para control operativo y automatización de reportes.",
-                    fullDesc: "Sistemas desarrollados en conjunto con <b>Antigravity AI</b> para optimizar el análisis de grandes volúmenes de datos. <br>⚙️ <b>Gestión:</b> Integración de automatizaciones y diseño de interfaces en Python/PyQt6.",
-                    tags: ["Python", "Automation", "Antigravity"],
-                    image: "https://picsum.photos/seed/plaud/600/400"
-                },
-                {
-                    title: "Dashboard de Innovación y Operaciones – IPS SYSO",
-                    desc: "Digitalización de reportes administrativos, integración de RIPS y monitoreo de indicadores operativos.",
-                    fullDesc: "Sistema integral de Business Intelligence para el sector salud. <br>📊 <b>Dashboards:</b> Monitoreo de indicadores de desempeño y productividad en tiempo real. <br>🏥 <b>RIPS:</b> Digitalización de procesos de registro individual de prestación de servicios. <br>⚙️ <b>Infraestructura:</b> Propuestas de mejora en conectividad y procesos internos.",
-                    tags: ["Power BI", "Healthcare", "Process Optimization"],
-                    image: "https://picsum.photos/seed/ipssyso/600/400"
-                },
-                {
-                    title: "SpaceParts – Proyecto BI End-to-End",
-                    desc: "ETL en Python, modelado de datos en estrella y dashboards Power BI con métricas de rentabilidad y OTD.",
-                    fullDesc: "Proyecto técnico que integra el ciclo completo de analítica de datos. <br>⚙️ <b>ETL:</b> Python (Pandas/PyArrow) para datasets Parquet. <br>📊 <b>Modelado:</b> Power BI/DAX (FactSales, DimProduct, etc). <br>💾 <b>Control:</b> GitHub + VS Code.",
-                    tags: ["Power BI", "Python", "ETL", "Git Flow"],
-                    link: "https://spaceparts-dashboard-report.streamlit.app/",
-                    image: "assets/images/spaceparts-1.png",
-                    images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
-                },
-                {
-                    title: "Estadísticas Vitales DANE – Análisis Académico",
-                    desc: "Limpieza y análisis estadístico de microdatos de nacimientos mediante Python y exportación en formato Parquet.",
-                    fullDesc: "Análisis de datos públicos del DANE para proyecto académico. <br>🐍 <b>Python:</b> Pandas, NumPy, Matplotlib para procesamiento y visualización. <br>📊 <b>Análisis:</b> Estadísticas descriptivas de nacimientos en Colombia. <br>💾 <b>Formato:</b> Exportación optimizada en Parquet.",
-                    tags: ["Python", "Data Analysis", "Parquet"],
-                    image: "https://picsum.photos/seed/dane/600/400"
-                },
-                {
-                    title: "Babyshower - Ian Gabriel",
-                    desc: "Aplicación web interactiva para lista de regalos de Babyshower.",
-                    fullDesc: "Experiencia digital responsiva construida con <b>Antigravity AI</b>. <br>👶 <b>UX/UI:</b> Diseño con scroll horizontal, animaciones dinámicas y agrupamiento por categorías de regalos. <br>🎨 <b>Frontend:</b> HTML, CSS moderno, JavaScript.",
-                    tags: ["Web", "UI/UX", "Antigravity"],
-                    image: "https://picsum.photos/seed/baby/600/400"
-                }
+                { name: "Ruta Profesional Data Engineer & AI", date: "2022 - 2023", hours: "100+ h" },
+                { name: "Python: Funciones, Comprehensions & Manejo de Errores", date: "2023", hours: "32 h" },
+                { name: "Análisis de Negocios para Ciencia de Datos", date: "2022", hours: "10 h" },
+                { name: "Fundamentos de Ingeniería de Software", date: "2022", hours: "16 h" }
             ]
         },
         contact: {
-            title: "Contacto"
+            title: "Hablemos de Datos y Negocio",
+            subtitle: "¿Tienes un desafío operativo, una cadena de suministro que necesita orden o requieres una solución de analítica a medida?",
+            email_label: "Correo Electrónico",
+            phone_label: "Llamada / WhatsApp",
+            location_label: "Ubicación & Disponibilidad",
+            location_val: "Cartagena / Bogotá / Remoto Global",
+            linkedin_label: "Perfil LinkedIn"
         }
     },
     en: {
         nav: {
             about: "About Me",
-            skills: "Skills",
+            portfolio: "Case Studies",
             experience: "Experience",
+            skills: "Tech Stack",
             education: "Education",
-            portfolio: "Projects",
             contact: "Contact"
         },
         hero: {
             greeting: "Fayder Enrique<br><span class='highlight'>Arroyo Herazo</span>",
             role: "Solutions Architect & Analytics Engineer",
-            bio: "Bilingual (English C1) Industrial Engineer and Data Analytics Specialist (Meritorious 4.8). 10+ years combining business strategy, cloud data architecture, and full-stack analytics platforms (SaaS / BI) to optimize mission-critical operations.",
-            btn_cv: "Download<br>CV",
-            btn_contact: "Contact Me"
+            bio: "Bilingual (<b>English C1</b>) Industrial Engineer and Data Analytics Specialist awarded <b>Meritorious Distinction (Unanimous 4.8/5.0)</b>. 10+ years designing end-to-end data architectures, automated ETL pipelines, and cloud analytics platforms (SaaS / BI) to transform mission-critical operations.",
+            btn_cv: "Download Resume",
+            btn_projects: "View Case Studies",
+            btn_contact: "Get in Touch",
+            stat_exp: "Years in Operations & Data Solutions",
+            stat_grade: "Meritorious Thesis Award (Deceuninck)",
+            stat_audit: "COP Audited in Finance & Payroll",
+            stat_lang: "Full Professional Bilingual Proficiency"
         },
         about: {
-            title: "About Me",
-            description: `I am a bilingual (English C1) professional specializing in industrial engineering, enterprise data solutions architecture, and cloud analytics platforms (SaaS / BI), with over 10 years of experience bridging business strategy and technical execution.
-            <br><br>
-            I architect and deploy end-to-end data solutions: from automated ETL pipelines (Python, FastAPI, SQL) and cloud relational modeling (Supabase, PostgreSQL), to predictive and prescriptive analytics (Power BI/DAX, Prophet, XGBoost) and production web applications (Next.js, React).
-            <br><br>
-            Demonstrated track record of high-impact delivery: supply chain optimization for multinational manufacturing (Meritorious Thesis Award 4.8 at Deceuninck), multi-tenant financial audit platforms covering +$17B COP (Bioger), AI-powered ATS deployments (FEPCO), and operational cycle-time reduction from 4 hours to 25 minutes.`
+            title: "Value Proposition & Strategy",
+            intro: "I combine more than a decade of operational leadership with full-stack software and data engineering to architect solutions that eradicate manual inefficiencies and empower executive decision-making.",
+            pillars: [
+                {
+                    icon: "fas fa-database",
+                    title: "Data Architecture & Cloud ETL",
+                    desc: "Automated data pipelines and relational cloud modeling (PostgreSQL, Supabase, FastAPI). Migrating fragile spreadsheet workflows into robust, compliant, and scalable cloud databases."
+                },
+                {
+                    icon: "fas fa-chart-line",
+                    title: "Business Intelligence & Advanced Analytics",
+                    desc: "Enterprise tabular modeling in Power BI (Advanced DAX), seasonal demand forecasting (Prophet), Machine Learning (XGBoost), and causal price elasticity modeling for C-suite decision support."
+                },
+                {
+                    icon: "fas fa-laptop-code",
+                    title: "SaaS & Web Platform Engineering",
+                    desc: "Engineering modern enterprise applications (Next.js, React, TypeScript, Vercel). Multi-tenant architectures featuring role-based access, real-time dynamic org charts, and executive KPI hubs."
+                },
+                {
+                    icon: "fas fa-industry",
+                    title: "Industrial Engineering & Operations",
+                    desc: "Deep operational insight: supply chain optimization, ABC inventory classification, forensic payroll data audit, and radical reporting cycle-time reduction (from 4 hours to just 25 minutes)."
+                }
+            ]
         },
         skills: {
-            title: "Skills & Technologies"
-        },
-        certifications: {
-            title: "Diplomas & Courses"
+            title: "Technical Stack & Core Competencies",
+            subtitle: "Battle-tested tools and frameworks organized by engineering domain",
+            categories: [
+                {
+                    name: "Data Engineering & Cloud Databases",
+                    icon: "fas fa-server",
+                    skills: ["Advanced SQL", "PostgreSQL", "Supabase", "ETL / ELT Pipelines", "FastAPI (Python)", "REST APIs", "Power Query", "Data Lakehouse (Parquet)"]
+                },
+                {
+                    name: "Business Intelligence & DataViz",
+                    icon: "fas fa-chart-bar",
+                    skills: ["Power BI (Advanced DAX)", "Tabular Modeling", "Streamlit", "Looker Studio", "Operational KPIs (SLA/NPS)", "Advanced Excel"]
+                },
+                {
+                    name: "Cloud Architecture & Full-Stack",
+                    icon: "fas fa-code",
+                    skills: ["Next.js (App Router)", "React & TypeScript", "Tailwind CSS", "Node.js", "Vercel Deployments", "Git & GitHub CI/CD", "Multi-Tenant SaaS"]
+                },
+                {
+                    name: "Data Science & Prescriptive Analytics",
+                    icon: "fas fa-brain",
+                    skills: ["Python (Pandas, NumPy)", "Prophet (Forecasting)", "XGBoost & Scikit-Learn", "Causal Elasticity Modeling", "ABC Classification", "OLS Regression"]
+                }
+            ]
         },
         experience: {
-            title: "Professional Experience",
+            title: "Professional Experience & Consulting",
             jobs: [
                 {
                     role: "Tech Lead & Data Solutions Architect",
                     company: "Bioger S.A.S. (OrganiSaaS & Nexo Ecosystem)",
                     period: "Jan 2026 - Present",
                     location: "Cartagena / Hybrid",
-                    desc: `• Architected and deployed multi-tenant cloud platform (Next.js, Supabase, Vercel) for operational oversight and human capital analytics.<br>
-                    • Audited and cross-reconciled large-scale financial and payroll datasets totaling +$17B COP, pinpointing statutory and tax variances.<br>
+                    desc: `• Architected and deployed multi-tenant cloud platform (Next.js, Supabase, Vercel) for operational control and human capital analytics.<br>
+                    • Audited and cross-reconciled large-scale financial and payroll datasets totaling <b>+$17B COP</b>, identifying statutory discrepancies and tax variances.<br>
                     • Engineered real-time dynamic organizational charts, employee performance evaluation pipelines, and climate survey dashboards.`
                 },
                 {
@@ -373,83 +408,167 @@ const translations = {
                     • Designed <b>Nexo Maintenance</b> module, integrating GLPI incident records and industrial safety cards for operational field oversight.`
                 },
                 {
-                    role: "Data Analyst / Market Research",
-                    company: "Corporación Unificada Nacional de Educación Superior (CUN)",
-                    period: "Feb 2026 - Aug 2026",
-                    location: "Hybrid",
-                    desc: `• Designing quantitative and qualitative market research studies.<br>
-                    • Data cleaning, integration, and statistical analysis to generate actionable insights.<br>
-                    • Development of analytical reports and dashboards for decision-making support.`
+                    role: "BI & Data Analyst (International Remote)",
+                    company: "Fox Ordering",
+                    period: "Jan 2026 - Apr 2026",
+                    location: "Remote (US / Latam)",
+                    desc: `• Modeled and extracted massive relational databases using SQL to pinpoint operational bottlenecks and supply chain inefficiencies.<br>
+                    • Engineered executive KPI dashboards tracking critical operational metrics (delivery SLA, NPS, churn, and cycle times).<br>
+                    • Maintained standardized data pipelines and repository documentation using Git.`
                 },
                 {
-                    role: "Technology Innovation and Infrastructure Management Advisor",
+                    role: "Data Analyst / Market Research",
+                    company: "Corporación Unificada Nacional (CUN)",
+                    period: "Feb 2026 - Aug 2026",
+                    location: "Hybrid",
+                    desc: `• Designed and executed quantitative and qualitative market studies to guide strategic university positioning.<br>
+                    • Developed interactive enrollment and prospecting intelligence dashboards for leadership decision support.`
+                },
+                {
+                    role: "Tech Innovation & BI Advisor",
                     company: "IPS SYSO Empresarial S.A.S.",
                     period: "Sep 2025 - Dec 2025",
                     location: "Cartagena, Colombia",
-                    desc: `• Leadership in technological innovation projects to optimize operational efficiency.<br>
-                    • Development of control dashboards and report automation using Power BI and Looker Studio.<br>
-                    • Maintenance and assurance of the company's technical and infrastructure availability.<br>
-                    • Integration and analysis of operational systems and infrastructure data.`
+                    desc: `• Spearheaded digital transformation in occupational health operations; automated executive reporting using Power BI and Looker Studio.<br>
+                    • Integrated clinical datasets (RIPS), infrastructure maintenance logs, and budget tracking.`
                 },
                 {
-                    role: "Data Analyst / Business Intelligence Analyst",
-                    company: "Fox Ordering",
-                    period: "Jan 2026 - Apr 2026",
-                    location: "Remote / Hybrid",
-                    desc: `• Creation, maintenance, and optimization of operational reports, dashboards, and KPIs.<br>
-                    • Analysis of large volumes of data using SQL to identify trends and process bottlenecks.<br>
-                    • Management and control of information in advanced Excel to ensure data traceability.<br>
-                    • Documentation and version control of reporting assets using Git in a collaborative setting.`
-                },
-                {
-                    role: "Data Financial Planning Analyst",
-                    company: "3 Castillos",
+                    role: "Financial Planning & Data Analyst",
+                    company: "Molinos 3 Castillos",
                     period: "Apr 2024 - Sep 2025",
-                    desc: `• Detailed analysis of financial data applying advanced statistical methods and tools.<br>
-                    • Automation of data collection and transformation applying Excel Power Query workflows.<br>
-                    • Creation and maintenance of interactive financial dashboards in Power BI.<br>
-                    • Performance projection through statistical budgeting and accurate financial forecasting.`
+                    location: "Cartagena",
+                    desc: `• Automated financial data extraction and transformation pipelines via Excel Power Query and Power BI.<br>
+                    • Built statistical forecast models for annual budget planning and cash flow risk management.`
                 },
                 {
-                    role: "Operations Supervisor",
-                    company: "Credi Jamar S.A.",
+                    role: "Operations & Process Efficiency Supervisor (9 years)",
+                    company: "CREDI JAMAR S.A.",
                     period: "Jan 2015 - Jan 2024",
-                    desc: `• Monitored and executed the Strategic Collection Plan (PEC).<br>
-                    • Met productivity goals and managed assigned personnel.<br>
-                    • Designed and implemented internal control dashboards in Power BI and Excel.<br>
-                    • Process optimization: reduced report generation time from 4 hours to 25 minutes.`
+                    location: "Cartagena",
+                    desc: `• Directly managed high-performance operational teams (up to 7 specialists) executing credit recovery goals and productivity SLAs.<br>
+                    • Designed and deployed the operation's first automated Power BI dashboard, <b>reducing reporting and processing cycle time from 4 hours to just 25 minutes</b>.<br>
+                    • Optimized field service dispatching based on territory effectiveness and geospatial data.`
                 },
                 {
-                    role: "Portfolio Analyst",
-                    company: "Credi Jamar S.A.",
+                    role: "Senior Credit Risk & Portfolio Analyst (6.5 years)",
+                    company: "CREDI JAMAR S.A.",
                     period: "Jul 2008 - Dec 2014",
-                    desc: `• Recovered overdue portfolio through direct contact and negotiation.<br>
-                    • Managed customer claims (PQR) and followed up on unapplied payments.<br>
-                    • Authorized discounts and identified flaws in the credit approval process.`
+                    location: "Cartagena",
+                    desc: `• Monitored delinquent debt portfolios, audited credit underwriting standards, and modeled default mitigation patterns.`
+                }
+            ]
+        },
+        portfolio: {
+            title: "Featured Case Studies & Deployed Platforms",
+            filters: {
+                all: "All",
+                enterprise: "Enterprise & SaaS",
+                analytics: "BI & Predictive Analytics",
+                tools: "Operations & Data"
+            },
+            projects: [
+                {
+                    category: "enterprise",
+                    badge: "Meritorious Thesis Award (4.8/5.0)",
+                    title: "Supply Chain Optimization — Deceuninck Colombia",
+                    desc: "Web analytics platform and cloud ETL architecture for plant demand, ABC inventory classification, and customs logistics.",
+                    fullDesc: "<b>Meritorious Degree Project (Unanimous 4.8/5.0 - Resolution No. 048)</b> for multinational manufacturing leader. Migrated obsolete Excel/VBA spreadsheets to cloud architecture. <br>⚙️ <b>Architecture:</b> FastAPI (Python) + PostgreSQL (Supabase) + React (Vite). <br>📊 <b>Analytics:</b> Descriptive/diagnostic historical demand modeling, weighted ABC classification, and real-time customs tracking. <br>🔒 <b>Compliance:</b> Full data anonymization under statutory privacy laws.",
+                    tags: ["FastAPI", "PostgreSQL", "Supabase", "React", "ETL", "Supply Chain"],
+                    image: "assets/images/schema_lab_clin.jpg"
+                },
+                {
+                    category: "enterprise",
+                    badge: "Multi-Tenant Enterprise SaaS",
+                    title: "OrganiSaaS & Nexo Bioger — Management & Audit Platform",
+                    desc: "Multi-tenant SaaS for large-scale payroll data audit (+$17B COP), dynamic org charts, and performance evaluation.",
+                    fullDesc: "Enterprise platform deployed on Vercel with Supabase Multi-Tenant architecture. Features SuperAdmin control, enterprise management, <b>forensic financial audit of payroll and statutory benefits exceeding +$17B COP</b>, and interactive real-time org chart with zoom capabilities.",
+                    tags: ["Next.js", "React 19", "Supabase Realtime", "Vercel", "Tailwind CSS"],
+                    link: "https://nexo-demo-two.vercel.app/login",
+                    image: "assets/images/nexo-logo.jpg"
+                },
+                {
+                    category: "enterprise",
+                    badge: "AI-Powered ATS",
+                    title: "NEXO FEPCO — ATS Platform & Maintenance Center",
+                    desc: "AI-driven candidate screening, medical exam tracking, and industrial maintenance operational command center.",
+                    fullDesc: "Comprehensive operational suite for FEPCO. Vercel-hosted ATS platform featuring intelligent applicant pre-screening and medical appointment monitoring. Includes industrial maintenance module connecting GLPI incident tracking and safety cards.",
+                    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "AI Engine"],
+                    link: "https://fepco-nexo-teal.vercel.app/",
+                    image: "assets/images/gestion_humana.png"
+                },
+                {
+                    category: "analytics",
+                    badge: "Prescriptive B2B Analytics",
+                    title: "Revenue Management Command Center",
+                    desc: "Prescriptive analytics tool for price and margin optimization, demand simulation, and financial risk mitigation.",
+                    fullDesc: "B2B platform modeling price elasticity via Log-Log regression (-2.08) and seasonal forecasts with Prophet and XGBoost. Enables executive price-setting simulations that have prevented commercial exposure totaling $797M COP.",
+                    tags: ["Python", "Streamlit", "Prophet", "XGBoost", "Causal Modeling", "Plotly"],
+                    link: "https://tableroestrategicofinanciero.streamlit.app/",
+                    image: "assets/images/revenue_command_center.png"
+                },
+                {
+                    category: "enterprise",
+                    badge: "SG-SST Command Center",
+                    title: "Sdavila Grupo Asesores — Web Portal & Command Center",
+                    desc: "Corporate portal and centralized command center for client documentation, regulatory tracking, and SG-SST auditing.",
+                    fullDesc: "Architected and deployed web infrastructure and operational control center for consulting firm Sdavila. Enables enterprise clients to upload, review, and audit occupational health and safety requirements with secure cloud storage.",
+                    tags: ["React", "Vite", "Supabase", "Tailwind CSS", "SG-SST"],
+                    link: "https://sdavilagrupoasesores.com",
+                    image: "assets/images/header_laboratorio.png"
+                },
+                {
+                    category: "analytics",
+                    badge: "Commercial Intelligence",
+                    title: "PharmaLife BI & Commercial Forecasting",
+                    desc: "Interactive executive dashboard featuring predictive modeling and sales diagnostics for pharmaceutical distribution.",
+                    fullDesc: "Analytics system incorporating econometric OLS modeling and Prophet forecasting algorithms to anticipate product turnover, margin variances, and sales quota pacing.",
+                    tags: ["Streamlit", "Python", "Prophet", "OLS Regression", "DataViz"],
+                    link: "https://ventaspharmalife.streamlit.app/",
+                    image: "assets/images/gestion_humana.png"
+                },
+                {
+                    category: "analytics",
+                    badge: "End-to-End BI",
+                    title: "SpaceParts — Full-Stack BI Architecture",
+                    desc: "Python ETL pipeline with Parquet datasets, star schema modeling, and Power BI dashboards with profitability and OTD metrics.",
+                    fullDesc: "Full-cycle data analytics solution: automated extraction and transformation of millions of transaction records to columnar Parquet format, dimensional modeling in Power BI (Advanced DAX), and executive reporting.",
+                    tags: ["Power BI", "Python", "ETL", "Parquet", "DAX", "Git Flow"],
+                    link: "https://spaceparts-dashboard-report.streamlit.app/",
+                    image: "assets/images/spaceparts-1.png"
+                },
+                {
+                    category: "tools",
+                    badge: "Operations Management",
+                    title: "Clinical Laboratory Network — Home Service Management",
+                    desc: "Multi-zone web platform optimizing route dispatching and mobile clinical sample collection traceability.",
+                    fullDesc: "Operational dashboard built with React + Vite and Supabase (PostgreSQL) relational backend, streamlining mobile technician scheduling and field workflow.",
+                    tags: ["React", "Supabase", "PostgreSQL", "Tailwind CSS", "Vercel"],
+                    link: "laboratorio.html",
+                    image: "assets/images/header_laboratorio.png"
                 }
             ]
         },
         education: {
-            title: "Education",
+            title: "Academic Background & Distinctions",
             degrees: [
                 {
-                    degree: "Specialization in Data Analytics and Information",
+                    degree: "Postgrad Specialization in Data & Information Analytics",
                     institution: "Fundación Universitaria Tecnológico Comfenalco",
                     year: "2026",
-                    thesis: 'Meritorious Degree Project: "Descriptive Analytics System and ETL Process Automation for Supply Chain Optimization at Deceuninck Colombia SAS"'
+                    thesis: '🏆 Meritorious Thesis Award (Unanimous 4.8/5.0 - Resolution No. 048): "Descriptive Analytics System and ETL Process Automation for Supply Chain Optimization at Deceuninck Colombia SAS"'
                 },
                 {
-                    degree: "Industrial Engineering",
+                    degree: "B.S. in Industrial Engineering",
                     institution: "Fundación Universitaria Tecnológico Comfenalco",
                     year: "2020"
                 },
                 {
-                    degree: "Technology in Quality Control",
+                    degree: "Associate Degree in Quality Control",
                     institution: "Fundación Universitaria Tecnológico Comfenalco",
                     year: "2018"
                 },
                 {
-                    degree: "Technology in Information Systems Analysis and Development",
+                    degree: "Associate Degree in Information Systems Analysis and Development",
                     institution: "SENA",
                     year: "2012"
                 }
@@ -460,21 +579,20 @@ const translations = {
                     institution: "Fundación Universitaria Tecnológico Comfenalco",
                     hours: "120 hours",
                     location: "Cartagena",
-                    year: "2021",
-                    month: "May"
-                },
-                {
-                    name: "Microsoft Power BI",
-                    institution: "Universidad de Cataluña",
-                    duration: "12 weeks",
-                    location: "Virtual mode",
                     year: "2021"
                 },
                 {
-                    name: "Data Analysis",
+                    name: "Microsoft Power BI Specialist",
+                    institution: "Universidad de Cataluña",
+                    duration: "12 weeks",
+                    location: "Virtual",
+                    year: "2021"
+                },
+                {
+                    name: "Data Analytics & BI",
                     institution: "Universidad Tecnológica de Bolívar (MINTIC)",
                     duration: "12 weeks",
-                    location: "In-person mode",
+                    location: "Cartagena",
                     year: "2024"
                 }
             ],
@@ -484,165 +602,31 @@ const translations = {
                     institution: "Universidad de Cataluña",
                     hours: "40 hours",
                     location: "Cartagena",
-                    year: "2021",
-                    month: "June"
+                    year: "2021"
                 },
                 {
                     name: "Management Tools",
                     institution: "Universidad Pontificia Javeriana",
                     hours: "32 hours",
                     location: "Bogotá",
-                    year: "2020",
-                    month: "December"
+                    year: "2020"
                 }
             ],
             platzi: [
-                {
-                    name: "Data Science and Artificial Intelligence",
-                    date: "Sept. 13, 2022",
-                    hours: "14 h"
-                },
-                {
-                    name: "Mathematics Fundamentals",
-                    date: "Sept. 18, 2022",
-                    hours: "13 h"
-                },
-                {
-                    name: "Software Engineering Fundamentals",
-                    date: "Sept. 21, 2022",
-                    hours: "16 h"
-                },
-                {
-                    name: "Business Analysis for Data Science",
-                    date: "Sept. 14, 2022",
-                    hours: "10 h"
-                },
-                {
-                    name: "Python: Comprehensions, Functions and Error Handling",
-                    date: "Jan. 19, 2023",
-                    hours: "32 h"
-                },
-                {
-                    name: "Work Environment for Data Science with Jupyter Notebooks and Anaconda",
-                    date: "Oct. 8, 2022",
-                    hours: "18 h"
-                }
-            ]
-        },
-        portfolio: {
-            title: "Featured Projects",
-            projects: [
-                {
-                    title: "Supply Chain Analytics & ETL Dashboard (Deceuninck)",
-                    desc: "Modern web analytics system and automated ETL pipeline for manufacturing plant demand and inventory.",
-                    fullDesc: "<b>Meritorious Degree Thesis</b> for the Postgrad Degree in Data Analytics. Migrated legacy Excel/VBA macros to a modern cloud web architecture. <br>⚙️ <b>Architecture:</b> FastAPI (Python) + PostgreSQL (Supabase) + React (Vite). <br>📊 <b>Analytics:</b> Descriptive and diagnostic demand modeling, weighted ABC inventory classification, and real-time customs tracking. <br>🔒 <b>Compliance:</b> Full data anonymization under statutory privacy laws.",
-                    tags: ["FastAPI", "React", "PostgreSQL", "Supabase", "Pandas", "ETL", "Vite"],
-                    image: "https://picsum.photos/seed/deceuninck/600/400"
-                },
-                {
-                    title: "Revenue Command Center - Prescriptive Analytics",
-                    desc: "B2B Revenue Management system for price and margin optimization.",
-                    fullDesc: "<b>Prescriptive Analytics</b> tool transforming commodity pricing strategy. Eliminates uncertainty through advanced causal modeling. <br>📊 <b>Tech Stack:</b> Log-Log Regression (Elasticity), Prophet (Forecast), and XGBoost. <br>💡 <b>Business Impact:</b> Critical elasticity identification (-2.08) and $797M risk prevention.",
-                    tags: ["Python", "Streamlit", "Plotly", "Prophet", "XGBoost", "Causal Modeling"],
-                    link: "https://tableroestrategicofinanciero.streamlit.app/",
-                    image: "assets/images/revenue_command_center.png"
-                },
-                {
-                    title: "PharmaLife BI Dashboard",
-                    desc: "Interactive executive dashboard for predictive and operational analysis.",
-                    fullDesc: "Business intelligence platform for PharmaLife Laboratories, developed with <b>Antigravity AI</b>. <br>📈 <b>Modeling:</b> Prophet, OLS Elasticity. <br>📊 <b>Visualization:</b> Streamlit, interactive Plotly with full corporate branding.",
-                    tags: ["Streamlit", "Python", "Prophet", "Antigravity"],
-                    link: "https://ventaspharmalife.streamlit.app/",
-                    image: "https://picsum.photos/seed/pharma/600/400"
-                },
-                {
-                    title: "Alegra BI Challenge - Parity Analysis",
-                    desc: "Interactive Business Intelligence platform for analyzing female political representation.",
-                    fullDesc: "SaaS-style dashboard developed in Python. <br>📊 <b>Modeling:</b> Scikit-Learn (Linear Regression) for predicting parity timeline. <br>📈 <b>Visualization:</b> Streamlit, Pandas, and interactive Plotly. <br>🚀 <b>Impact:</b> Global benchmarking and automated setback alerts.",
-                    tags: ["Python", "Streamlit", "Scikit-Learn", "BI"],
-                    link: "https://alegra-bi-dashboard.streamlit.app/",
-                    image: "https://picsum.photos/seed/alegra/600/400"
-                },
-                {
-                    title: "Clinical Laboratory - Home Service Management",
-                    desc: "Logistics and clinical management system integrating PostgreSQL (Supabase) and React.",
-                    fullDesc: "Management system for <b>Clinical Laboratory Network</b>. Home service optimization. <br>💾 <b>Backend:</b> Supabase (PostgreSQL) with multi-zone architecture. <br>⚛️ <b>Frontend:</b> React + Vite + TailwindCSS for operational dashboard. <br>🚀 <b>Infrastructure:</b> Continuous deployment on Vercel.",
-                    tags: ["React", "Supabase", "PostgreSQL", "TailwindCSS", "Vercel"],
-                    link: "laboratorio.html",
-                    image: "assets/images/header_laboratorio.png"
-                },
-                {
-                    title: "NEXO FEPCO - Vacancy Tracking & Control Center",
-                    desc: "Comprehensive operational intelligence and prescriptive analytics platform for LATAM.",
-                    fullDesc: "Unified Geographic Command Center to monitor vacancies, candidate metrics, and AI-driven turnover risk. <br>🗺️ <b>Maps:</b> Detailed vector rendering of Colombia and LATAM. <br>💻 <b>Tech Stack:</b> Next.js, TypeScript, Tailwind CSS, Supabase, D3 Geo.",
-                    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "D3 Geo"],
-                    link: "https://fepco-nexo-teal.vercel.app/",
-                    image: "https://picsum.photos/seed/fepco/600/400"
-                },
-                {
-                    title: "Talent Hub Enterprise - Nexo Bioger",
-                    desc: "Enterprise Single Page Application (SPA) for HR management and financial analysis.",
-                    fullDesc: "Management system with real-time <b>Dynamic Org Chart</b>. Includes <b>forensic financial analysis</b> of losses due to workplace accidents and cost overruns from rework with overtime. <br>🔐 <b>Security:</b> Granular permissions and authentication via Supabase. <br>💻 <b>Tech Stack:</b> React 19, Vite, Tailwind CSS v4, Recharts, Supabase Realtime.",
-                    tags: ["React 19", "Vite", "Supabase Realtime", "Tailwind CSS v4"],
-                    link: "https://nexo-demo-two.vercel.app/login",
-                    image: "assets/images/nexo-logo.jpg"
-                },
-                {
-                    title: "Talent Hub Analytics - HR Platform",
-                    desc: "Enterprise Single Page Application (SPA) for Talent Management.",
-                    fullDesc: "Custom comprehensive solution for Human Resources. Acts as a Strategic Control Center to monitor KPIs on organizational health, financial impact, and retention. <br>📊 <b>Modules:</b> Executive Dashboard, Financial Impact, Organizational Health, Talent Attraction. <br>💻 <b>Tech Stack:</b> React 18, TypeScript, Vite, Tailwind CSS, Recharts.",
-                    tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS"],
-                    link: "https://talentohumanoctg.vercel.app/",
-                    image: "assets/images/gestion_humana.png"
-                },
-                {
-                    title: "CUN - Market Research Ecosystem",
-                    desc: "Comprehensive platform with chatbot, WhatsApp management, and app scraping.",
-                    fullDesc: "Advanced analysis tool developed to automate data extraction. <br>🤖 <b>Scraping & NLP:</b> Detailed app content analysis based on comments and descriptions. <br>💬 <b>Chatbot:</b> WhatsApp interaction management engine. <br>🚀 <b>Deployment:</b> Robust backend architecture (Node/Python).",
-                    tags: ["Web Scraping", "NLP", "Chatbot", "Node.js"],
-                    image: "https://picsum.photos/seed/cun_market/600/400"
-                },
-                {
-                    title: "PLAUD & HP Analytics",
-                    desc: "Analytical dashboards for operational control and report automation.",
-                    fullDesc: "Systems developed in conjunction with <b>Antigravity AI</b> to optimize the analysis of large volumes of data. <br>⚙️ <b>Management:</b> Integration of automations and interface design in Python/PyQt6.",
-                    tags: ["Python", "Automation", "Antigravity"],
-                    image: "https://picsum.photos/seed/plaud/600/400"
-                },
-                {
-                    title: "Innovation and Operations Dashboard – IPS SYSO",
-                    desc: "Digitalization of administrative reports, RIPS integration, and operational indicators monitoring.",
-                    fullDesc: "Comprehensive Business Intelligence system for the healthcare sector. <br>📊 <b>Dashboards:</b> Real-time monitoring of performance and productivity indicators. <br>🏥 <b>RIPS:</b> Digitalization of individual service provision registration processes. <br>⚙️ <b>Infrastructure:</b> Proposals for improvement in connectivity and internal processes.",
-                    tags: ["Power BI", "Healthcare", "Process Optimization"],
-                    image: "https://picsum.photos/seed/ipssyso/600/400"
-                },
-                {
-                    title: "SpaceParts – End-to-End BI Project",
-                    desc: "Python ETL, star schema data modeling, and Power BI dashboards with profitability and OTD metrics.",
-                    fullDesc: "Technical project integrating the full data analytics cycle. <br>⚙️ <b>ETL:</b> Python (Pandas/PyArrow) for Parquet datasets. <br>📊 <b>Modeling:</b> Power BI/DAX (FactSales, DimProduct, etc). <br>💾 <b>Control:</b> GitHub + VS Code.",
-                    tags: ["Power BI", "Python", "ETL", "Git Flow"],
-                    link: "https://spaceparts-dashboard-report.streamlit.app/",
-                    image: "assets/images/spaceparts-1.png",
-                    images: ["assets/images/spaceparts-1.png", "assets/images/spaceparts-2.png", "assets/images/spaceparts-3.png", "assets/images/spaceparts-4.png"]
-                },
-                {
-                    title: "DANE Vital Statistics – Academic Analysis",
-                    desc: "Cleaning and statistical analysis of birth microdata using Python and Parquet format export.",
-                    fullDesc: "Analysis of DANE public data for academic project. <br>🐍 <b>Python:</b> Pandas, NumPy, Matplotlib for processing and visualization. <br>📊 <b>Analysis:</b> Descriptive statistics of births in Colombia. <br>💾 <b>Format:</b> Optimized export in Parquet.",
-                    tags: ["Python", "Data Analysis", "Parquet"],
-                    image: "https://picsum.photos/seed/dane/600/400"
-                },
-                {
-                    title: "Babyshower - Ian Gabriel",
-                    desc: "Interactive web application for Babyshower gift registry.",
-                    fullDesc: "Responsive digital experience built with <b>Antigravity AI</b>. <br>👶 <b>UX/UI:</b> Horizontal scroll design, dynamic animations, and category-based gift grouping. <br>🎨 <b>Frontend:</b> HTML, Modern CSS, JavaScript.",
-                    tags: ["Web", "UI/UX", "Antigravity"],
-                    image: "https://picsum.photos/seed/baby/600/400"
-                }
+                { name: "Professional Data Engineer & AI Path", date: "2022 - 2023", hours: "100+ h" },
+                { name: "Python: Comprehensions, Functions & Error Handling", date: "2023", hours: "32 h" },
+                { name: "Business Analytics for Data Science", date: "2022", hours: "10 h" },
+                { name: "Software Engineering Fundamentals", date: "2022", hours: "16 h" }
             ]
         },
         contact: {
-            title: "Contact"
+            title: "Let's Connect",
+            subtitle: "Looking to optimize an operational pipeline, streamline your supply chain, or deploy custom data intelligence?",
+            email_label: "Email",
+            phone_label: "Phone / WhatsApp",
+            location_label: "Location & Availability",
+            location_val: "Cartagena / Bogotá / Open to Global Remote",
+            linkedin_label: "LinkedIn Profile"
         }
     }
 };

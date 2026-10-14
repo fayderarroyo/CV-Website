@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fayder Arroyo | Solutions Architect & Analytics Engineer</title>
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css?v=5">
     <link rel="stylesheet" href="education.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -27,10 +27,10 @@
                 </a>
                 <div class="nav-links">
                     <a href="#about" data-i18n="nav.about">Sobre Mí</a>
+                    <a href="#portfolio" data-i18n="nav.portfolio">Casos de Éxito</a>
                     <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+                    <a href="#skills" data-i18n="nav.skills">Stack Técnico</a>
                     <a href="#education" data-i18n="nav.education">Formación</a>
-                    <a href="#portfolio" data-i18n="nav.portfolio">Proyectos</a>
-                    <a href="#skills" data-i18n="nav.skills">Skills</a>
                     <a href="#contact" data-i18n="nav.contact">Contacto</a>
                 </div>
                 <div class="lang-switch">
@@ -51,30 +51,51 @@
                 </div>
                 <div class="hero-content">
                     <h1 data-i18n="hero.greeting" class="hero-title">Fayder Enrique<br><span class="highlight">Arroyo Herazo</span></h1>
-                    <h2 data-i18n="hero.role" class="hero-subtitle">Especialista en Analítica y Soluciones Basadas en Datos</h2>
-                    <p data-i18n="hero.bio" class="hero-bio">Impulso la transformación digital a través de Business Intelligence...</p>
+                    <h2 data-i18n="hero.role" class="hero-subtitle">Solutions Architect & Analytics Engineer</h2>
+                    <p data-i18n="hero.bio" class="hero-bio">Cargando...</p>
                     <div class="cta-buttons">
                         <a href="assets/documents/cv_es.pdf" class="btn btn-primary" id="download-cv" download>
-                            <i class="fas fa-file-download" style="font-size: 1.2rem;"></i> <span data-i18n="hero.btn_cv" style="text-align: left; line-height: 1.2;">Descargar<br>CV</span>
+                            <i class="fas fa-file-download"></i> <span data-i18n="hero.btn_cv">Descargar CV</span>
                         </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i> <span data-i18n="hero.btn_contact">Contáctame</span>
+                        <a href="#portfolio" class="btn btn-secondary">
+                            <i class="fas fa-layer-group"></i> <span data-i18n="hero.btn_projects">Ver Casos de Éxito</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> <span data-i18n="hero.btn_contact">Contactar</span>
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="hero-stats" id="hero-stats">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Strategic Pillars -->
+    <section id="about">
+        <div class="container">
+            <div class="about-card">
+                <h2 data-i18n="about.title">Propuesta de Valor & Enfoque</h2>
+                <p id="about-intro" class="about-intro"></p>
+                <div class="pillars-grid" id="about-pillars">
+                    <!-- Injected by JS -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- Portfolio Section with Categories -->
+    <section id="portfolio">
         <div class="container">
-            <div class="about-card">
-                <h2 data-i18n="about.title">Sobre Mí</h2>
-                <div data-i18n="about.description"
-                    style="font-size: 1.1rem; color: var(--text-secondary); max-width: 900px; margin: 0 auto;">
-                    <!-- Injected by JS -->
-                </div>
+            <h2 data-i18n="portfolio.title">Casos de Éxito & Plataformas Desplegadas</h2>
+            <div class="portfolio-filters" id="portfolio-filters">
+                <!-- Injected by JS -->
+            </div>
+            <div class="portfolio-grid" id="portfolio-list">
+                <!-- Injected by JS -->
             </div>
         </div>
     </section>
@@ -89,63 +110,23 @@
         </div>
     </section>
 
-    <!-- Education Section with Timeline -->
-    <section id="education">
+    <!-- Skills Section (Grouped by 4 Engineering Domains) -->
+    <section id="skills">
         <div class="container">
-            <h2 data-i18n="education.title">Formación Académica</h2>
-            <div id="education-list">
-                <!-- Injected by JS - Timeline with all education types -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <div class="container">
-            <h2 data-i18n="portfolio.title">Proyectos Destacados</h2>
-            <div class="portfolio-grid" id="portfolio-list">
+            <h2 data-i18n="skills.title">Stack Tecnológico & Competencias</h2>
+            <p class="section-subtitle" id="skills-subtitle"></p>
+            <div class="skills-domains-grid" id="skills-categories">
                 <!-- Injected by JS -->
             </div>
         </div>
     </section>
 
-    <!-- Skills Section with Circular Badges -->
-    <section id="skills">
+    <!-- Education Section with Timeline -->
+    <section id="education">
         <div class="container">
-            <h2 data-i18n="skills.title">Skills & Tecnologías</h2>
-            <div class="skills-circles">
-                <div class="skill-circle">
-                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
-                    <div class="skill-name">Power BI</div>
-                </div>
-                <div class="skill-circle">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <div class="skill-name">SQL Server</div>
-                </div>
-                <div class="skill-circle">
-                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                    <div class="skill-name">Python</div>
-                </div>
-                <div class="skill-circle">
-                    <div class="skill-icon"><i class="fas fa-bolt"></i></div>
-                    <div class="skill-name">Power Query</div>
-                </div>
-                <div class="skill-circle">
-                    <div class="skill-icon"><i class="fas fa-table"></i></div>
-                    <div class="skill-name">Excel</div>
-                </div>
-                <div class="skill-circle">
-                    <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
-                    <div class="skill-name">DAX</div>
-                </div>
-                <div class="skill-circle">
-                    <div class="skill-icon"><i class="fas fa-cogs"></i></div>
-                    <div class="skill-name">ETL</div>
-                </div>
-                <div class="skill-circle">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <div class="skill-name">Innovation</div>
-                </div>
+            <h2 data-i18n="education.title">Formación Académica & Reconocimientos</h2>
+            <div id="education-list">
+                <!-- Injected by JS -->
             </div>
         </div>
     </section>
@@ -154,22 +135,9 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 data-i18n="contact.title">Contacto</h2>
-            <div class="contact-grid">
-                <a href="mailto:fayderarroyo@gmail.com" class="contact-item">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <h3>Email</h3>
-                    <p>fayderarroyo@gmail.com</p>
-                </a>
-                <a href="https://www.linkedin.com/in/fayderarroyo/" target="_blank" class="contact-item">
-                    <i class="fab fa-linkedin contact-icon"></i>
-                    <h3>LinkedIn</h3>
-                    <p>fayder-arroyo</p>
-                </a>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt contact-icon"></i>
-                    <h3>Ubicación</h3>
-                    <p>Cartagena, Colombia</p>
-                </div>
+            <p class="section-subtitle" id="contact-subtitle"></p>
+            <div class="contact-grid" id="contact-details">
+                <!-- Injected by JS -->
             </div>
         </div>
     </section>
@@ -177,16 +145,15 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Fayder Arroyo — Data & BI · Innovación Tecnológica</p>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Desarrollado con pasión por la analítica
-                y
-                la tecnología.</p>
+            <p>&copy; 2026 Fayder Arroyo Herazo — Solutions Architect & Analytics Engineer</p>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.7;">
+                Bilingual Industrial Engineer & Data Analytics Specialist · Cartagena / Bogotá / Global Remote
+            </p>
         </div>
     </footer>
 
-    <script src="data.js?v=20261012_v2"></script>
-    <script src="script.js?v=20261012_v2"></script>
-    <!-- Last Updated: 2026-10-12 Sync Experiencia Laboral -->
+    <script src="data.js?v=20261013_v3"></script>
+    <script src="script.js?v=20261013_v3"></script>
 </body>
 
 </html>
