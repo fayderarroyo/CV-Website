@@ -10,18 +10,18 @@ const translations = {
         },
         hero: {
             greeting: "Fayder Enrique<br><span class='highlight'>Arroyo Herazo</span>",
-            role: "Especialista en Analítica y Soluciones Basadas en Datos",
-            bio: "Impulso la transformación digital a través de Business Intelligence, automatización y análisis de datos, convirtiendo la información en decisiones estratégicas que optimizan la eficiencia operativa y promueven la innovación tecnológica.",
+            role: "Solutions Architect & Analytics Engineer",
+            bio: "Ingeniero Industrial y Especialista en Analítica de Datos (Meritorio 4.8, Bilingüe C1). Más de 10 años integrando visión de negocio, arquitectura de datos en la nube y desarrollo de plataformas analíticas (SaaS / BI) para transformar operaciones de alto impacto.",
             btn_cv: "Descargar<br>CV",
             btn_contact: "Contáctame"
         },
         about: {
             title: "Sobre Mí",
-            description: `Soy un profesional con experiencia en analítica de datos, inteligencia de negocios e innovación tecnológica, enfocado en mejorar la gestión operativa, financiera y estratégica de las organizaciones.
+            description: `Soy un profesional bilingüe (Inglés C1) especializado en ingeniería industrial, arquitectura de soluciones de datos y desarrollo de plataformas analíticas en la nube (SaaS / BI), con más de 10 años de experiencia uniendo la estrategia de operaciones con la ejecución técnica.
             <br><br>
-            Combino herramientas como Power BI, SQL y Python con metodologías de análisis y optimización de procesos para generar información clara, confiable y útil para la toma de decisiones.
+            Diseño e implemento soluciones de datos de punta a punta: desde la extracción y automatización de pipelines ETL (Python, FastAPI, SQL) y modelado relacional en la nube (Supabase, PostgreSQL), hasta analítica predictiva y prescriptiva (Power BI/DAX, Prophet, XGBoost) y el despliegue de sistemas web en producción (Next.js, React).
             <br><br>
-            Mi objetivo es transformar datos en conocimiento accionable, impulsar la eficiencia y acompañar la evolución digital de las empresas mediante soluciones analíticas y tecnológicas de alto impacto.`
+            Cuento con casos de éxito comprobados en operaciones reales: optimización de la cadena de suministro en manufactura multinacional (Trabajo Meritorio 4.8 en Deceuninck), desarrollo de plataformas multi-tenant para auditoría masiva de datos (+17.000M COP en Bioger), sistemas ATS con IA (FEPCO) y optimización de procesos reduciendo tiempos de 4 horas a 25 minutos.`
         },
         skills: {
             title: "Skills & Tecnologías"
@@ -32,6 +32,23 @@ const translations = {
         experience: {
             title: "Experiencia Laboral",
             jobs: [
+                {
+                    role: "Tech Lead & Arquitecto de Soluciones de Datos",
+                    company: "Bioger S.A.S. (Ecosistema OrganiSaaS / Nexo)",
+                    period: "Ene 2026 - Presente",
+                    location: "Cartagena / Híbrido",
+                    desc: `• Diseño de arquitectura y despliegue multi-tenant en la nube (Next.js, Supabase, Vercel) para control operativo y analítica de capital humano.<br>
+                    • Auditoría y conciliación masiva de datos financieros y de nómina por +$17.000M COP, detectando inconsistencias normativas y parafiscales.<br>
+                    • Desarrollo de organigramas dinámicos y tableros analíticos de evaluación de desempeño y clima laboral en tiempo real.`
+                },
+                {
+                    role: "Consultor de Automatización de Procesos & ATS con IA",
+                    company: "FEPCO S.A.S.",
+                    period: "Jul 2026 - Presente",
+                    location: "Cartagena / Remoto",
+                    desc: `• Arquitectura y puesta en producción en Vercel de <b>Nexo FEPCO Contratación</b>: plataforma ATS con motor de IA para pre-filtrado de candidatos y trazabilidad médica.<br>
+                    • Diseño del sistema de control operativo <b>Nexo Mantenimiento</b>, integrando datos de GLPI y tarjetas de seguridad para trazabilidad técnica.`
+                },
                 {
                     role: "Data Analyst / Market Research",
                     company: "Corporación Unificada Nacional de Educación Superior (CUN)",
@@ -316,18 +333,18 @@ const translations = {
         },
         hero: {
             greeting: "Fayder Enrique<br><span class='highlight'>Arroyo Herazo</span>",
-            role: "Specialist in Analytics and Data-Driven Solutions",
-            bio: "I drive digital transformation through Business Intelligence, automation, and data analysis, turning information into strategic decisions that optimize operational efficiency and promote technological innovation.",
+            role: "Solutions Architect & Analytics Engineer",
+            bio: "Bilingual (English C1) Industrial Engineer and Data Analytics Specialist (Meritorious 4.8). 10+ years combining business strategy, cloud data architecture, and full-stack analytics platforms (SaaS / BI) to optimize mission-critical operations.",
             btn_cv: "Download<br>CV",
             btn_contact: "Contact Me"
         },
         about: {
             title: "About Me",
-            description: `I am a professional with experience in data analytics, business intelligence, and technological innovation, focused on improving the operational, financial, and strategic management of organizations.
+            description: `I am a bilingual (English C1) professional specializing in industrial engineering, enterprise data solutions architecture, and cloud analytics platforms (SaaS / BI), with over 10 years of experience bridging business strategy and technical execution.
             <br><br>
-            I combine tools like Power BI, SQL, and Python with analysis and process optimization methodologies to generate clear, reliable, and useful information for decision-making.
+            I architect and deploy end-to-end data solutions: from automated ETL pipelines (Python, FastAPI, SQL) and cloud relational modeling (Supabase, PostgreSQL), to predictive and prescriptive analytics (Power BI/DAX, Prophet, XGBoost) and production web applications (Next.js, React).
             <br><br>
-            My goal is to transform data into actionable knowledge, drive efficiency, and accompany the digital evolution of companies through high-impact analytical and technological solutions.`
+            Demonstrated track record of high-impact delivery: supply chain optimization for multinational manufacturing (Meritorious Thesis Award 4.8 at Deceuninck), multi-tenant financial audit platforms covering +$17B COP (Bioger), AI-powered ATS deployments (FEPCO), and operational cycle-time reduction from 4 hours to 25 minutes.`
         },
         skills: {
             title: "Skills & Technologies"
@@ -338,6 +355,23 @@ const translations = {
         experience: {
             title: "Professional Experience",
             jobs: [
+                {
+                    role: "Tech Lead & Data Solutions Architect",
+                    company: "Bioger S.A.S. (OrganiSaaS & Nexo Ecosystem)",
+                    period: "Jan 2026 - Present",
+                    location: "Cartagena / Hybrid",
+                    desc: `• Architected and deployed multi-tenant cloud platform (Next.js, Supabase, Vercel) for operational oversight and human capital analytics.<br>
+                    • Audited and cross-reconciled large-scale financial and payroll datasets totaling +$17B COP, pinpointing statutory and tax variances.<br>
+                    • Engineered real-time dynamic organizational charts, employee performance evaluation pipelines, and climate survey dashboards.`
+                },
+                {
+                    role: "Process Automation & AI-ATS Consultant",
+                    company: "FEPCO S.A.S.",
+                    period: "Jul 2026 - Present",
+                    location: "Cartagena / Remote",
+                    desc: `• Built and deployed to production in Vercel <b>Nexo FEPCO Contratación</b>: enterprise ATS with AI engine for candidate pre-filtering and medical tracking.<br>
+                    • Designed <b>Nexo Maintenance</b> module, integrating GLPI incident records and industrial safety cards for operational field oversight.`
+                },
                 {
                     role: "Data Analyst / Market Research",
                     company: "Corporación Unificada Nacional de Educación Superior (CUN)",
